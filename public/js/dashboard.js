@@ -882,9 +882,12 @@ function renderEmailTemplates(templates) {
       <div class="email-card-actions">
         <button class="email-action-btn email-action-btn--copy"
                 id="email-copy-btn-${t.id}"
-                onclick="copyEmail(${t.id})">Copy Full Email</button>
-        <button class="email-action-btn email-action-btn--open"
-                onclick="openEmailClient(${t.id})">Open in Email</button>
+                onclick="copyEmail(${t.id})">Copy Email</button>
+        <button class="email-action-btn email-action-btn--send"
+                id="email-send-btn-${t.id}"
+                onclick="confirmAndSend(${t.id})">
+          ${isSent ? '✓ Sent' : '📤 Send Now'}
+        </button>
       </div>
     </div>`;
   }).join('');
@@ -956,6 +959,55 @@ function markEmailSent(id) {
       <span class="email-summary-chip email-summary-chip--sent">${sentCount} Sent</span>
       <span class="email-summary-chip email-summary-chip--unsent">${unsentCount} Not Sent</span>
     `;
+  }
+}
+
+async function confirmAndSend(id) {
+  const t = EmailState.templates.find(x => x.id === id);
+  if (!t) return;
+
+  // Show full email in a confirm dialog so user can review before sending
+  const confirmed = window.confirm(
+    `REVIEW EMAIL BEFORE SENDING\n\n` +
+    `FROM:    kspmarketingcanada@gmail.com\n` +
+    `TO:      ${t.to}\n` +
+    `SUBJECT: ${t.subject}\n\n` +
+    `──────────────────────────────\n` +
+    `${t.body.slice(0, 800)}${t.body.length > 800 ? '\n...(continues)' : ''}\n\n` +
+    `──────────────────────────────\n` +
+    `Click OK to SEND this email, or Cancel to go back.`
+  );
+
+  if (!confirmed) return;
+
+  const btn = $(`email-send-btn-${id}`);
+  if (btn) { btn.textContent = '⏳ Sending...'; btn.disabled = true; }
+
+  try {
+    const res  = await fetch('/api/send-email', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ id })
+    });
+    const json = await res.json();
+
+    if (json.success) {
+      // Mark as sent
+      const sentMap  = JSON.parse(localStorage.getItem('emailsSent') || '{}');
+      sentMap[id]    = true;
+      localStorage.setItem('emailsSent', JSON.stringify(sentMap));
+
+      if (btn) { btn.textContent = '✓ Sent'; btn.className = 'email-action-btn email-action-btn--sent'; btn.disabled = false; }
+      const badge = $(`email-badge-${id}`);
+      if (badge) { badge.textContent = '✓ Sent'; badge.className = 'email-sent-badge email-sent-badge--sent'; }
+      alert(`✅ Email sent successfully to ${t.to}`);
+    } else {
+      if (btn) { btn.textContent = '📤 Send Now'; btn.disabled = false; }
+      alert(`❌ Failed to send: ${json.error}`);
+    }
+  } catch (err) {
+    if (btn) { btn.textContent = '📤 Send Now'; btn.disabled = false; }
+    alert(`❌ Network error: ${err.message}`);
   }
 }
 

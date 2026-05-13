@@ -1,10 +1,13 @@
 'use strict';
 
+require('dotenv').config();
+
 const express    = require('express');
 const path       = require('path');
 const compress   = require('compression');
 const helmet     = require('helmet');
 const rateLimit  = require('express-rate-limit');
+const nodemailer = require('nodemailer');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -1416,6 +1419,41 @@ app.get('/robots.txt', (req, res) => {
   const baseUrl = `${req.protocol}://${req.get('host')}`;
   res.set('Content-Type', 'text/plain');
   res.send(`User-agent: *\nAllow: /\nSitemap: ${baseUrl}/sitemap.xml\n`);
+});
+
+// ─── Email Sending ────────────────────────────────────────────────────────────
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD
+  }
+});
+
+// POST /api/send-email  { id }  — sends the template email for that event id
+app.post('/api/send-email', async (req, res) => {
+  const { id } = req.body;
+  if (!id) return res.status(400).json({ success: false, error: 'Missing email id' });
+
+  const templates = generateEmailTemplates();
+  const template  = templates.find(t => t.id === Number(id));
+  if (!template) return res.status(404).json({ success: false, error: 'Template not found' });
+
+  try {
+    await transporter.sendMail({
+      from:    `"Kenny Patel — Comfort Inn Huntsville" <${process.env.GMAIL_USER}>`,
+      to:      template.to,
+      subject: template.subject,
+      text:    template.body
+    });
+
+    console.log(`[Email sent] #${id} → ${template.to}`);
+    res.json({ success: true, message: `Email sent to ${template.to}` });
+  } catch (err) {
+    console.error('[Email error]', err.message);
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 // ─── Health Check ─────────────────────────────────────────────────────────────
