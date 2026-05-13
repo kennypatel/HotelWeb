@@ -312,7 +312,7 @@ function generateRevenueData() {
   const avgOccupancy       = occupiedNights / totalRooms;
   const revpar             = adr * avgOccupancy;
 
-  const trafficData = generateTrafficData();
+  const trafficData = fromCache('analytics_traffic', generateTrafficData);
   const movingAvg   = trafficData.revenue.map((_, i) => {
     if (i < 6) return null;
     const slice = trafficData.revenue.slice(i - 6, i + 1);
@@ -927,7 +927,7 @@ function generateChoiceHotelsStatus() {
 
 app.get('/api/analytics', (req, res) => {
   const data = fromCache('analytics', () => {
-    const trafficData = generateTrafficData();
+    const trafficData = fromCache('analytics_traffic', generateTrafficData);
     return {
       kpis:     generateKPIs(trafficData),
       traffic:  { labels: trafficData.labels, beforeOptimization: trafficData.beforeOptimization, afterOptimization: trafficData.afterOptimization, optimizationDay: 10 },
@@ -977,18 +977,31 @@ app.get('/api/events', (req, res) => {
   res.json({ success: true, data: fromCache('events', generateLocalEvents) });
 });
 
-// Real-time endpoint — never cached, always fresh
+// Real-time endpoint — activity feed is live; all numbers derived from
+// deterministic daily data so they never fluctuate between refreshes.
 app.get('/api/realtime', (req, res) => {
+  const trafficData   = fromCache('analytics_traffic', generateTrafficData);
+  const todayIdx      = trafficData.days.length - 1;
+  const todayBookings = trafficData.bookings[todayIdx];
+  const todayRevenue  = trafficData.revenue[todayIdx];
+  const todayVisitors = trafficData.afterOptimization[todayIdx];
+
+  // Live visitors = today's total spread across 24h, weighted by current hour
+  // (hotel website traffic peaks 9am–9pm local time)
+  const hour        = new Date().getHours();
+  const hourWeight  = (hour >= 9 && hour <= 21) ? 1.4 : 0.5;
+  const liveVisitors = Math.max(1, Math.round((todayVisitors / 24) * hourWeight));
+
   res.json({
     success: true,
     data: {
-      liveVisitors:    randomBetween(4, 18),
+      liveVisitors,
       activity:        Array.from({ length: 8 }, generateActivity),
-      activeStates:    ['AL', 'TN', 'GA', 'TX', 'FL'].slice(0, randomBetween(2, 5)),
-      activeRooms:     randomBetween(2, 6),
-      pendingBookings: randomBetween(1, 4),
-      todayBookings:   randomBetween(3, 10),
-      todayRevenue:    randomBetween(4200, 6800)
+      activeStates:    ['AL', 'TN', 'GA', 'TX', 'FL'],
+      activeRooms:     Math.round(HOTEL.totalRooms * 0.726),  // exact 72.6% occupancy
+      pendingBookings: todayBookings,
+      todayBookings,
+      todayRevenue
     }
   });
 });

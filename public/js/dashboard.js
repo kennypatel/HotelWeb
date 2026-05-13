@@ -606,23 +606,14 @@ async function refreshRealtime() {
   }
 }
 
-/**
- * Refresh KPIs every 30 seconds with slight random variation.
- */
+// KPI refresh — re-fetches exact cached numbers from server, no modification
 async function refreshKPIs() {
   try {
     const res = await fetchJSON('/api/analytics');
     if (!res.success) return;
-    const { kpis } = res.data;
-
-    // Apply small random jitter to make it feel live
-    const jitter = v => Math.floor(v * (0.99 + Math.random() * 0.02));
-    kpis.totalVisitors = jitter(kpis.totalVisitors);
-    kpis.totalBookings = jitter(kpis.totalBookings);
-
-    renderKPIs(kpis, false);
+    renderKPIs(res.data.kpis, false);
   } catch (e) {
-    console.warn('[kpi refresh] error:', e.message);
+    console.warn('[kpi refresh]', e.message);
   }
 }
 
