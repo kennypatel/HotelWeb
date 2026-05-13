@@ -4,6 +4,96 @@
 
 'use strict';
 
+// ── Hotel Config ──────────────────────────────────────────────────────────────
+
+const DEFAULT_CONFIG = {
+  hotelName: 'Your Hotel',
+  hotelUrl:  '',
+  roomCount: '—',
+  hotelType: 'Luxury Collection',
+  hotelCity: ''
+};
+
+function loadConfig() {
+  try {
+    const saved = localStorage.getItem('hotelConfig');
+    return saved ? JSON.parse(saved) : null;
+  } catch { return null; }
+}
+
+function saveConfig(cfg) {
+  localStorage.setItem('hotelConfig', JSON.stringify(cfg));
+}
+
+function applyConfig(cfg) {
+  const name = cfg.hotelName || DEFAULT_CONFIG.hotelName;
+  const rooms = cfg.roomCount || DEFAULT_CONFIG.roomCount;
+  const type  = cfg.hotelType || '';
+  const city  = cfg.hotelCity || '';
+
+  const subtitle = [name, city].filter(Boolean).join(' — ');
+  const footerParts = [name, rooms + ' Rooms', type].filter(Boolean).join(' — ');
+
+  const headerEl  = document.getElementById('headerHotelName');
+  const revNameEl = document.getElementById('revenueHotelName');
+  const revRoomsEl= document.getElementById('revenueRoomCount');
+  const footerEl  = document.getElementById('footerHotelInfo');
+
+  if (headerEl)   headerEl.textContent  = subtitle;
+  if (revNameEl)  revNameEl.textContent = name;
+  if (revRoomsEl) revRoomsEl.textContent= rooms;
+  if (footerEl)   footerEl.textContent  = footerParts;
+
+  document.title = `HotelPulse — ${name}`;
+}
+
+function initSetupModal() {
+  const overlay = document.getElementById('setupModal');
+  const form    = document.getElementById('hotelSetupForm');
+  const openBtn = document.getElementById('openSettings');
+
+  function openModal(cfg) {
+    if (cfg) {
+      document.getElementById('inputHotelName').value = cfg.hotelName || '';
+      document.getElementById('inputHotelUrl').value  = cfg.hotelUrl  || '';
+      document.getElementById('inputRoomCount').value = cfg.roomCount || '';
+      document.getElementById('inputHotelType').value = cfg.hotelType || 'Luxury Collection';
+      document.getElementById('inputHotelCity').value = cfg.hotelCity || '';
+    }
+    overlay.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    overlay.classList.add('hidden');
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const cfg = {
+      hotelName: document.getElementById('inputHotelName').value.trim(),
+      hotelUrl:  document.getElementById('inputHotelUrl').value.trim(),
+      roomCount: document.getElementById('inputRoomCount').value.trim(),
+      hotelType: document.getElementById('inputHotelType').value,
+      hotelCity: document.getElementById('inputHotelCity').value.trim()
+    };
+    saveConfig(cfg);
+    applyConfig(cfg);
+    closeModal();
+  });
+
+  openBtn.addEventListener('click', function() {
+    openModal(loadConfig());
+  });
+
+  const existing = loadConfig();
+  if (existing) {
+    applyConfig(existing);
+    closeModal();
+  } else {
+    overlay.classList.remove('hidden');
+  }
+}
+
 // ── State ─────────────────────────────────────────────────────────────────────
 const State = {
   analyticsData:   null,
@@ -617,6 +707,7 @@ async function loadAllData() {
 //  BOOT
 // ══════════════════════════════════════════════════════════════════════════════
 async function boot() {
+  initSetupModal();
   startClock();
   await loadAllData();
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HotelPulse — Optimization Dashboard | The Grand Meridian</title>
-  <meta name="description" content="Real-time hotel website analytics, SEO optimization scores, and revenue intelligence for The Grand Meridian." />
+  <title>HotelPulse — Optimization Dashboard</title>
+  <meta name="description" content="Real-time hotel website analytics, SEO optimization scores, and revenue intelligence." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -33,7 +33,7 @@
       </div>
       <div class="header-titles">
         <h1 class="site-title">HotelPulse</h1>
-        <span class="site-subtitle">Optimization Dashboard — The Grand Meridian</span>
+        <span class="site-subtitle">Optimization Dashboard — <span id="headerHotelName">Your Hotel</span></span>
       </div>
     </div>
     <div class="header-right">
@@ -50,6 +50,10 @@
         <span class="header-stat-value" id="headerTodayRevenue">—</span>
       </div>
       <div class="live-clock" id="liveClock">00:00:00</div>
+      <button class="settings-btn" id="openSettings" title="Hotel Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
     </div>
   </header>
 
@@ -304,7 +308,7 @@
             </div>
             <div>
               <h2 class="panel-title">Revenue Analytics</h2>
-              <p class="panel-subtitle">The Grand Meridian — 120 rooms</p>
+              <p class="panel-subtitle"><span id="revenueHotelName">Your Hotel</span> — <span id="revenueRoomCount">—</span> rooms</p>
             </div>
           </div>
         </div>
@@ -440,10 +444,63 @@
       <span class="footer-copy">© 2026 | Powered by AI Optimization</span>
     </div>
     <div class="footer-right">
-      <span class="footer-hotel">The Grand Meridian — 120 Rooms — Luxury Collection</span>
+      <span class="footer-hotel" id="footerHotelInfo">Your Hotel</span>
       <span class="footer-refresh">Dashboard auto-refreshes every 30s</span>
     </div>
   </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HOTEL SETUP MODAL
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="modal-overlay hidden" id="setupModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-logo">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="url(#mLogoGrad)"/><path d="M8 26V12h4v5h8v-5h4v14h-4v-6H12v6H8z" fill="white"/><circle cx="28" cy="10" r="4" fill="#10b981"/><defs><linearGradient id="mLogoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#1d4ed8"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs></svg>
+        </div>
+        <div>
+          <h2 class="modal-title">Welcome to HotelPulse</h2>
+          <p class="modal-desc">Enter your hotel details to personalize your dashboard.</p>
+        </div>
+      </div>
+
+      <form class="modal-form" id="hotelSetupForm">
+        <div class="form-row">
+          <label class="form-label">Hotel Name <span class="form-required">*</span></label>
+          <input class="form-input" id="inputHotelName" type="text" placeholder="e.g. Comfort Inn Huntsville" required />
+        </div>
+        <div class="form-row">
+          <label class="form-label">Website URL</label>
+          <input class="form-input" id="inputHotelUrl" type="url" placeholder="https://yourhotel.com" />
+        </div>
+        <div class="form-row two-col">
+          <div>
+            <label class="form-label">Number of Rooms <span class="form-required">*</span></label>
+            <input class="form-input" id="inputRoomCount" type="number" min="1" max="5000" placeholder="e.g. 120" required />
+          </div>
+          <div>
+            <label class="form-label">Hotel Type</label>
+            <select class="form-input form-select" id="inputHotelType">
+              <option value="Luxury Collection">Luxury Collection</option>
+              <option value="Boutique">Boutique</option>
+              <option value="Resort">Resort</option>
+              <option value="Business">Business</option>
+              <option value="Budget">Budget</option>
+              <option value="Extended Stay">Extended Stay</option>
+              <option value="Airport Hotel">Airport Hotel</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Location / City</label>
+          <input class="form-input" id="inputHotelCity" type="text" placeholder="e.g. Huntsville, AL" />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Launch My Dashboard →</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script src="/js/charts.js"></script>
   <script src="/js/dashboard.js"></script>
