@@ -842,6 +842,27 @@ function generateLocalEvents() {
       outreachScript: 'Hi, I\'m from Comfort Inn Huntsville — just 2.8 miles from the Botanical Garden. Galaxy of Lights draws families from across the region. We\'d love to be your recommended hotel partner this holiday season.',
       status: 'not_contacted',
       notes: 'Families drive from Birmingham, Nashville, Atlanta for this event. Holiday season — book up fast.'
+    },
+    {
+      id: 11,
+      name: 'Orion Amphitheater — Concert Season Partnership',
+      type: 'Live Music / Entertainment',
+      venue: 'Orion Amphitheater',
+      address: '701 Amphitheater Dr NW, Huntsville, AL 35806',
+      dateLabel: 'Ongoing — Spring through Fall',
+      durationNights: 1,
+      expectedAttendance: 8000,
+      estimatedRoomNights: 940,
+      distanceMiles: 4.2,
+      priority: 'high',
+      revenueOpportunity: 102460,
+      contactOrg: 'Orion Amphitheater — Venue Management (Oak View Group)',
+      contactEmail: 'info@orionamphitheater.com',
+      contactPhone: '(256) 427-5400',
+      contactWebsite: 'https://www.orionamphitheater.com',
+      outreachScript: 'Hi, I\'m Kenny Patel, GM at Comfort Inn Huntsville — 4.2 miles from Orion Amphitheater. We\'d love to be your official recommended hotel for concert-goers who need overnight accommodations. We offer free parking, free hot breakfast the morning after, and can set up a dedicated booking link for your guests.',
+      status: 'not_contacted',
+      notes: 'Orion hosts 8,000-capacity shows all season. Out-of-town concert fans drive from Nashville, Atlanta, Birmingham — many need a hotel. High-volume, recurring opportunity every show night.'
     }
   ];
 }
@@ -1221,6 +1242,41 @@ General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
 (256) 837-4070`
+    },
+    {
+      id: 11,
+      eventName: 'Orion Amphitheater — Concert Season Partnership',
+      to: 'info@orionamphitheater.com',
+      subject: 'Official Hotel Partnership Proposal — Comfort Inn Huntsville × Orion Amphitheater',
+      body: `Dear Orion Amphitheater Team,
+
+My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — just 4.2 miles from Orion Amphitheater. I'm writing to propose an official hotel partnership that would give your out-of-town concert guests a trusted, comfortable place to stay before and after every show.
+
+Orion Amphitheater has become one of the premier outdoor music venues in the Southeast, and with an 8,000-seat capacity drawing fans from Nashville, Atlanta, Birmingham, and beyond, a significant portion of your audience needs overnight accommodations in Huntsville. We'd like to be the hotel they find first.
+
+Here's what a Comfort Inn × Orion Amphitheater partnership would look like:
+
+- A dedicated "Concert Guest Rate" — special discounted pricing for Orion concert-goers, bookable through a custom link we create for your website and ticket confirmation emails
+- Priority room availability on show nights — we'll hold a block of rooms specifically for Orion guests so they're never left scrambling for a place to stay
+- A welcome packet for concert guests at check-in: parking tips for Orion, local restaurant recommendations for pre-show dining, and a late check-out option the morning after
+- Free hot breakfast included with every stay — so your guests can fuel up before heading home after a great night of music
+- Co-branded promotion — we'll feature Orion Amphitheater in our lobby, on our guest WiFi landing page, and in our pre-arrival emails to incoming guests
+
+In return, we're asking to be listed as Orion's recommended hotel on your website, social media, and in your ticket confirmation emails. We're also open to sponsorship conversations if there are hospitality or promotional opportunities at the venue.
+
+Concert-goers are some of the most enthusiastic guests we host — they're in a great mood, they leave great reviews, and they come back whenever their favorite artist returns to Huntsville. This partnership is a genuine win for both of us.
+
+I'd love to schedule a quick 15-minute call or stop by the venue at your convenience to discuss the details. Please reach me at (256) 837-4070 or reply to this email anytime.
+
+Looking forward to making Orion nights even more memorable for your guests.
+
+Warmly,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070
+comfortinnhuntsville.com`
     }
   ];
 }
