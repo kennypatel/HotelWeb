@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HotelPulse — Optimization Dashboard | The Grand Meridian</title>
+  <meta name="description" content="Real-time hotel website analytics, SEO optimization scores, and revenue intelligence for The Grand Meridian." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo-mark">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="url(#logoGrad)"/>
+          <path d="M8 26V12h4v5h8v-5h4v14h-4v-6H12v6H8z" fill="white"/>
+          <circle cx="28" cy="10" r="4" fill="#10b981"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1d4ed8"/>
+              <stop offset="1" stop-color="#0891b2"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="header-titles">
+        <h1 class="site-title">HotelPulse</h1>
+        <span class="site-subtitle">Optimization Dashboard — The Grand Meridian</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="live-badge">
+        <span class="pulse-dot"></span>
+        LIVE
+      </div>
+      <div class="header-stat">
+        <span class="header-stat-label">Live Visitors</span>
+        <span class="header-stat-value" id="headerLiveVisitors">—</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat-label">Today's Revenue</span>
+        <span class="header-stat-value" id="headerTodayRevenue">—</span>
+      </div>
+      <div class="live-clock" id="liveClock">00:00:00</div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════════════════ -->
+  <main class="dashboard-main">
+
+    <!-- ── KPI CARDS ROW ─────────────────────────────────────── -->
+    <section class="kpi-section">
+      <div class="kpi-card" id="kpiVisitors">
+        <div class="kpi-icon kpi-icon--blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="kpi-body">
+          <span class="kpi-label">Total Visitors</span>
+          <span class="kpi-value" data-target="0" id="kpiVisitorsValue">—</span>
+          <span class="kpi-change positive" id="kpiVisitorsChange">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+            —
+          </span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiBookings">
+        <div class="kpi-icon kpi-icon--green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/></svg>
+        </div>
+        <div class="kpi-body">
+          <span class="kpi-label">Total Bookings</span>
+          <span class="kpi-value" id="kpiBookingsValue">—</span>
+          <span class="kpi-change positive" id="kpiBookingsChange">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+            —
+          </span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiRevenue">
+        <div class="kpi-icon kpi-icon--amber">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
+        </div>
+        <div class="kpi-body">
+          <span class="kpi-label">Revenue Generated</span>
+          <span class="kpi-value" id="kpiRevenueValue">—</span>
+          <span class="kpi-change positive" id="kpiRevenueChange">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+            —
+          </span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiConversion">
+        <div class="kpi-icon kpi-icon--purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="kpi-body">
+          <span class="kpi-label">Conversion Rate</span>
+          <span class="kpi-value" id="kpiConversionValue">—</span>
+          <span class="kpi-change positive" id="kpiConversionChange">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+            vs 3.2% last month
+          </span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiAvgBooking">
+        <div class="kpi-icon kpi-icon--cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div class="kpi-body">
+          <span class="kpi-label">Avg. Booking Value</span>
+          <span class="kpi-value" id="kpiAvgBookingValue">—</span>
+          <span class="kpi-change positive">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+            vs $287 last month
+          </span>
+        </div>
+      </div>
+
+      <div class="kpi-card" id="kpiOccupancy">
+        <div class="kpi-icon kpi-icon--pink">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="kpi-body">
+          <span class="kpi-label">Occupancy Rate</span>
+          <span class="kpi-value" id="kpiOccupancyValue">—</span>
+          <span class="kpi-change positive">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+            vs 61.4% last month
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CHARTS GRID ────────────────────────────────────────── -->
+    <section class="charts-grid">
+
+      <!-- Traffic Over Time -->
+      <div class="chart-card chart-card--wide">
+        <div class="chart-card-header">
+          <div>
+            <h2 class="chart-title">Traffic Over Time</h2>
+            <p class="chart-subtitle">30-day visitor trend — optimization applied on Day 10</p>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item legend-item--dashed"><span class="legend-dot" style="background:#64748b;"></span>Before Optimization</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#3b82f6;"></span>After Optimization</span>
+            <div class="optimization-badge">🚀 Optimization Applied</div>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="trafficChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Traffic Sources -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <div>
+            <h2 class="chart-title">Traffic Sources</h2>
+            <p class="chart-subtitle">Last 30 days breakdown</p>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap chart-canvas-wrap--donut">
+          <canvas id="sourcesChart"></canvas>
+        </div>
+        <div class="sources-legend" id="sourcesLegend"></div>
+      </div>
+
+      <!-- Booking Funnel -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <div>
+            <h2 class="chart-title">Booking Funnel</h2>
+            <p class="chart-subtitle">Visitor-to-booking conversion stages</p>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="funnelChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Revenue Trend -->
+      <div class="chart-card chart-card--wide">
+        <div class="chart-card-header">
+          <div>
+            <h2 class="chart-title">Revenue Trend</h2>
+            <p class="chart-subtitle">Daily revenue with 7-day moving average</p>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item"><span class="legend-dot" style="background:#f59e0b;"></span>Daily Revenue</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#ec4899;"></span>7-Day Moving Avg.</span>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="revenueChart"></canvas>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── SEO + PERFORMANCE ROW ─────────────────────────────── -->
+    <section class="panels-row">
+
+      <!-- SEO Optimization Panel -->
+      <div class="panel seo-panel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon panel-icon--blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div>
+              <h2 class="panel-title">SEO Optimization</h2>
+              <p class="panel-subtitle">Search engine performance scores</p>
+            </div>
+          </div>
+          <div class="seo-score-bubble" id="seoScoreBubble">
+            <span class="seo-score-num" id="seoScoreNum">84</span>
+            <span class="seo-score-label">/ 100</span>
+          </div>
+        </div>
+
+        <div class="seo-metrics" id="seoMetrics">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="seo-recommendations">
+          <h3 class="rec-title">Actionable Recommendations</h3>
+          <div id="seoRecommendations">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance Metrics Panel -->
+      <div class="panel performance-panel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon panel-icon--green">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div>
+              <h2 class="panel-title">Performance Metrics</h2>
+              <p class="panel-subtitle">Core Web Vitals &amp; speed analysis</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="section-label">Core Web Vitals</h3>
+        <div class="vitals-grid" id="vitalsGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <h3 class="section-label" style="margin-top:1.5rem;">Page Load Speed</h3>
+        <div class="speed-bars" id="speedBars">
+          <!-- Populated by JS -->
+        </div>
+
+        <h3 class="section-label" style="margin-top:1.5rem;">Device Performance Score</h3>
+        <div class="device-perf" id="devicePerf">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="uptime-row">
+          <div class="uptime-item">
+            <span class="uptime-label">Uptime</span>
+            <span class="uptime-value uptime-value--green" id="perfUptime">—</span>
+          </div>
+          <div class="uptime-item">
+            <span class="uptime-label">Avg Response</span>
+            <span class="uptime-value" id="perfResponse">—</span>
+          </div>
+          <div class="uptime-item">
+            <span class="uptime-label">Error Rate</span>
+            <span class="uptime-value uptime-value--good" id="perfError">—</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── REVENUE ANALYTICS + REALTIME FEED ─────────────────── -->
+    <section class="panels-row">
+
+      <!-- Revenue Analytics Panel -->
+      <div class="panel revenue-panel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon panel-icon--amber">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <h2 class="panel-title">Revenue Analytics</h2>
+              <p class="panel-subtitle">The Grand Meridian — 120 rooms</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="revenue-kpis" id="revenueKpis">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="revenue-charts-row">
+          <div class="revenue-chart-block">
+            <h3 class="section-label">Revenue by Room Type</h3>
+            <div class="chart-canvas-wrap chart-canvas-wrap--small">
+              <canvas id="roomTypeChart"></canvas>
+            </div>
+          </div>
+          <div class="revenue-chart-block">
+            <h3 class="section-label">Revenue by Channel</h3>
+            <div class="chart-canvas-wrap chart-canvas-wrap--small">
+              <canvas id="channelChart"></canvas>
+            </div>
+            <div class="channel-legend" id="channelLegend"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-time Activity Feed -->
+      <div class="panel realtime-panel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon panel-icon--pink">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h2 class="panel-title">Real-time Activity</h2>
+              <p class="panel-subtitle">Live website activity feed</p>
+            </div>
+          </div>
+          <div class="realtime-counter">
+            <span class="pulse-dot pulse-dot--green"></span>
+            <span id="liveVisitorCount">—</span> online
+          </div>
+        </div>
+
+        <div class="realtime-stats-row">
+          <div class="realtime-stat">
+            <span class="realtime-stat-val" id="rtActiveRooms">—</span>
+            <span class="realtime-stat-lbl">Rooms Viewed</span>
+          </div>
+          <div class="realtime-stat">
+            <span class="realtime-stat-val" id="rtPendingBookings">—</span>
+            <span class="realtime-stat-lbl">Pending Bookings</span>
+          </div>
+          <div class="realtime-stat">
+            <span class="realtime-stat-val" id="rtTodayBookings">—</span>
+            <span class="realtime-stat-lbl">Bookings Today</span>
+          </div>
+        </div>
+
+        <div class="activity-feed" id="activityFeed">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── GEOGRAPHIC + OPTIMIZATION RECOMMENDATIONS ─────────── -->
+    <section class="panels-row">
+
+      <!-- Geographic + Device Panel -->
+      <div class="panel geo-panel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon panel-icon--cyan">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h2 class="panel-title">Traffic &amp; Geographic</h2>
+              <p class="panel-subtitle">Top visitor countries &amp; devices</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="geo-charts-row">
+          <div class="geo-countries">
+            <h3 class="section-label">Top 10 Countries</h3>
+            <div id="geoCountryBars">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+          <div class="geo-device">
+            <h3 class="section-label">Device Breakdown</h3>
+            <div class="chart-canvas-wrap chart-canvas-wrap--donut-sm">
+              <canvas id="deviceChart"></canvas>
+            </div>
+            <div class="device-legend" id="deviceLegend"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optimization Recommendations Panel -->
+      <div class="panel recommendations-panel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <div class="panel-icon panel-icon--purple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <h2 class="panel-title">Optimization Roadmap</h2>
+              <p class="panel-subtitle">Actionable items with estimated impact</p>
+            </div>
+          </div>
+          <div class="rec-summary" id="recSummary"></div>
+        </div>
+
+        <div class="recommendations-list" id="recommendationsList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <div class="logo-mark logo-mark--sm">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="url(#logoGrad2)"/><path d="M8 26V12h4v5h8v-5h4v14h-4v-6H12v6H8z" fill="white"/><circle cx="28" cy="10" r="4" fill="#10b981"/><defs><linearGradient id="logoGrad2" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#1d4ed8"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs></svg>
+      </div>
+      <span class="footer-brand">HotelPulse Analytics</span>
+      <span class="footer-copy">© 2026 | Powered by AI Optimization</span>
+    </div>
+    <div class="footer-right">
+      <span class="footer-hotel">The Grand Meridian — 120 Rooms — Luxury Collection</span>
+      <span class="footer-refresh">Dashboard auto-refreshes every 30s</span>
+    </div>
+  </footer>
+
+  <script src="/js/charts.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
