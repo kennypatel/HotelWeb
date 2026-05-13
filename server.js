@@ -557,55 +557,64 @@ function generateOptimizationRecommendations() {
 }
 
 // Real-time activity pool — US domestic cities & Comfort Inn room types
-const activityCities = [
-  'Nashville', 'Atlanta', 'Birmingham', 'Memphis', 'Chattanooga',
-  'Montgomery', 'Columbus', 'Jackson', 'Knoxville', 'Charlotte',
-  'Dallas', 'Houston', 'New Orleans', 'Louisville', 'Tampa',
-  'Orlando', 'Richmond', 'Raleigh', 'St. Louis', 'Indianapolis',
-  'Decatur', 'Florence', 'Gadsden', 'Tuscaloosa', 'Auburn'
-];
+// Realistic real-time activities specific to Comfort Inn Huntsville,
+// 4725 University Drive NW — guests are UAH visitors, NASA/Redstone
+// contractors, families, road trippers from the Southeast US.
+const specificActivities = [
+  // Bookings — real room types, real nightly rates, real stay lengths
+  { type: 'booking', message: 'Booking confirmed: Double Queen, 2 nights (UAH Graduation weekend) — $238' },
+  { type: 'booking', message: 'New reservation: Standard King, 3 nights — $327 (NASA contractor from Huntsville)' },
+  { type: 'booking', message: 'Choice Rewards member booked King Suite, 1 night — $139' },
+  { type: 'booking', message: 'Direct booking: Double Queen, 2 nights — $238 (family visiting UAH)' },
+  { type: 'booking', message: 'Reservation confirmed: Standard Queen, 4 nights — $396 (Redstone Arsenal contractor)' },
+  { type: 'booking', message: 'New booking: Standard King, 2 nights — $218 (Boeing employee)' },
+  { type: 'booking', message: 'AAA rate booking: Double Queen, 3 nights — $321' },
+  { type: 'booking', message: 'Government rate confirmed: Standard Queen, 5 nights — $495 (DoD contractor)' },
+  { type: 'booking', message: 'Choice Rewards booking: Standard Queen, 1 night — $99' },
+  { type: 'booking', message: 'Reservation: King Suite, 2 nights — $278 (anniversary trip)' },
 
-const activityRooms = [
-  'Standard Queen', 'Standard King', 'Double Queen', 'King Suite', 'Accessible Room'
-];
+  // Room views — specific to this hotel and local demand drivers
+  { type: 'view', message: 'Guest from Nashville checking Double Queen availability for UAH move-in weekend' },
+  { type: 'view', message: 'Visitor from Atlanta browsing Standard King room photos' },
+  { type: 'view', message: 'Family from Birmingham viewing Double Queen room details' },
+  { type: 'view', message: 'Contractor from Houston checking King Suite for Cummings Research Park visit' },
+  { type: 'view', message: 'Guest from Memphis viewing pool and fitness center photos' },
+  { type: 'view', message: 'Visitor from Chattanooga checking pet policy for upcoming stay' },
+  { type: 'view', message: 'NASA visitor from Florida browsing Standard Queen availability' },
+  { type: 'view', message: 'Guest from Dallas checking free breakfast hours and menu' },
+  { type: 'view', message: 'Military family from Montgomery viewing Accessible Room details' },
+  { type: 'view', message: 'Parent from Georgia browsing rooms for UAH orientation week' },
 
-const activityTemplates = [
-  { type: 'view',    templates: [
-    'Guest from {city} is viewing the {room}',
-    'Visitor from {city} checking availability for {room}',
-    'User from {city} browsing {room} photos'
-  ]},
-  { type: 'booking', templates: [
-    'Booking confirmed: {nights} nights, {room} — ${amount}',
-    'New direct reservation: {room}, {nights} nights from {city}',
-    'Choice Rewards member from {city} booked {room} × {nights} nights'
-  ]},
-  { type: 'action',  templates: [
-    'Guest from {city} clicked "Check Availability"',
-    'Visitor from {city} viewing free breakfast details',
-    'User from {city} checking pet policy',
-    'Guest from {city} requesting government / AAA rate'
-  ]},
-  { type: 'review',  templates: [
-    'New 5-star review posted by guest from {city}',
-    'Guest from {city}: "Great location near UAH — will stay again!"',
-    'TripAdvisor review: 4 stars — "Clean rooms, great breakfast"'
-  ]}
+  // Actions — real things Comfort Inn guests do on the website
+  { type: 'action', message: 'Guest from Nashville clicked "Check Availability" for UAH Homecoming weekend' },
+  { type: 'action', message: 'Visitor asked: "How far is the hotel from Redstone Arsenal main gate?" (3.4 miles)' },
+  { type: 'action', message: 'Guest from Atlanta searched government/military rates for 5-night stay' },
+  { type: 'action', message: 'Family from Birmingham checking EV charging availability before booking' },
+  { type: 'action', message: 'Boeing contractor from Texas requesting corporate rate quote' },
+  { type: 'action', message: 'Guest clicked "Directions" from US Space & Rocket Center (2.1 miles away)' },
+  { type: 'action', message: 'Visitor from Knoxville checking AAA discount rate — saved $12/night' },
+  { type: 'action', message: 'Guest from Charlotte checking pool hours and outdoor area details' },
+  { type: 'action', message: 'Couple from New Orleans checking in to King Suite — Bridge Street Town Centre trip' },
+  { type: 'action', message: 'Lockheed Martin contractor checking long-stay weekly rate options' },
+  { type: 'action', message: 'Guest enrolled in Choice Privileges rewards during checkout' },
+  { type: 'action', message: 'Visitor checking pet fee policy ($20/night, max 2 pets, under 40 lbs)' },
+
+  // Reviews — specific to real Comfort Inn Huntsville guest experiences
+  { type: 'review', message: '5-star review: "Perfect location for our UAH visit — 10 min walk to campus!"' },
+  { type: 'review', message: '4-star review: "Free hot breakfast was great, clean rooms, easy parking"' },
+  { type: 'review', message: '5-star review: "Stayed for Redstone Arsenal work — quiet, comfortable, good value"' },
+  { type: 'review', message: '4-star review: "Friendly staff, close to Bridge Street shopping and restaurants"' },
+  { type: 'review', message: '5-star review: "Great stop on our way through Huntsville — will book again!"' },
+  { type: 'review', message: '4-star review: "Pool was clean, breakfast had lots of options, very convenient"' },
+  { type: 'review', message: '5-star review: "Best value on University Drive — NASA trip was a success!"' }
 ];
 
 function generateActivity() {
-  const typeData = activityTemplates[Math.floor(Math.random() * activityTemplates.length)];
-  const template = typeData.templates[Math.floor(Math.random() * typeData.templates.length)];
-  const city     = activityCities[Math.floor(Math.random() * activityCities.length)];
-  const room     = activityRooms[Math.floor(Math.random() * activityRooms.length)];
-  const nights   = randomBetween(1, 4);
-  const amount   = randomBetween(99, 420);
-
+  const activity = specificActivities[Math.floor(Math.random() * specificActivities.length)];
   return {
     id:        Date.now() + Math.random(),
-    type:      typeData.type,
-    message:   template.replace('{city}', city).replace('{room}', room)
-                       .replace('{nights}', nights).replace('{amount}', amount.toLocaleString()),
+    type:      activity.type,
+    message:   activity.message,
     timestamp: new Date().toISOString(),
     timeAgo:   'just now'
   };
