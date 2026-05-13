@@ -704,12 +704,133 @@ async function loadAllData() {
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
+//  LOCAL EVENTS & OUTREACH
+// ══════════════════════════════════════════════════════════════════════════════
+
+async function loadEvents() {
+  try {
+    const res  = await fetch('/api/events');
+    const json = await res.json();
+    if (!json.success) return;
+    renderEvents(json.data);
+  } catch (e) {
+    console.error('[loadEvents]', e);
+  }
+}
+
+function renderEvents(events) {
+  const list = $('eventsList');
+  if (!list) return;
+
+  // Track contacted status in localStorage
+  const contacted = JSON.parse(localStorage.getItem('eventsContacted') || '{}');
+
+  list.innerHTML = events.map(ev => {
+    const isContacted = contacted[ev.id];
+    const priorityClass = `priority-${ev.priority}`;
+    const revenueStr = ev.revenueOpportunity >= 1000
+      ? '$' + (ev.revenueOpportunity / 1000).toFixed(1) + 'k'
+      : '$' + ev.revenueOpportunity;
+
+    return `
+    <div class="event-card ${priorityClass}" id="event-${ev.id}">
+      <div class="event-top">
+        <div class="event-name">${ev.name}</div>
+        <span class="event-type-badge">${ev.type}</span>
+      </div>
+
+      <div class="event-meta">
+        <div class="event-meta-item">
+          <span class="event-meta-label">Date</span>
+          <span class="event-meta-value">${ev.dateLabel} (${ev.durationNights} nights)</span>
+        </div>
+        <div class="event-meta-item">
+          <span class="event-meta-label">Venue</span>
+          <span class="event-meta-value">${ev.venue} — ${ev.distanceMiles} mi away</span>
+        </div>
+        <div class="event-meta-item">
+          <span class="event-meta-label">Expected Attendance</span>
+          <span class="event-meta-value">${ev.expectedAttendance.toLocaleString()} people</span>
+        </div>
+        <div class="event-meta-item">
+          <span class="event-meta-label">Est. Room Nights Needed</span>
+          <span class="event-meta-value highlight">${ev.estimatedRoomNights.toLocaleString()} nights</span>
+        </div>
+      </div>
+
+      <div class="event-revenue">
+        <span class="event-revenue-label">Revenue Opportunity (your share)</span>
+        <span class="event-revenue-value">${revenueStr}</span>
+      </div>
+
+      <div class="event-contact">
+        <div class="event-contact-org">${ev.contactOrg}</div>
+        <div class="event-contact-row">
+          <span>📞 <a class="event-contact-link" href="tel:${ev.contactPhone}">${ev.contactPhone}</a></span>
+          <span>✉️ <a class="event-contact-link" href="mailto:${ev.contactEmail}">${ev.contactEmail}</a></span>
+          <span>🌐 <a class="event-contact-link" href="${ev.contactWebsite}" target="_blank" rel="noopener">Website</a></span>
+        </div>
+      </div>
+
+      <div class="event-script">
+        <span class="event-script-label">📝 Suggested Outreach Message</span>
+        ${ev.outreachScript}
+      </div>
+
+      <div class="event-notes">💡 ${ev.notes}</div>
+
+      <div class="event-actions">
+        <button class="event-btn event-btn--primary" onclick="copyScript(${ev.id})">Copy Message</button>
+        <button class="event-btn event-btn--secondary" onclick="openEmail(${ev.id})">Email Organizer</button>
+        <button class="event-btn ${isContacted ? 'event-btn--success' : 'event-btn--secondary'}"
+          id="contacted-btn-${ev.id}" onclick="markContacted(${ev.id})">
+          ${isContacted ? '✓ Contacted' : 'Mark Contacted'}
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function copyScript(id) {
+  fetch('/api/events').then(r=>r.json()).then(json => {
+    const ev = json.data.find(e => e.id === id);
+    if (!ev) return;
+    navigator.clipboard.writeText(ev.outreachScript).then(() => {
+      const btn = document.querySelector(`#event-${id} .event-btn--primary`);
+      if (btn) { btn.textContent = '✓ Copied!'; setTimeout(() => { btn.textContent = 'Copy Message'; }, 2000); }
+    });
+  });
+}
+
+function openEmail(id) {
+  fetch('/api/events').then(r=>r.json()).then(json => {
+    const ev = json.data.find(e => e.id === id);
+    if (!ev) return;
+    const subject = encodeURIComponent(`Room Block Partnership — Comfort Inn Huntsville — ${ev.name}`);
+    const body    = encodeURIComponent(ev.outreachScript + '\n\nComfort Inn Huntsville\n4725 University Drive NW, Huntsville, AL 35816\n(256) 837-4070');
+    window.open(`mailto:${ev.contactEmail}?subject=${subject}&body=${body}`);
+  });
+}
+
+function markContacted(id) {
+  const contacted = JSON.parse(localStorage.getItem('eventsContacted') || '{}');
+  contacted[id]   = !contacted[id];
+  localStorage.setItem('eventsContacted', JSON.stringify(contacted));
+  const btn = $(`contacted-btn-${id}`);
+  if (btn) {
+    btn.textContent = contacted[id] ? '✓ Contacted' : 'Mark Contacted';
+    btn.className   = `event-btn ${contacted[id] ? 'event-btn--success' : 'event-btn--secondary'}`;
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
 //  BOOT
 // ══════════════════════════════════════════════════════════════════════════════
 async function boot() {
   initSetupModal();
   startClock();
   await loadAllData();
+  await loadEvents();
 
   // Real-time activity feed — every 3 seconds
   setInterval(refreshRealtime, 3000);

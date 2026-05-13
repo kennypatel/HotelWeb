@@ -620,6 +620,232 @@ function generateActivity() {
   };
 }
 
+// ─── Local Events Generator ───────────────────────────────────────────────────
+
+function generateLocalEvents() {
+  // Upcoming Huntsville, AL events — real recurring events with realistic data.
+  // Dates are set relative to today so the feed stays current.
+  const now = new Date();
+  function daysFromNow(d) {
+    const dt = new Date(now);
+    dt.setDate(dt.getDate() + d);
+    return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }
+
+  return [
+    {
+      id: 1,
+      name: 'UAH Summer Graduation Ceremony',
+      type: 'Academic',
+      venue: 'Propst Arena, Von Braun Center',
+      address: '700 Monroe St SW, Huntsville, AL',
+      dateLabel: daysFromNow(18),
+      durationNights: 2,
+      expectedAttendance: 3200,
+      estimatedRoomNights: 420,
+      distanceMiles: 4.1,
+      priority: 'high',
+      revenueOpportunity: 45780,
+      contactOrg: 'UAH Office of the Registrar',
+      contactEmail: 'registrar@uah.edu',
+      contactPhone: '(256) 824-6090',
+      contactWebsite: 'https://www.uah.edu/registrar',
+      outreachScript: 'Hi, I\'m the manager at Comfort Inn Huntsville on University Drive — just 1.2 miles from UAH. We\'d love to offer your graduation guests a special room block rate. Can we discuss an affiliation?',
+      status: 'not_contacted',
+      notes: 'Families travel from across the Southeast for UAH graduation. Book room block 6–8 weeks ahead.'
+    },
+    {
+      id: 2,
+      name: 'AIAA Space Conference & Exposition',
+      type: 'Defense / Aerospace Conference',
+      venue: 'Von Braun Center',
+      address: '700 Monroe St SW, Huntsville, AL',
+      dateLabel: daysFromNow(34),
+      durationNights: 4,
+      expectedAttendance: 1800,
+      estimatedRoomNights: 980,
+      distanceMiles: 4.1,
+      priority: 'high',
+      revenueOpportunity: 106890,
+      contactOrg: 'AIAA (American Institute of Aeronautics and Astronautics)',
+      contactEmail: 'info@aiaa.org',
+      contactPhone: '(703) 264-7500',
+      contactWebsite: 'https://www.aiaa.org',
+      outreachScript: 'Hello, I\'m reaching out from Comfort Inn Huntsville — 4 miles from Von Braun Center. We offer government/corporate rates and free hot breakfast. We\'d like to be listed as a preferred hotel for AIAA attendees.',
+      status: 'not_contacted',
+      notes: 'Aerospace professionals — many have government per diem rates. High-value multi-night stays.'
+    },
+    {
+      id: 3,
+      name: 'Redstone Arsenal Family Day & Open House',
+      type: 'Military / Government',
+      venue: 'Redstone Arsenal',
+      address: 'Redstone Arsenal, Huntsville, AL 35808',
+      dateLabel: daysFromNow(47),
+      durationNights: 2,
+      expectedAttendance: 5000,
+      estimatedRoomNights: 310,
+      distanceMiles: 3.4,
+      priority: 'high',
+      revenueOpportunity: 33790,
+      contactOrg: 'Redstone Arsenal Public Affairs Office',
+      contactEmail: 'usarmy.redstone.imcom.mbx.pao@army.mil',
+      contactPhone: '(256) 876-2151',
+      contactWebsite: 'https://www.army.mil/redstone',
+      outreachScript: 'Hi, I\'m the manager at Comfort Inn Huntsville — 3.4 miles from Redstone\'s main gate. We accept government rates and have free parking. We\'d love to be recommended to visiting families for Family Day.',
+      status: 'not_contacted',
+      notes: 'Military families visiting from out of state. Government per diem rates. Patriotic branding helps.'
+    },
+    {
+      id: 4,
+      name: 'Rocket City Brewfest',
+      type: 'Food & Beverage Festival',
+      venue: 'MidCity Huntsville',
+      address: '3305 Airport Rd SW, Huntsville, AL',
+      dateLabel: daysFromNow(54),
+      durationNights: 1,
+      expectedAttendance: 2500,
+      estimatedRoomNights: 180,
+      distanceMiles: 5.2,
+      priority: 'medium',
+      revenueOpportunity: 19620,
+      contactOrg: 'Rocket City Brewfest Organizers',
+      contactEmail: 'info@rocketcitybrewfest.com',
+      contactPhone: '(256) 504-2787',
+      contactWebsite: 'https://www.rocketcitybrewfest.com',
+      outreachScript: 'Hi, we\'re Comfort Inn Huntsville on University Drive. We\'d love to offer a special rate to Brewfest attendees and be listed on your event page as a recommended hotel.',
+      status: 'not_contacted',
+      notes: 'Guests who drink at the event need overnight lodging nearby. Easy sell on "designated driver" angle.'
+    },
+    {
+      id: 5,
+      name: 'UAH Charger Football Home Opener',
+      type: 'College Sports',
+      venue: 'UAH Roberts Stadium / Louis J. Merrill Field',
+      address: '500 Sparkman Dr, Huntsville, AL',
+      dateLabel: daysFromNow(68),
+      durationNights: 1,
+      expectedAttendance: 1400,
+      estimatedRoomNights: 120,
+      distanceMiles: 1.2,
+      priority: 'medium',
+      revenueOpportunity: 13080,
+      contactOrg: 'UAH Athletics Department',
+      contactEmail: 'athletics@uah.edu',
+      contactPhone: '(256) 824-6812',
+      contactWebsite: 'https://uahchargers.com',
+      outreachScript: 'Hi, I\'m the manager at Comfort Inn just 1.2 miles from UAH\'s campus. We\'d love to offer visiting team and fan room blocks for home games this season.',
+      status: 'not_contacted',
+      notes: 'Visiting team, coaches, and traveling fans. Reach out to visiting school athletic depts too.'
+    },
+    {
+      id: 6,
+      name: 'Huntsville Hospital Medical Conference',
+      type: 'Healthcare / Medical',
+      venue: 'Huntsville Hospital Conference Center',
+      address: '101 Sivley Rd SW, Huntsville, AL',
+      dateLabel: daysFromNow(72),
+      durationNights: 3,
+      expectedAttendance: 650,
+      estimatedRoomNights: 340,
+      distanceMiles: 4.8,
+      priority: 'medium',
+      revenueOpportunity: 37060,
+      contactOrg: 'Huntsville Hospital Foundation',
+      contactEmail: 'foundation@huntsvillehospital.org',
+      contactPhone: '(256) 265-8000',
+      contactWebsite: 'https://www.huntsvillehospital.org',
+      outreachScript: 'Hello, I\'m reaching out from Comfort Inn Huntsville — we\'d love to offer a preferred group rate for physicians and staff attending your upcoming conference.',
+      status: 'not_contacted',
+      notes: 'Medical professionals often have employer-covered travel. Professional, quiet atmosphere important.'
+    },
+    {
+      id: 7,
+      name: 'Panoply Arts Festival',
+      type: 'Arts & Culture',
+      venue: 'Big Spring Park',
+      address: '200 Church St SW, Huntsville, AL',
+      dateLabel: daysFromNow(85),
+      durationNights: 2,
+      expectedAttendance: 8000,
+      estimatedRoomNights: 520,
+      distanceMiles: 4.3,
+      priority: 'medium',
+      revenueOpportunity: 56680,
+      contactOrg: 'Arts Huntsville',
+      contactEmail: 'info@artshuntsville.org',
+      contactPhone: '(256) 519-2787',
+      contactWebsite: 'https://www.artshuntsville.org',
+      outreachScript: 'Hi, I\'m from Comfort Inn Huntsville. Panoply draws visitors from across Alabama — we\'d love to be listed as a recommended hotel on your website and sponsor materials.',
+      status: 'not_contacted',
+      notes: 'Large regional draw. Families and couples. Consider offering a "Panoply Weekend Package" rate.'
+    },
+    {
+      id: 8,
+      name: 'AUSA Annual Meeting & Exposition',
+      type: 'Defense / Government',
+      venue: 'Von Braun Center',
+      address: '700 Monroe St SW, Huntsville, AL',
+      dateLabel: daysFromNow(98),
+      durationNights: 3,
+      expectedAttendance: 2400,
+      estimatedRoomNights: 1100,
+      distanceMiles: 4.1,
+      priority: 'high',
+      revenueOpportunity: 119900,
+      contactOrg: 'Association of the United States Army',
+      contactEmail: 'ausa-info@ausa.org',
+      contactPhone: '(800) 336-4570',
+      contactWebsite: 'https://www.ausa.org',
+      outreachScript: 'Hello, I\'m the manager at Comfort Inn Huntsville — 4 miles from Von Braun Center. We offer government per diem rates, free hot breakfast, and free parking. We\'d like to be a preferred hotel for AUSA attendees.',
+      status: 'not_contacted',
+      notes: 'Defense contractors, Army officers, government officials. High per diem rates. Very high revenue opportunity.'
+    },
+    {
+      id: 9,
+      name: 'UAH Homecoming Weekend',
+      type: 'Academic',
+      venue: 'University of Alabama in Huntsville',
+      address: '301 Sparkman Dr, Huntsville, AL',
+      dateLabel: daysFromNow(112),
+      durationNights: 2,
+      expectedAttendance: 2800,
+      estimatedRoomNights: 360,
+      distanceMiles: 1.2,
+      priority: 'high',
+      revenueOpportunity: 39240,
+      contactOrg: 'UAH Alumni Relations',
+      contactEmail: 'alumni@uah.edu',
+      contactPhone: '(256) 824-6083',
+      contactWebsite: 'https://www.uah.edu/alumni',
+      outreachScript: 'Hi, we\'re the Comfort Inn just 1.2 miles from UAH campus — the closest Comfort Inn to campus. We\'d love to offer returning alumni a special Homecoming rate and be featured in your Homecoming communications.',
+      status: 'not_contacted',
+      notes: 'Alumni returning from around the country. Brand loyalty to UAH helps. Offer a Charger Blue discount.'
+    },
+    {
+      id: 10,
+      name: 'Galaxy of Lights — Huntsville Botanical Garden',
+      type: 'Holiday / Tourism',
+      venue: 'Huntsville Botanical Garden',
+      address: '4747 Bob Wallace Ave SW, Huntsville, AL',
+      dateLabel: daysFromNow(185),
+      durationNights: 1,
+      expectedAttendance: 12000,
+      estimatedRoomNights: 680,
+      distanceMiles: 2.8,
+      priority: 'medium',
+      revenueOpportunity: 74120,
+      contactOrg: 'Huntsville Botanical Garden',
+      contactEmail: 'info@hbg.org',
+      contactPhone: '(256) 830-4447',
+      contactWebsite: 'https://hbg.org',
+      outreachScript: 'Hi, I\'m from Comfort Inn Huntsville — just 2.8 miles from the Botanical Garden. Galaxy of Lights draws families from across the region. We\'d love to be your recommended hotel partner this holiday season.',
+      status: 'not_contacted',
+      notes: 'Families drive from Birmingham, Nashville, Atlanta for this event. Holiday season — book up fast.'
+    }
+  ];
+}
+
 // ─── JSON-LD Schema Generator ─────────────────────────────────────────────────
 
 function generateHotelSchema() {
@@ -745,6 +971,10 @@ app.get('/api/schema', (req, res) => {
 
 app.get('/api/choice-hotels', (req, res) => {
   res.json({ success: true, data: generateChoiceHotelsStatus() });
+});
+
+app.get('/api/events', (req, res) => {
+  res.json({ success: true, data: fromCache('events', generateLocalEvents) });
 });
 
 // Real-time endpoint — never cached, always fresh
