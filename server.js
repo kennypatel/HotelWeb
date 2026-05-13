@@ -896,6 +896,335 @@ function generateHotelSchema() {
   };
 }
 
+// ─── Email Templates Generator ───────────────────────────────────────────────
+
+function generateEmailTemplates() {
+  return [
+    {
+      id: 1,
+      eventName: 'UAH Summer Graduation Ceremony',
+      to: 'registrar@uah.edu',
+      subject: 'Room Block Offer for UAH Summer Graduation Families — Comfort Inn (1.2 mi from Campus)',
+      body: `Dear UAH Registrar's Office,
+
+Congratulations on another graduating class. I'm Kenny Patel, General Manager of the Comfort Inn Huntsville at 4725 University Drive NW — just 1.2 miles from the UAH campus, which makes us one of the most convenient lodging options for families traveling to Huntsville for graduation weekend.
+
+Every spring and summer, we see a surge of parents, grandparents, siblings, and extended family members arriving from across Alabama, Tennessee, Georgia, and beyond to celebrate their graduates. Many of them struggle to find available rooms close to campus at a reasonable rate, and I'd love to solve that problem for your graduation community.
+
+I'd like to propose a dedicated room block arrangement for UAH Summer Graduation. Here's what we can offer:
+
+- A reserved block of 20–30 rooms held at a preferred group rate of $109/night for Standard Queen and King rooms, and $119/night for Double Queen rooms (ideal for larger families)
+- A complimentary room for the graduation coordinator or a designated UAH contact
+- Free hot breakfast included daily for all block guests
+- Flexible cutoff date so families can reserve without pressure
+- Free parking — no hidden fees
+
+Our hotel is walking distance from several great restaurants on University Drive, and guests frequently tell us they love the convenience of being able to drop things off between the ceremony and dinner without a long drive.
+
+If you'd be open to listing Comfort Inn Huntsville as a recommended hotel on your graduation information page or in your communications to families, I'd be very grateful. Even a simple mention can make a meaningful difference for families who are trying to plan their trips.
+
+I'd love to set up a quick call at your convenience to finalize details. Please feel free to reach me directly at (256) 837-4070 or reply to this email.
+
+Thank you for everything you do for UAH students and families.
+
+Warm regards,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 2,
+      eventName: 'AIAA Space Conference & Exposition',
+      to: 'info@aiaa.org',
+      subject: 'Preferred Hotel Partnership for AIAA Space Conference — Huntsville, AL',
+      body: `Dear AIAA Conference Team,
+
+My name is Kenny Patel, and I'm the General Manager of Comfort Inn Huntsville, located at 4725 University Drive NW — approximately 4 miles from the Von Braun Center. I'm reaching out ahead of your upcoming Space Conference & Exposition to explore a preferred hotel partnership for your attendees.
+
+Huntsville is, of course, the Rocket City — and our guests frequently include engineers, scientists, and aerospace professionals visiting NASA Marshall Space Flight Center, Redstone Arsenal, and Cummings Research Park. We understand what working professionals in the defense and aerospace industries need: a clean, quiet, well-connected place to rest and prepare.
+
+Here is what I'd like to offer AIAA conference attendees:
+
+- Negotiated room block rate of $109/night (Standard Queen/King), with government and corporate per diem rates honored where applicable
+- A reserved block of 30–40 rooms with a 72-hour cancellation policy for flexibility
+- Free hot breakfast each morning — a genuine time-saver for attendees with full conference days
+- Free high-speed WiFi throughout the property, including conference-ready business center access
+- Free parking with no daily fee
+- A quiet, professionally managed environment — our guests consistently mention the calm atmosphere in reviews
+
+AIAA attracts serious professionals, and many will be traveling under government per diem or corporate travel policies. Our rates are structured to align with federal per diem levels for Huntsville, and we can provide confirmation documentation to attendees as needed.
+
+I'd be honored if Comfort Inn Huntsville could be included on your official conference hotel list or recommended lodging page. We're happy to provide co-branded materials or a booking link specific to your event.
+
+Please don't hesitate to call me at (256) 837-4070 or reply here. I'm happy to work around your timeline.
+
+With appreciation,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 3,
+      eventName: 'Redstone Arsenal Family Day & Open House',
+      to: 'usarmy.redstone.imcom.mbx.pao@army.mil',
+      subject: 'Hotel Partnership for Redstone Arsenal Family Day — Government Rates Available',
+      body: `Dear Redstone Arsenal Public Affairs Office,
+
+My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Our hotel is located 3.4 miles from Redstone Arsenal's main gate, and I'm writing to offer our support for the upcoming Family Day and Open House event.
+
+Family Day is a special occasion — and the families who travel from across the country to be part of it deserve comfortable, affordable accommodations that honor their sacrifice and commitment. We'd be proud to be a recommended lodging option for visiting military families.
+
+Here is what Comfort Inn Huntsville can offer for this event:
+
+- Government per diem room rates (currently $99/night for Standard Queen, $109/night for Standard King) — rates aligned with the federal per diem for the Huntsville, AL area
+- A reserved room block of 20–25 rooms held specifically for Family Day guests
+- Free hot breakfast daily — we know military families are up early and appreciate a hearty start to the day
+- Free parking with no fees, including space for larger vehicles
+- Pet-friendly accommodations for families traveling with animals
+- 24-hour front desk staffed by our friendly team
+
+We have a long history of welcoming government contractors, DoD personnel, and military families at this location, and we take that responsibility seriously. Our guests consistently note the value, cleanliness, and staff professionalism in their reviews.
+
+If there is any way for Comfort Inn Huntsville to be mentioned in your Family Day communications, family packets, or installation welcome materials, we would be very grateful. We're also happy to display event information in our lobby for arriving guests.
+
+Thank you for your service and for organizing this important event. Please reach me at (256) 837-4070 at your convenience.
+
+With respect and gratitude,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 4,
+      eventName: 'Rocket City Brewfest',
+      to: 'info@rocketcitybrewfest.com',
+      subject: 'Official Hotel Partner Inquiry — Rocket City Brewfest Weekend',
+      body: `Dear Rocket City Brewfest Team,
+
+I'm Kenny Patel, General Manager of Comfort Inn Huntsville on University Drive — and I have to say, Brewfest is one of my favorite Huntsville events of the year. The energy it brings to MidCity is fantastic.
+
+I'm reaching out because I think there's a natural partnership opportunity here that would benefit both your attendees and our hotel. Comfort Inn Huntsville is located 5.2 miles from MidCity — close enough to be convenient, far enough that your guests can enjoy the festival without worrying about driving home. That's exactly the peace of mind that makes a great festival experience.
+
+Here's what I'd like to propose:
+
+- A "Brewfest Stay Safe" room block — 15–20 rooms held at a special event rate of $109/night for festival weekend
+- The ability to list Comfort Inn as the recommended "designated driver solution" on your website and event app — that framing resonates with festival-goers who are planning to fully enjoy themselves
+- Shuttle coordination assistance — we can help guests connect with local rideshare or shuttle options between the hotel and MidCity
+- Free hot breakfast the morning after the festival — because recovery mornings matter
+- Late checkout option (12:30 PM) for Brewfest guests when available, at no extra charge
+
+Many of your attendees travel from Birmingham, Nashville, and Atlanta for this event. They're looking for a safe, affordable place to stay without worrying about logistics. A quick mention on your "Plan Your Visit" page or in your email communications could mean a great deal to both our businesses.
+
+I'd love to grab coffee and talk through the details — or we can keep it simple and get a partnership agreement in place over email. Whatever works best for you.
+
+Cheers,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 5,
+      eventName: 'UAH Charger Football Home Opener',
+      to: 'athletics@uah.edu',
+      subject: 'Room Block Partnership for UAH Charger Football Season — Comfort Inn (1.2 mi from Campus)',
+      body: `Dear UAH Athletics Department,
+
+My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. At 1.2 miles from the UAH campus, we're in a position to be a tremendous resource for your visiting teams, coaches, and traveling fans throughout the football season — and I'd love to explore a partnership.
+
+Every home game weekend brings visiting schools, fans, and families to Huntsville, and finding quality accommodations close to Roberts Stadium shouldn't be a challenge for any of them. Here's what Comfort Inn Huntsville can offer:
+
+- A recurring visiting team room block — we can hold 15–20 rooms per home game weekend at a preferred athletic group rate of $109/night
+- Quiet, comfortable rooms suitable for athletes and coaches who need genuine rest before and after competition
+- Free hot breakfast — perfect for pre-game fueling or post-travel recovery
+- Flexible cutoff policies that work with your season scheduling
+- Free parking with room for team vehicles and buses nearby
+
+For traveling fans and visiting school supporters, we can offer a separate "Game Weekend" rate that we're happy to promote through your athletics website or ticket confirmation emails.
+
+UAH athletics is growing, and we'd love to grow alongside it. Being the go-to hotel for Charger football opponents and fans alike would be a genuine point of pride for our team.
+
+I'd be delighted to speak with your travel coordinator or group sales contact. Please reach me at (256) 837-4070, or reply here and we'll set something up.
+
+Go Chargers — and safe travels to all who visit.
+
+Warmly,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 6,
+      eventName: 'Huntsville Hospital Medical Conference',
+      to: 'foundation@huntsvillehospital.org',
+      subject: 'Preferred Lodging for Huntsville Hospital Medical Conference Attendees',
+      body: `Dear Huntsville Hospital Foundation,
+
+My name is Kenny Patel, and I serve as General Manager of Comfort Inn Huntsville at 4725 University Drive NW, located approximately 4.8 miles from Huntsville Hospital. I'm writing ahead of your upcoming medical conference to offer preferred lodging arrangements for your physician and staff attendees.
+
+Medical conferences demand a lodging environment that meets a high standard — reliable WiFi for reviewing materials, genuinely quiet rooms for rest between long conference days, a professional atmosphere, and efficient service for guests who are on tight schedules. These are things we take seriously at our property.
+
+Here is what I'd like to offer conference attendees:
+
+- A reserved room block of 20–30 rooms at a preferred conference rate of $109/night for Standard rooms and $119/night for Double Queen configurations
+- Early check-in starting at 1:00 PM for arriving attendees when rooms are available
+- Free hot breakfast included daily — a meaningful convenience for physicians with packed conference agendas
+- Business center access for printing materials, reviewing presentations, or quick remote meetings
+- Free high-speed WiFi throughout the property
+- Complimentary parking — no daily fees
+
+Many of your attendees may be traveling under employer or institutional reimbursement, and we're happy to provide itemized folios, direct billing inquiries, and any documentation needed to support expense reporting.
+
+If you're open to including Comfort Inn Huntsville in your conference registration materials or on your event website as a recommended lodging option, we'd be very appreciative. We'd be glad to provide a custom booking code or group link to make the process seamless for your registrants.
+
+Please feel free to call me directly at (256) 837-4070 or reply to this email at your earliest convenience.
+
+With professional regards,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 7,
+      eventName: 'Panoply Arts Festival',
+      to: 'info@artshuntsville.org',
+      subject: 'Hotel Partnership for Panoply Arts Festival — Comfort Inn Huntsville',
+      body: `Dear Arts Huntsville Team,
+
+I'm Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Panoply is one of the events I look forward to most each year — it brings an energy and creativity to Huntsville that's genuinely special, and I'd love for Comfort Inn to be part of the experience for your out-of-town visitors.
+
+We're located 4.3 miles from Big Spring Park, making us a comfortable and convenient base for couples and families coming in from Birmingham, Nashville, Chattanooga, and beyond for the festival weekend.
+
+Here's what I'd like to propose for a Panoply Arts Festival partnership:
+
+- A "Panoply Weekend" room block — 20–30 rooms at a special festival rate of $109/night for Standard rooms and $119/night for Double Queens, ideal for families with children
+- The ability to be listed as a recommended hotel on the Panoply website, event program, or Arts Huntsville communications
+- A complimentary room for your event staff or visiting artists if needed
+- Free hot breakfast included — a relaxed morning start before heading out to the park
+- Recommendations for nearby dining and local attractions that our front desk team shares with every Panoply guest
+
+The families and couples who attend Panoply tend to be thoughtful, community-minded visitors who want to support local businesses and have a genuinely good weekend experience. That's exactly the kind of guest we love hosting — and they tend to leave great reviews.
+
+If there's an opportunity to co-promote the partnership — even a simple "Stay & Enjoy Panoply" mention — I'd be grateful for the visibility. In return, we're happy to display Panoply signage in our lobby and recommend the festival to all of our guests that weekend.
+
+Let's make Panoply weekend even better for Huntsville visitors together. I'd love to connect at your convenience.
+
+With warmth,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 8,
+      eventName: 'AUSA Annual Meeting & Exposition',
+      to: 'ausa-info@ausa.org',
+      subject: 'Preferred Hotel Partnership Proposal — AUSA Annual Meeting, Huntsville, AL',
+      body: `Dear AUSA Events Team,
+
+My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. With the AUSA Annual Meeting & Exposition returning to the Von Braun Center — approximately 4 miles from our property — I'm reaching out to explore a formal preferred hotel arrangement for your attendees.
+
+AUSA brings together some of the most important voices in national defense: Army officials, defense industry executives, government contractors, and policy leaders. These are professionals with high standards for their accommodations, and I want to make sure Comfort Inn Huntsville is positioned to meet those standards and serve them well.
+
+Here is what we're prepared to offer AUSA attendees:
+
+- A reserved room block of 30–40 rooms at government per diem rates ($99/night Standard Queen, $109/night Standard King) — aligned with federal per diem for the Huntsville, AL area
+- Corporate negotiated rates for non-government attendees at $115/night
+- Direct billing capability for companies and government agencies that require invoice-based payment
+- A quiet, professional environment well-suited to attendees who have early morning briefings or evening working sessions
+- Free hot breakfast daily — a genuine asset when conference days start at 7:30 AM
+- Free parking with no daily charges, and convenient shuttle coordination to Von Braun Center
+- Business center access for printing, document review, and secure remote work
+
+AUSA is one of the premier events in our industry, and Huntsville's defense community is proud to host it. We'd be honored to be listed among the official conference hotels and to serve the attendees who make this meeting possible.
+
+I'm happy to provide references from government and defense contractors who have stayed with us previously. Please reach me at (256) 837-4070 or reply to this email.
+
+With great respect,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 9,
+      eventName: 'UAH Homecoming Weekend',
+      to: 'alumni@uah.edu',
+      subject: 'Homecoming Room Block for Returning UAH Alumni — Closest Comfort Inn to Campus',
+      body: `Dear UAH Alumni Relations Team,
+
+My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. As Homecoming weekend approaches, I wanted to reach out to see if we could work together to make the experience even better for returning UAH alumni.
+
+We're located just 1.2 miles from campus — the closest Comfort Inn to UAH — which means returning alumni can walk to events, avoid parking headaches, and feel genuinely close to the campus they love. For alumni who haven't been back in years, that proximity can make the whole weekend feel more meaningful.
+
+Here's what I'd like to offer for UAH Homecoming:
+
+- A "Charger Homecoming" room block — 20–25 rooms held at a special alumni rate of $109/night, available exclusively to UAH Homecoming guests
+- A "Charger Blue" welcome gift at check-in — a small token to celebrate the weekend (we're happy to discuss logistics with your team)
+- Free hot breakfast both mornings of the weekend
+- Flexible checkout until noon on Sunday to give alumni time for late-morning campus events without rushing
+- Free parking with no hidden fees
+
+Many returning alumni are bringing families — spouses, kids, parents — and our Double Queen rooms are well-suited for those multi-generational groups. We'd love to be mentioned in your Homecoming communications, weekend schedule, or alumni magazine.
+
+The relationship between Comfort Inn and UAH is one we value deeply — this campus is our neighborhood, and its alumni community is our community too. It would mean a great deal to us to play a small part in welcoming people home.
+
+Please don't hesitate to call me at (256) 837-4070 or reply directly. I'd love to hear from you.
+
+Go Chargers!
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    },
+    {
+      id: 10,
+      eventName: 'Galaxy of Lights — Huntsville Botanical Garden',
+      to: 'info@hbg.org',
+      subject: 'Hotel Partner Inquiry for Galaxy of Lights Holiday Season — Comfort Inn Huntsville',
+      body: `Dear Huntsville Botanical Garden Team,
+
+My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — located just 2.8 miles from the Botanical Garden. I'm reaching out ahead of the Galaxy of Lights season to explore a recommended hotel partnership for your holiday visitors.
+
+Galaxy of Lights is genuinely one of the most beloved holiday experiences in the region, and it draws families from Birmingham, Nashville, Atlanta, and across the Southeast who often turn it into a full overnight trip. Those families need a warm, comfortable, affordable place to stay — and I'd like Comfort Inn Huntsville to be the place they think of first.
+
+Here's what I'm proposing for a Galaxy of Lights partnership:
+
+- A "Holiday Stay" room block — 20–30 rooms at a special seasonal rate of $109/night for Standard rooms and $119/night for Double Queens, perfect for families with young children
+- A welcome packet at check-in with tips for enjoying Galaxy of Lights, including parking info, best arrival times, and nearby dining recommendations
+- Free hot breakfast the morning after their visit — a cozy family breakfast before heading home
+- The opportunity to be listed as a recommended hotel on the Galaxy of Lights website, event map, or ticket confirmation emails
+
+The families who come for Galaxy of Lights are exactly the kind of guests who write glowing reviews and come back year after year. We already see many of them choosing us during the holiday season, and a formal partnership would help both of us serve them better.
+
+The Huntsville Botanical Garden is a treasure for this city, and I'd be honored to support your mission. If there's any way we can also make a small donation to the Garden's programs in exchange for partnership recognition, I'm very open to that conversation.
+
+Please reach me at (256) 837-4070 or reply to this email. Happy holidays to your whole team.
+
+With warmth and holiday spirit,
+Kenny Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 837-4070`
+    }
+  ];
+}
+
 // ─── Choice Hotels Integration Status ────────────────────────────────────────
 
 function generateChoiceHotelsStatus() {
@@ -975,6 +1304,10 @@ app.get('/api/choice-hotels', (req, res) => {
 
 app.get('/api/events', (req, res) => {
   res.json({ success: true, data: fromCache('events', generateLocalEvents) });
+});
+
+app.get('/api/email-templates', (req, res) => {
+  res.json({ success: true, data: fromCache('email-templates', generateEmailTemplates) });
 });
 
 // Real-time endpoint — activity feed is live; all numbers derived from

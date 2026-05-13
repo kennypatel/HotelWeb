@@ -815,6 +815,151 @@ function markContacted(id) {
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
+//  EMAIL TEMPLATES
+// ══════════════════════════════════════════════════════════════════════════════
+
+// In-memory store for templates (populated on load)
+const EmailState = { templates: [] };
+
+async function loadEmailTemplates() {
+  try {
+    const res  = await fetch('/api/email-templates');
+    const json = await res.json();
+    if (!json.success) return;
+    EmailState.templates = json.data;
+    renderEmailTemplates(json.data);
+  } catch (e) {
+    console.error('[loadEmailTemplates]', e);
+  }
+}
+
+function renderEmailTemplates(templates) {
+  const grid    = $('emailCardsGrid');
+  const summEl  = $('emailTemplatesSummary');
+  if (!grid) return;
+
+  const sentMap = JSON.parse(localStorage.getItem('emailsSent') || '{}');
+
+  // Summary chips
+  if (summEl) {
+    const sentCount   = templates.filter(t => sentMap[t.id]).length;
+    const unsentCount = templates.length - sentCount;
+    summEl.innerHTML = `
+      <span class="email-summary-chip email-summary-chip--sent">${sentCount} Sent</span>
+      <span class="email-summary-chip email-summary-chip--unsent">${unsentCount} Not Sent</span>
+    `;
+  }
+
+  grid.innerHTML = templates.map(t => {
+    const isSent   = !!sentMap[t.id];
+    // First two non-empty lines of the body for preview
+    const preview  = t.body.split('\n').filter(l => l.trim()).slice(0, 2).join('\n');
+
+    return `
+    <div class="email-card" id="email-card-${t.id}">
+      <div class="email-card-header">
+        <div class="email-event-name">${t.eventName}</div>
+        <button class="email-sent-badge ${isSent ? 'email-sent-badge--sent' : 'email-sent-badge--unsent'}"
+                id="email-badge-${t.id}"
+                onclick="markEmailSent(${t.id})"
+                title="Toggle sent status">
+          ${isSent ? '✓ Sent' : 'Not Sent'}
+        </button>
+      </div>
+
+      <div class="email-to-line">
+        <span class="email-to-label">To:</span>
+        <span class="email-to-address">${t.to}</span>
+      </div>
+
+      <div class="email-subject-line">
+        <span class="email-subject-label">Subject:</span>
+        <span class="email-subject-text">${t.subject}</span>
+      </div>
+
+      <div class="email-preview" id="email-preview-${t.id}">${preview}</div>
+
+      <div class="email-card-actions">
+        <button class="email-action-btn email-action-btn--copy"
+                id="email-copy-btn-${t.id}"
+                onclick="copyEmail(${t.id})">Copy Full Email</button>
+        <button class="email-action-btn email-action-btn--open"
+                onclick="openEmailClient(${t.id})">Open in Email</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function copyEmail(id) {
+  const t = EmailState.templates.find(x => x.id === id);
+  if (!t) return;
+
+  const text = `Subject: ${t.subject}\n\n${t.body}`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = $(`email-copy-btn-${id}`);
+    if (!btn) return;
+    const original = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.className   = 'email-action-btn email-action-btn--copied';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.className   = 'email-action-btn email-action-btn--copy';
+    }, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity  = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const btn = $(`email-copy-btn-${id}`);
+    if (btn) {
+      const original = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.className   = 'email-action-btn email-action-btn--copied';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.className   = 'email-action-btn email-action-btn--copy';
+      }, 2000);
+    }
+  });
+}
+
+function openEmailClient(id) {
+  const t = EmailState.templates.find(x => x.id === id);
+  if (!t) return;
+  const subject = encodeURIComponent(t.subject);
+  const body    = encodeURIComponent(t.body);
+  window.open(`mailto:${t.to}?subject=${subject}&body=${body}`);
+}
+
+function markEmailSent(id) {
+  const sentMap      = JSON.parse(localStorage.getItem('emailsSent') || '{}');
+  sentMap[id]        = !sentMap[id];
+  localStorage.setItem('emailsSent', JSON.stringify(sentMap));
+
+  const badge = $(`email-badge-${id}`);
+  if (badge) {
+    badge.textContent = sentMap[id] ? '✓ Sent' : 'Not Sent';
+    badge.className   = `email-sent-badge ${sentMap[id] ? 'email-sent-badge--sent' : 'email-sent-badge--unsent'}`;
+  }
+
+  // Refresh summary counts
+  const summEl = $('emailTemplatesSummary');
+  if (summEl && EmailState.templates.length) {
+    const sentCount   = EmailState.templates.filter(t => sentMap[t.id]).length;
+    const unsentCount = EmailState.templates.length - sentCount;
+    summEl.innerHTML = `
+      <span class="email-summary-chip email-summary-chip--sent">${sentCount} Sent</span>
+      <span class="email-summary-chip email-summary-chip--unsent">${unsentCount} Not Sent</span>
+    `;
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
 //  BOOT
 // ══════════════════════════════════════════════════════════════════════════════
 async function boot() {
@@ -822,6 +967,7 @@ async function boot() {
   startClock();
   await loadAllData();
   await loadEvents();
+  await loadEmailTemplates();
 
   // Real-time activity feed — every 3 seconds
   setInterval(refreshRealtime, 3000);
