@@ -1,0 +1,17 @@
+{
+  "name": "hotelpulse-analytics",
+  "version": "1.0.0",
+  "description": "Hotel Website Optimization & Analytics Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "HotelPulse Analytics",
+  "license": "MIT"
+}
