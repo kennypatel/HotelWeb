@@ -7,11 +7,11 @@
 // ── Hotel Config ──────────────────────────────────────────────────────────────
 
 const DEFAULT_CONFIG = {
-  hotelName: 'Your Hotel',
-  hotelUrl:  '',
-  roomCount: '—',
-  hotelType: 'Luxury Collection',
-  hotelCity: ''
+  hotelName: 'Comfort Inn Huntsville',
+  hotelUrl:  'https://comfortinn.reservationscenter.com/hotel/comfort-inn-huntsville-near-university-4725-university-drive-huntsville',
+  roomCount: '70',
+  hotelType: 'Business',
+  hotelCity: 'Huntsville, AL'
 };
 
 function loadConfig() {
@@ -90,7 +90,7 @@ function initSetupModal() {
     applyConfig(existing);
     closeModal();
   } else {
-    overlay.classList.remove('hidden');
+    openModal(DEFAULT_CONFIG);
   }
 }
 
