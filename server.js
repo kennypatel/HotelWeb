@@ -83,7 +83,7 @@ const HOTEL = {
   state:      'AL',
   zip:        '35816',
   country:    'US',
-  phone:      '+1-256-837-4070',
+  phone:      '+1-706-350-3883',
   website:    'https://comfortinn.reservationscenter.com/hotel/comfort-inn-huntsville-near-university-4725-university-drive-huntsville',
   totalRooms: 70,
   stars:      3,
@@ -947,7 +947,7 @@ Our hotel is walking distance from several great restaurants on University Drive
 
 If you'd be open to listing Comfort Inn Huntsville as a recommended hotel on your graduation information page or in your communications to families, I'd be very grateful. Even a simple mention can make a meaningful difference for families who are trying to plan their trips.
 
-I'd love to set up a quick call at your convenience to finalize details. Please feel free to reach me directly at (256) 837-4070 or reply to this email.
+I'd love to set up a quick call at your convenience to finalize details. Please feel free to reach me directly at (706) 350-3883 or reply to this email.
 
 Thank you for everything you do for UAH students and families.
 
@@ -956,7 +956,7 @@ Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 2,
@@ -982,14 +982,14 @@ AIAA attracts serious professionals, and many will be traveling under government
 
 I'd be honored if Comfort Inn Huntsville could be included on your official conference hotel list or recommended lodging page. We're happy to provide co-branded materials or a booking link specific to your event.
 
-Please don't hesitate to call me at (256) 837-4070 or reply here. I'm happy to work around your timeline.
+Please don't hesitate to call me at (706) 350-3883 or reply here. I'm happy to work around your timeline.
 
 With appreciation,
 Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 3,
@@ -1015,14 +1015,14 @@ We have a long history of welcoming government contractors, DoD personnel, and m
 
 If there is any way for Comfort Inn Huntsville to be mentioned in your Family Day communications, family packets, or installation welcome materials, we would be very grateful. We're also happy to display event information in our lobby for arriving guests.
 
-Thank you for your service and for organizing this important event. Please reach me at (256) 837-4070 at your convenience.
+Thank you for your service and for organizing this important event. Please reach me at (706) 350-3883 at your convenience.
 
 With respect and gratitude,
 Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 4,
@@ -1052,7 +1052,7 @@ Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 5,
@@ -1075,7 +1075,7 @@ For traveling fans and visiting school supporters, we can offer a separate "Game
 
 UAH athletics is growing, and we'd love to grow alongside it. Being the go-to hotel for Charger football opponents and fans alike would be a genuine point of pride for our team.
 
-I'd be delighted to speak with your travel coordinator or group sales contact. Please reach me at (256) 837-4070, or reply here and we'll set something up.
+I'd be delighted to speak with your travel coordinator or group sales contact. Please reach me at (706) 350-3883, or reply here and we'll set something up.
 
 Go Chargers — and safe travels to all who visit.
 
@@ -1084,7 +1084,7 @@ Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 6,
@@ -1110,14 +1110,14 @@ Many of your attendees may be traveling under employer or institutional reimburs
 
 If you're open to including Comfort Inn Huntsville in your conference registration materials or on your event website as a recommended lodging option, we'd be very appreciative. We'd be glad to provide a custom booking code or group link to make the process seamless for your registrants.
 
-Please feel free to call me directly at (256) 837-4070 or reply to this email at your earliest convenience.
+Please feel free to call me directly at (706) 350-3883 or reply to this email at your earliest convenience.
 
 With professional regards,
 Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 7,
@@ -1149,7 +1149,7 @@ Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 8,
@@ -1174,14 +1174,14 @@ Here is what we're prepared to offer AUSA attendees:
 
 AUSA is one of the premier events in our industry, and Huntsville's defense community is proud to host it. We'd be honored to be listed among the official conference hotels and to serve the attendees who make this meeting possible.
 
-I'm happy to provide references from government and defense contractors who have stayed with us previously. Please reach me at (256) 837-4070 or reply to this email.
+I'm happy to provide references from government and defense contractors who have stayed with us previously. Please reach me at (706) 350-3883 or reply to this email.
 
 With great respect,
 Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 9,
@@ -1206,14 +1206,14 @@ Many returning alumni are bringing families — spouses, kids, parents — and o
 
 The relationship between Comfort Inn and UAH is one we value deeply — this campus is our neighborhood, and its alumni community is our community too. It would mean a great deal to us to play a small part in welcoming people home.
 
-Please don't hesitate to call me at (256) 837-4070 or reply directly. I'd love to hear from you.
+Please don't hesitate to call me at (706) 350-3883 or reply directly. I'd love to hear from you.
 
 Go Chargers!
 Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 10,
@@ -1237,14 +1237,14 @@ The families who come for Galaxy of Lights are exactly the kind of guests who wr
 
 The Huntsville Botanical Garden is a treasure for this city, and I'd be honored to support your mission. If there's any way we can also make a small donation to the Garden's programs in exchange for partnership recognition, I'm very open to that conversation.
 
-Please reach me at (256) 837-4070 or reply to this email. Happy holidays to your whole team.
+Please reach me at (706) 350-3883 or reply to this email. Happy holidays to your whole team.
 
 With warmth and holiday spirit,
 Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070`
+(706) 350-3883`
     },
     {
       id: 11,
@@ -1269,7 +1269,7 @@ In return, we're asking to be listed as Orion's recommended hotel on your websit
 
 Concert-goers are some of the most enthusiastic guests we host — they're in a great mood, they leave great reviews, and they come back whenever their favorite artist returns to Huntsville. This partnership is a genuine win for both of us.
 
-I'd love to schedule a quick 15-minute call or stop by the venue at your convenience to discuss the details. Please reach me at (256) 837-4070 or reply to this email anytime.
+I'd love to schedule a quick 15-minute call or stop by the venue at your convenience to discuss the details. Please reach me at (706) 350-3883 or reply to this email anytime.
 
 Looking forward to making Orion nights even more memorable for your guests.
 
@@ -1278,7 +1278,7 @@ Kenny Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(256) 837-4070
+(706) 350-3883
 comfortinnhuntsville.com`
     }
   ];
