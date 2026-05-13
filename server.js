@@ -83,7 +83,7 @@ const HOTEL = {
   state:      'AL',
   zip:        '35816',
   country:    'US',
-  phone:      '+1-706-350-3883',
+  phone:      '+1-256-562-2525',
   website:    'https://comfortinn.reservationscenter.com/hotel/comfort-inn-huntsville-near-university-4725-university-drive-huntsville',
   totalRooms: 70,
   stars:      3,
@@ -863,7 +863,7 @@ function generateLocalEvents() {
       contactEmail: 'info@orionamphitheater.com',
       contactPhone: '(256) 427-5400',
       contactWebsite: 'https://www.orionamphitheater.com',
-      outreachScript: 'Hi, I\'m Kenny Patel, GM at Comfort Inn Huntsville — 4.2 miles from Orion Amphitheater. We\'d love to be your official recommended hotel for concert-goers who need overnight accommodations. We offer free parking, free hot breakfast the morning after, and can set up a dedicated booking link for your guests.',
+      outreachScript: 'Hi, I\'m Sam Patel, GM at Comfort Inn Huntsville — 4.2 miles from Orion Amphitheater. We\'d love to be your official recommended hotel for concert-goers who need overnight accommodations. We offer free parking, free hot breakfast the morning after, and can set up a dedicated booking link for your guests.',
       status: 'not_contacted',
       notes: 'Orion hosts 8,000-capacity shows all season. Out-of-town concert fans drive from Nashville, Atlanta, Birmingham — many need a hotel. High-volume, recurring opportunity every show night.'
     }
@@ -931,7 +931,7 @@ function generateEmailTemplates() {
       subject: 'Room Block Offer for UAH Summer Graduation Families — Comfort Inn (1.2 mi from Campus)',
       body: `Dear UAH Registrar's Office,
 
-Congratulations on another graduating class. I'm Kenny Patel, General Manager of the Comfort Inn Huntsville at 4725 University Drive NW — just 1.2 miles from the UAH campus, which makes us one of the most convenient lodging options for families traveling to Huntsville for graduation weekend.
+Congratulations on another graduating class. I'm Sam Patel, General Manager of the Comfort Inn Huntsville at 4725 University Drive NW — just 1.2 miles from the UAH campus, which makes us one of the most convenient lodging options for families traveling to Huntsville for graduation weekend.
 
 Every spring and summer, we see a surge of parents, grandparents, siblings, and extended family members arriving from across Alabama, Tennessee, Georgia, and beyond to celebrate their graduates. Many of them struggle to find available rooms close to campus at a reasonable rate, and I'd love to solve that problem for your graduation community.
 
@@ -947,16 +947,16 @@ Our hotel is walking distance from several great restaurants on University Drive
 
 If you'd be open to listing Comfort Inn Huntsville as a recommended hotel on your graduation information page or in your communications to families, I'd be very grateful. Even a simple mention can make a meaningful difference for families who are trying to plan their trips.
 
-I'd love to set up a quick call at your convenience to finalize details. Please feel free to reach me directly at (706) 350-3883 or reply to this email.
+I'd love to set up a quick call at your convenience to finalize details. Please feel free to reach me directly at (256) 562-2525 or reply to this email.
 
 Thank you for everything you do for UAH students and families.
 
 Warm regards,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 2,
@@ -965,7 +965,7 @@ Comfort Inn Huntsville
       subject: 'Preferred Hotel Partnership for AIAA Space Conference — Huntsville, AL',
       body: `Dear AIAA Conference Team,
 
-My name is Kenny Patel, and I'm the General Manager of Comfort Inn Huntsville, located at 4725 University Drive NW — approximately 4 miles from the Von Braun Center. I'm reaching out ahead of your upcoming Space Conference & Exposition to explore a preferred hotel partnership for your attendees.
+My name is Sam Patel, and I'm the General Manager of Comfort Inn Huntsville, located at 4725 University Drive NW — approximately 4 miles from the Von Braun Center. I'm reaching out ahead of your upcoming Space Conference & Exposition to explore a preferred hotel partnership for your attendees.
 
 Huntsville is, of course, the Rocket City — and our guests frequently include engineers, scientists, and aerospace professionals visiting NASA Marshall Space Flight Center, Redstone Arsenal, and Cummings Research Park. We understand what working professionals in the defense and aerospace industries need: a clean, quiet, well-connected place to rest and prepare.
 
@@ -982,14 +982,14 @@ AIAA attracts serious professionals, and many will be traveling under government
 
 I'd be honored if Comfort Inn Huntsville could be included on your official conference hotel list or recommended lodging page. We're happy to provide co-branded materials or a booking link specific to your event.
 
-Please don't hesitate to call me at (706) 350-3883 or reply here. I'm happy to work around your timeline.
+Please don't hesitate to call me at (256) 562-2525 or reply here. I'm happy to work around your timeline.
 
 With appreciation,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 3,
@@ -998,7 +998,7 @@ Comfort Inn Huntsville
       subject: 'Hotel Partnership for Redstone Arsenal Family Day — Government Rates Available',
       body: `Dear Redstone Arsenal Public Affairs Office,
 
-My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Our hotel is located 3.4 miles from Redstone Arsenal's main gate, and I'm writing to offer our support for the upcoming Family Day and Open House event.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Our hotel is located 3.4 miles from Redstone Arsenal's main gate, and I'm writing to offer our support for the upcoming Family Day and Open House event.
 
 Family Day is a special occasion — and the families who travel from across the country to be part of it deserve comfortable, affordable accommodations that honor their sacrifice and commitment. We'd be proud to be a recommended lodging option for visiting military families.
 
@@ -1015,14 +1015,14 @@ We have a long history of welcoming government contractors, DoD personnel, and m
 
 If there is any way for Comfort Inn Huntsville to be mentioned in your Family Day communications, family packets, or installation welcome materials, we would be very grateful. We're also happy to display event information in our lobby for arriving guests.
 
-Thank you for your service and for organizing this important event. Please reach me at (706) 350-3883 at your convenience.
+Thank you for your service and for organizing this important event. Please reach me at (256) 562-2525 at your convenience.
 
 With respect and gratitude,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 4,
@@ -1031,7 +1031,7 @@ Comfort Inn Huntsville
       subject: 'Official Hotel Partner Inquiry — Rocket City Brewfest Weekend',
       body: `Dear Rocket City Brewfest Team,
 
-I'm Kenny Patel, General Manager of Comfort Inn Huntsville on University Drive — and I have to say, Brewfest is one of my favorite Huntsville events of the year. The energy it brings to MidCity is fantastic.
+I'm Sam Patel, General Manager of Comfort Inn Huntsville on University Drive — and I have to say, Brewfest is one of my favorite Huntsville events of the year. The energy it brings to MidCity is fantastic.
 
 I'm reaching out because I think there's a natural partnership opportunity here that would benefit both your attendees and our hotel. Comfort Inn Huntsville is located 5.2 miles from MidCity — close enough to be convenient, far enough that your guests can enjoy the festival without worrying about driving home. That's exactly the peace of mind that makes a great festival experience.
 
@@ -1048,11 +1048,11 @@ Many of your attendees travel from Birmingham, Nashville, and Atlanta for this e
 I'd love to grab coffee and talk through the details — or we can keep it simple and get a partnership agreement in place over email. Whatever works best for you.
 
 Cheers,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 5,
@@ -1061,7 +1061,7 @@ Comfort Inn Huntsville
       subject: 'Room Block Partnership for UAH Charger Football Season — Comfort Inn (1.2 mi from Campus)',
       body: `Dear UAH Athletics Department,
 
-My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. At 1.2 miles from the UAH campus, we're in a position to be a tremendous resource for your visiting teams, coaches, and traveling fans throughout the football season — and I'd love to explore a partnership.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. At 1.2 miles from the UAH campus, we're in a position to be a tremendous resource for your visiting teams, coaches, and traveling fans throughout the football season — and I'd love to explore a partnership.
 
 Every home game weekend brings visiting schools, fans, and families to Huntsville, and finding quality accommodations close to Roberts Stadium shouldn't be a challenge for any of them. Here's what Comfort Inn Huntsville can offer:
 
@@ -1075,16 +1075,16 @@ For traveling fans and visiting school supporters, we can offer a separate "Game
 
 UAH athletics is growing, and we'd love to grow alongside it. Being the go-to hotel for Charger football opponents and fans alike would be a genuine point of pride for our team.
 
-I'd be delighted to speak with your travel coordinator or group sales contact. Please reach me at (706) 350-3883, or reply here and we'll set something up.
+I'd be delighted to speak with your travel coordinator or group sales contact. Please reach me at (256) 562-2525, or reply here and we'll set something up.
 
 Go Chargers — and safe travels to all who visit.
 
 Warmly,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 6,
@@ -1093,7 +1093,7 @@ Comfort Inn Huntsville
       subject: 'Preferred Lodging for Huntsville Hospital Medical Conference Attendees',
       body: `Dear Huntsville Hospital Foundation,
 
-My name is Kenny Patel, and I serve as General Manager of Comfort Inn Huntsville at 4725 University Drive NW, located approximately 4.8 miles from Huntsville Hospital. I'm writing ahead of your upcoming medical conference to offer preferred lodging arrangements for your physician and staff attendees.
+My name is Sam Patel, and I serve as General Manager of Comfort Inn Huntsville at 4725 University Drive NW, located approximately 4.8 miles from Huntsville Hospital. I'm writing ahead of your upcoming medical conference to offer preferred lodging arrangements for your physician and staff attendees.
 
 Medical conferences demand a lodging environment that meets a high standard — reliable WiFi for reviewing materials, genuinely quiet rooms for rest between long conference days, a professional atmosphere, and efficient service for guests who are on tight schedules. These are things we take seriously at our property.
 
@@ -1110,14 +1110,14 @@ Many of your attendees may be traveling under employer or institutional reimburs
 
 If you're open to including Comfort Inn Huntsville in your conference registration materials or on your event website as a recommended lodging option, we'd be very appreciative. We'd be glad to provide a custom booking code or group link to make the process seamless for your registrants.
 
-Please feel free to call me directly at (706) 350-3883 or reply to this email at your earliest convenience.
+Please feel free to call me directly at (256) 562-2525 or reply to this email at your earliest convenience.
 
 With professional regards,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 7,
@@ -1126,7 +1126,7 @@ Comfort Inn Huntsville
       subject: 'Hotel Partnership for Panoply Arts Festival — Comfort Inn Huntsville',
       body: `Dear Arts Huntsville Team,
 
-I'm Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Panoply is one of the events I look forward to most each year — it brings an energy and creativity to Huntsville that's genuinely special, and I'd love for Comfort Inn to be part of the experience for your out-of-town visitors.
+I'm Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Panoply is one of the events I look forward to most each year — it brings an energy and creativity to Huntsville that's genuinely special, and I'd love for Comfort Inn to be part of the experience for your out-of-town visitors.
 
 We're located 4.3 miles from Big Spring Park, making us a comfortable and convenient base for couples and families coming in from Birmingham, Nashville, Chattanooga, and beyond for the festival weekend.
 
@@ -1145,11 +1145,11 @@ If there's an opportunity to co-promote the partnership — even a simple "Stay 
 Let's make Panoply weekend even better for Huntsville visitors together. I'd love to connect at your convenience.
 
 With warmth,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 8,
@@ -1158,7 +1158,7 @@ Comfort Inn Huntsville
       subject: 'Preferred Hotel Partnership Proposal — AUSA Annual Meeting, Huntsville, AL',
       body: `Dear AUSA Events Team,
 
-My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. With the AUSA Annual Meeting & Exposition returning to the Von Braun Center — approximately 4 miles from our property — I'm reaching out to explore a formal preferred hotel arrangement for your attendees.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. With the AUSA Annual Meeting & Exposition returning to the Von Braun Center — approximately 4 miles from our property — I'm reaching out to explore a formal preferred hotel arrangement for your attendees.
 
 AUSA brings together some of the most important voices in national defense: Army officials, defense industry executives, government contractors, and policy leaders. These are professionals with high standards for their accommodations, and I want to make sure Comfort Inn Huntsville is positioned to meet those standards and serve them well.
 
@@ -1174,14 +1174,14 @@ Here is what we're prepared to offer AUSA attendees:
 
 AUSA is one of the premier events in our industry, and Huntsville's defense community is proud to host it. We'd be honored to be listed among the official conference hotels and to serve the attendees who make this meeting possible.
 
-I'm happy to provide references from government and defense contractors who have stayed with us previously. Please reach me at (706) 350-3883 or reply to this email.
+I'm happy to provide references from government and defense contractors who have stayed with us previously. Please reach me at (256) 562-2525 or reply to this email.
 
 With great respect,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 9,
@@ -1190,7 +1190,7 @@ Comfort Inn Huntsville
       subject: 'Homecoming Room Block for Returning UAH Alumni — Closest Comfort Inn to Campus',
       body: `Dear UAH Alumni Relations Team,
 
-My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. As Homecoming weekend approaches, I wanted to reach out to see if we could work together to make the experience even better for returning UAH alumni.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. As Homecoming weekend approaches, I wanted to reach out to see if we could work together to make the experience even better for returning UAH alumni.
 
 We're located just 1.2 miles from campus — the closest Comfort Inn to UAH — which means returning alumni can walk to events, avoid parking headaches, and feel genuinely close to the campus they love. For alumni who haven't been back in years, that proximity can make the whole weekend feel more meaningful.
 
@@ -1206,14 +1206,14 @@ Many returning alumni are bringing families — spouses, kids, parents — and o
 
 The relationship between Comfort Inn and UAH is one we value deeply — this campus is our neighborhood, and its alumni community is our community too. It would mean a great deal to us to play a small part in welcoming people home.
 
-Please don't hesitate to call me at (706) 350-3883 or reply directly. I'd love to hear from you.
+Please don't hesitate to call me at (256) 562-2525 or reply directly. I'd love to hear from you.
 
 Go Chargers!
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 10,
@@ -1222,7 +1222,7 @@ Comfort Inn Huntsville
       subject: 'Hotel Partner Inquiry for Galaxy of Lights Holiday Season — Comfort Inn Huntsville',
       body: `Dear Huntsville Botanical Garden Team,
 
-My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — located just 2.8 miles from the Botanical Garden. I'm reaching out ahead of the Galaxy of Lights season to explore a recommended hotel partnership for your holiday visitors.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — located just 2.8 miles from the Botanical Garden. I'm reaching out ahead of the Galaxy of Lights season to explore a recommended hotel partnership for your holiday visitors.
 
 Galaxy of Lights is genuinely one of the most beloved holiday experiences in the region, and it draws families from Birmingham, Nashville, Atlanta, and across the Southeast who often turn it into a full overnight trip. Those families need a warm, comfortable, affordable place to stay — and I'd like Comfort Inn Huntsville to be the place they think of first.
 
@@ -1237,14 +1237,14 @@ The families who come for Galaxy of Lights are exactly the kind of guests who wr
 
 The Huntsville Botanical Garden is a treasure for this city, and I'd be honored to support your mission. If there's any way we can also make a small donation to the Garden's programs in exchange for partnership recognition, I'm very open to that conversation.
 
-Please reach me at (706) 350-3883 or reply to this email. Happy holidays to your whole team.
+Please reach me at (256) 562-2525 or reply to this email. Happy holidays to your whole team.
 
 With warmth and holiday spirit,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883`
+(256) 562-2525`
     },
     {
       id: 11,
@@ -1253,7 +1253,7 @@ Comfort Inn Huntsville
       subject: 'Official Hotel Partnership Proposal — Comfort Inn Huntsville × Orion Amphitheater',
       body: `Dear Orion Amphitheater Team,
 
-My name is Kenny Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — just 4.2 miles from Orion Amphitheater. I'm writing to propose an official hotel partnership that would give your out-of-town concert guests a trusted, comfortable place to stay before and after every show.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — just 4.2 miles from Orion Amphitheater. I'm writing to propose an official hotel partnership that would give your out-of-town concert guests a trusted, comfortable place to stay before and after every show.
 
 Orion Amphitheater has become one of the premier outdoor music venues in the Southeast, and with an 8,000-seat capacity drawing fans from Nashville, Atlanta, Birmingham, and beyond, a significant portion of your audience needs overnight accommodations in Huntsville. We'd like to be the hotel they find first.
 
@@ -1269,16 +1269,16 @@ In return, we're asking to be listed as Orion's recommended hotel on your websit
 
 Concert-goers are some of the most enthusiastic guests we host — they're in a great mood, they leave great reviews, and they come back whenever their favorite artist returns to Huntsville. This partnership is a genuine win for both of us.
 
-I'd love to schedule a quick 15-minute call or stop by the venue at your convenience to discuss the details. Please reach me at (706) 350-3883 or reply to this email anytime.
+I'd love to schedule a quick 15-minute call or stop by the venue at your convenience to discuss the details. Please reach me at (256) 562-2525 or reply to this email anytime.
 
 Looking forward to making Orion nights even more memorable for your guests.
 
 Warmly,
-Kenny Patel
+Sam Patel
 General Manager
 Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
-(706) 350-3883
+(256) 562-2525
 comfortinnhuntsville.com`
     }
   ];
@@ -1442,7 +1442,7 @@ app.post('/api/send-email', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from:    `"Kenny Patel — Comfort Inn Huntsville" <${process.env.GMAIL_USER}>`,
+      from:    `"Sam Patel — Comfort Inn Huntsville" <${process.env.GMAIL_USER}>`,
       to:      template.to,
       subject: template.subject,
       text:    template.body
