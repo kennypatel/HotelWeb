@@ -40,31 +40,31 @@ function generateTrafficData() {
     const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
     labels.push(label);
 
-    const dayIndex = 29 - i; // 0 = oldest, 29 = today
+    const dayIndex = 29 - i;
     const seed = dayIndex * 17 + 3;
 
-    // Before optimization baseline: ~700-950 visitors/day, slight noise
-    const baseVisitors = 800 + Math.floor(seededRandom(seed) * 150) - 75;
+    // Comfort Inn Huntsville: realistic baseline ~120-180 visitors/day before optimization
+    const baseVisitors = 130 + Math.floor(seededRandom(seed) * 60) - 30;
     beforeOptimization.push(baseVisitors);
 
-    // After optimization: day 10+ shows rapid growth to ~2400/day
+    // After optimization: grows to ~280-380 visitors/day — realistic for a regional mid-scale hotel
     let afterVal;
     if (dayIndex < 10) {
-      afterVal = baseVisitors + Math.floor(seededRandom(seed + 1000) * 80) - 40;
+      afterVal = baseVisitors + Math.floor(seededRandom(seed + 1000) * 20) - 10;
     } else {
-      const growthFactor = 1 + ((dayIndex - 9) / 21) * 2.2;
-      afterVal = Math.floor(baseVisitors * growthFactor + seededRandom(seed + 2000) * 200 - 100);
+      const growthFactor = 1 + ((dayIndex - 9) / 21) * 1.4;
+      afterVal = Math.floor(baseVisitors * growthFactor + seededRandom(seed + 2000) * 40 - 20);
     }
     afterOptimization.push(Math.max(afterVal, baseVisitors));
 
-    // Bookings: 3-8% conversion of after-optimization traffic
-    const convRate = 0.03 + seededRandom(seed + 3000) * 0.05;
-    const dayBookings = Math.floor(afterOptimization[dayIndex] * convRate);
+    // Bookings: 4-8% conversion — realistic for direct hotel bookings
+    const convRate = 0.04 + seededRandom(seed + 3000) * 0.04;
+    const dayBookings = Math.max(1, Math.floor(afterOptimization[dayIndex] * convRate));
     bookings.push(dayBookings);
 
-    // Revenue: $175-$420 per booking avg
-    const avgRate = 175 + seededRandom(seed + 4000) * 245;
-    const avgNights = 1.5 + seededRandom(seed + 5000) * 2;
+    // Revenue: $89-$149/night, avg 1.8 nights — Comfort Inn Huntsville pricing
+    const avgRate = 89 + seededRandom(seed + 4000) * 60;
+    const avgNights = 1.5 + seededRandom(seed + 5000) * 0.8;
     revenue.push(Math.floor(dayBookings * avgRate * avgNights));
 
     days.push({
@@ -94,9 +94,9 @@ function generateKPIs(trafficData) {
   const bookingChange = (((totalBookings - prevBookings) / prevBookings) * 100).toFixed(1);
   const revenueChange = (((totalRevenue - prevRevenue) / prevRevenue) * 100).toFixed(1);
 
-  const totalRooms = 120;
-  const roomNights = totalBookings * 2.1;
-  const occupancyRate = ((roomNights / (totalRooms * 30)) * 100).toFixed(1);
+  const totalRooms = 70;
+  const roomNights = totalBookings * 1.8;
+  const occupancyRate = Math.min(((roomNights / (totalRooms * 30)) * 100), 95).toFixed(1);
 
   return {
     totalVisitors: totalVisitorsCurrent,
@@ -218,12 +218,13 @@ function generatePerformanceData() {
 }
 
 function generateRevenueData() {
+  // Comfort Inn Huntsville — 70 rooms, mid-scale business hotel near UAH
   const roomTypes = [
-    { type: 'Standard Room', rooms: 40, rate: 189, occupancy: 78, color: '#3b82f6' },
-    { type: 'Deluxe Room', rooms: 35, rate: 259, occupancy: 82, color: '#10b981' },
-    { type: 'Ocean View Suite', rooms: 25, rate: 389, occupancy: 71, color: '#f59e0b' },
-    { type: 'Junior Suite', rooms: 12, rate: 479, occupancy: 68, color: '#8b5cf6' },
-    { type: 'Presidential Suite', rooms: 8, rate: 899, occupancy: 54, color: '#ec4899' }
+    { type: 'Standard Queen',    rooms: 28, rate: 99,  occupancy: 74, color: '#3b82f6' },
+    { type: 'Standard King',     rooms: 22, rate: 109, occupancy: 71, color: '#10b981' },
+    { type: 'Double Queen',      rooms: 12, rate: 119, occupancy: 78, color: '#f59e0b' },
+    { type: 'King Suite',        rooms:  6, rate: 139, occupancy: 65, color: '#8b5cf6' },
+    { type: 'Accessible Room',   rooms:  2, rate: 99,  occupancy: 60, color: '#ec4899' }
   ];
 
   const channels = [
@@ -272,47 +273,51 @@ function generateRevenueData() {
 }
 
 function generateBookingFunnel() {
-  const visitors = 45820;
+  // 30-day total visitors for a 70-room Comfort Inn (realistic post-optimization)
+  const visitors = 8240;
   return [
-    { stage: 'Website Visitors', count: visitors, percentage: 100 },
-    { stage: 'Room Pages Viewed', count: Math.floor(visitors * 0.61), percentage: 61 },
-    { stage: 'Checked Availability', count: Math.floor(visitors * 0.28), percentage: 28 },
-    { stage: 'Started Booking', count: Math.floor(visitors * 0.12), percentage: 12 },
-    { stage: 'Booking Completed', count: Math.floor(visitors * 0.057), percentage: 5.7 }
+    { stage: 'Website Visitors',     count: visitors,                    percentage: 100 },
+    { stage: 'Room Pages Viewed',    count: Math.floor(visitors * 0.58), percentage: 58  },
+    { stage: 'Checked Availability', count: Math.floor(visitors * 0.26), percentage: 26  },
+    { stage: 'Started Booking',      count: Math.floor(visitors * 0.10), percentage: 10  },
+    { stage: 'Booking Completed',    count: Math.floor(visitors * 0.055),percentage: 5.5 }
   ];
 }
 
 function generateTrafficSources() {
+  // Scaled to realistic 30-day traffic for Comfort Inn Huntsville
   return [
-    { source: 'Organic Search', visitors: 18420, percentage: 40.2, color: '#10b981' },
-    { source: 'Direct', visitors: 9860, percentage: 21.5, color: '#3b82f6' },
-    { source: 'Paid Ads', visitors: 7340, percentage: 16.0, color: '#f59e0b' },
-    { source: 'Social Media', visitors: 5210, percentage: 11.4, color: '#8b5cf6' },
-    { source: 'Referral', visitors: 3180, percentage: 6.9, color: '#ec4899' },
-    { source: 'Email', visitors: 1810, percentage: 3.9, color: '#06b6d4' }
+    { source: 'Organic Search', visitors: 3210, percentage: 39.0, color: '#10b981' },
+    { source: 'Direct',         visitors: 1870, percentage: 22.7, color: '#3b82f6' },
+    { source: 'Paid Ads',       visitors: 1340, percentage: 16.3, color: '#f59e0b' },
+    { source: 'Booking.com',    visitors:  820, percentage:  9.9, color: '#8b5cf6' },
+    { source: 'Referral',       visitors:  620, percentage:  7.5, color: '#ec4899' },
+    { source: 'Email',          visitors:  380, percentage:  4.6, color: '#06b6d4' }
   ];
 }
 
 function generateGeographicData() {
+  // Comfort Inn Huntsville draws mostly domestic US travelers —
+  // UAH visitors, NASA/aerospace contractors, regional road trips
   return [
-    { country: 'United States', visitors: 12840, flag: '🇺🇸' },
-    { country: 'United Kingdom', visitors: 6210, flag: '🇬🇧' },
-    { country: 'Germany', visitors: 4380, flag: '🇩🇪' },
-    { country: 'Australia', visitors: 3920, flag: '🇦🇺' },
-    { country: 'Canada', visitors: 3540, flag: '🇨🇦' },
-    { country: 'France', visitors: 2870, flag: '🇫🇷' },
-    { country: 'Japan', visitors: 2340, flag: '🇯🇵' },
-    { country: 'UAE', visitors: 1980, flag: '🇦🇪' },
-    { country: 'Singapore', visitors: 1640, flag: '🇸🇬' },
-    { country: 'Brazil', visitors: 1290, flag: '🇧🇷' }
+    { country: 'Alabama (Local)',  visitors: 2840, flag: '🇺🇸' },
+    { country: 'Tennessee',        visitors: 1620, flag: '🇺🇸' },
+    { country: 'Georgia',          visitors: 1180, flag: '🇺🇸' },
+    { country: 'Texas',            visitors:  870, flag: '🇺🇸' },
+    { country: 'Florida',          visitors:  740, flag: '🇺🇸' },
+    { country: 'Mississippi',      visitors:  410, flag: '🇺🇸' },
+    { country: 'North Carolina',   visitors:  310, flag: '🇺🇸' },
+    { country: 'Virginia',         visitors:  240, flag: '🇺🇸' },
+    { country: 'Canada',           visitors:  190, flag: '🇨🇦' },
+    { country: 'United Kingdom',   visitors:  140, flag: '🇬🇧' }
   ];
 }
 
 function generateDeviceData() {
   return [
-    { device: 'Mobile', percentage: 54, visitors: 24762, color: '#3b82f6' },
-    { device: 'Desktop', percentage: 35, visitors: 16040, color: '#10b981' },
-    { device: 'Tablet', percentage: 11, visitors: 5018, color: '#f59e0b' }
+    { device: 'Mobile',  percentage: 54, visitors: 4450, color: '#3b82f6' },
+    { device: 'Desktop', percentage: 35, visitors: 2884, color: '#10b981' },
+    { device: 'Tablet',  percentage: 11, visitors:  906, color: '#f59e0b' }
   ];
 }
 
@@ -427,16 +432,15 @@ const activityTemplates = [
 ];
 
 const cities = [
-  'New York', 'London', 'Sydney', 'Toronto', 'Paris', 'Dubai', 'Singapore',
-  'Los Angeles', 'Chicago', 'Amsterdam', 'Berlin', 'Tokyo', 'Miami',
-  'Melbourne', 'San Francisco', 'Barcelona', 'Rome', 'Seoul', 'Hong Kong',
-  'Boston', 'Seattle', 'Vienna', 'Stockholm', 'Zurich', 'Cape Town'
+  'Nashville', 'Atlanta', 'Birmingham', 'Memphis', 'Chattanooga',
+  'Montgomery', 'Columbus', 'Jackson', 'Knoxville', 'Charlotte',
+  'Dallas', 'Houston', 'New Orleans', 'Louisville', 'Tampa',
+  'Orlando', 'Richmond', 'Raleigh', 'St. Louis', 'Indianapolis',
+  'Decatur', 'Florence', 'Gadsden', 'Tuscaloosa', 'Auburn'
 ];
 
 const rooms = [
-  'Deluxe Ocean View', 'Presidential Suite', 'Standard King', 'Junior Suite',
-  'Penthouse Suite', 'Garden View Room', 'Club Suite', 'Family Suite',
-  'Executive Room', 'Ocean View Suite'
+  'Standard Queen', 'Standard King', 'Double Queen', 'King Suite', 'Accessible Room'
 ];
 
 function generateActivity() {
@@ -444,8 +448,8 @@ function generateActivity() {
   const template = typeData.templates[Math.floor(Math.random() * typeData.templates.length)];
   const city = cities[Math.floor(Math.random() * cities.length)];
   const room = rooms[Math.floor(Math.random() * rooms.length)];
-  const nights = randomBetween(1, 7);
-  const amount = randomBetween(249, 1890);
+  const nights = randomBetween(1, 4);
+  const amount = randomBetween(89, 420);
 
   const message = template
     .replace('{city}', city)
@@ -516,9 +520,10 @@ app.get('/api/revenue', (req, res) => {
 });
 
 app.get('/api/realtime', (req, res) => {
-  const visitorCount = randomBetween(18, 47);
+  // Realistic live stats for a 70-room mid-scale hotel
+  const visitorCount = randomBetween(4, 18);
   const activities = Array.from({ length: 8 }, () => generateActivity());
-  const activeCountries = ['US', 'GB', 'AU', 'DE', 'CA', 'FR', 'JP'].slice(0, randomBetween(3, 7));
+  const activeCountries = ['AL', 'TN', 'GA', 'TX', 'FL', 'NC', 'MS'].slice(0, randomBetween(2, 5));
 
   res.json({
     success: true,
@@ -526,10 +531,10 @@ app.get('/api/realtime', (req, res) => {
       liveVisitors: visitorCount,
       activity: activities,
       activeCountries,
-      activeRooms: randomBetween(6, 14),
-      pendingBookings: randomBetween(2, 8),
-      todayBookings: randomBetween(12, 31),
-      todayRevenue: randomBetween(4200, 11800)
+      activeRooms: randomBetween(2, 6),
+      pendingBookings: randomBetween(1, 4),
+      todayBookings: randomBetween(3, 10),
+      todayRevenue: randomBetween(4200, 6800)   // 70 rooms × ~$109 ADR × ~65-75% occupancy
     }
   });
 });
