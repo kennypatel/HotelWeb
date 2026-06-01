@@ -8,7 +8,7 @@
 **Business Name:** AppointFlow
 **Tagline:** "We Fill Your Calendar. You Close the Deals."
 **Business Type:** B2B Done-For-You Appointment Setting Service (AI-assisted)
-**Owner:** Kenny Patel (patelkenny17@gmail.com)
+**Owner:** Kenny Patel (ceo@carsniperapp.com)
 **Stage:** Pre-revenue, Day 1
 
 ---

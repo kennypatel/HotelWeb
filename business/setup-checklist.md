@@ -4,7 +4,7 @@
 
 ### 1. Gmail — Sender Account
 - [ ] Go to gmail.com → Create Account
-- [ ] Username: appointflow.kenny@gmail.com (or similar)
+- [ ] Sender email: ceo@carsniperapp.com
 - [ ] Set up email signature (see below)
 - [ ] Do NOT connect to any existing Gmail you use personally
 - [ ] This is your sender email — all business goes through here

@@ -9,12 +9,12 @@
 
 **Task 1: Create free accounts (45 min)**
 
-1. Gmail: go to gmail.com → Create account → use "appointflow.kenny@gmail.com" or similar
+1. Gmail: go to gmail.com → Create account → use "ceo@carsniperapp.com" or similar
    - In Settings → General → set Signature:
      ```
      Kenny Patel
      AppointFlow | AI-Powered Appointment Setting
-     appointflow.kenny@gmail.com
+     ceo@carsniperapp.com
      ```
    - Vacation responder: OFF
    - Enable "Send and Archive" button
