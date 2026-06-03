@@ -1,0 +1,14 @@
+hotel_name,website,email,phone,city,state,source_url,category,notes
+"Nevada Inn Motel",https://www.nevadainnmotel.com,,(702) 293-2044,Boulder City,NV,https://www.nevadainnmotel.com,motel,no_email_found | brand:independent
+"Virginia City Inn",https://www.virginiacityinn.com,,(775) 847-0282,Virginia City,NV,https://www.virginiacityinn.com,motel,no_email_found | brand:independent
+"Travel Inn Motel",https://www.travelinnmi.com,,+1 219-872-9441,Michigan City,IN,https://www.travelinnmi.com,motel,no_email_found | brand:independent
+"Western Inn Motel Boulder City",https://www.westerninnbouldercity.com,,(702) 294-0393,Boulder City,NV,https://www.westerninnbouldercity.com,motel,no_email_found | brand:independent
+"Dakota Country Inn",https://www.dakotacountryinn.com,,605-337-2607,Platte,SD,https://www.dakotacountryinn.com,motel,no_email_found | brand:independent
+"Motel Blu",https://www.motelblu.com,,+1 305 757 8451,Miami,FL,https://www.motelblu.com,motel,no_email_found | brand:independent
+"Beach Road House",https://www.beachroadhouse.com,,(907) 766-3060,Haines,AK,https://www.beachroadhouse.com,independent_hotel,no_email_found | brand:independent
+"Uplift Inn",https://www.upliftinn.com,,(303) 567-9263,Idaho Springs,CO,https://www.upliftinn.com,motel,no_email_found | brand:independent
+"Independence Inn",https://www.independenceinnnh.com,,(603) 664-9908,Strafford,NH,https://www.independenceinnnh.com,motel,no_email_found | brand:independent
+"Capitol Hill Motel",https://www.capitolhillmotel.com,,(503) 244-1400,Portland,OR,https://www.capitolhillmotel.com,motel,no_email_found | brand:independent
+"Economy Inn Motel",https://www.economyinnontario.com,,(541) 889-6449,Ontario,OR,https://www.economyinnontario.com,motel,no_email_found | brand:independent
+"Best Inn Texas",https://www.bestinntexas.com,,(806) 894-7335,Levelland,TX,https://www.bestinntexas.com,motel,no_email_found | brand:independent
+"Taos Valley Lodge",https://www.taosvalleylodge.com,,(575) 737-0447,Taos,NM,https://www.taosvalleylodge.com,boutique_hotel,no_email_found | brand:independent

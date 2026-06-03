@@ -1,0 +1,101 @@
+hotel_name,website,email,phone,city,state,source_url,category,notes
+"Ontario Inn Motel",https://www.ontarioinnmotel.com,ontarioinn@msn.com,541-823-2556,Ontario,OR,https://www.ontarioinnmotel.com,motel,likely_owner_or_manager | brand:independent
+"Carolina Motel",https://www.carolinamotel.com,manager@carolinamotel.com,,Franklin,NC,https://www.carolinamotel.com/contact,motel,likely_owner_or_manager | brand:independent
+"E-Z 8 Motel Old Town",https://www.ez8hotels.com,reservations@ez8hotels.com,(619) 294-2512,San Diego,CA,https://www.ez8hotels.com,limited_service_hotel,generic_contact_email | brand:independent
+"Quality Inn New River Gorge",https://www.qinrg.com,richard@qinrg.com,(304) 574-8256,Fayetteville,WV,https://www.qinrg.com/contact,small_franchise_hotel,likely_owner_or_manager | brand:franchise (Choice Hotels)
+"Historic Morris Harvey House Inn",https://www.morrisharveyhouse.com,contact@morrisharveyhouse.com,(304) 646-7561,Fayetteville,WV,https://www.morrisharveyhouse.com,boutique_hotel,generic_contact_email | brand:independent
+"Florida Hotel and Conference Center",https://www.thefloridahotelorlando.com,reservations@thefloridahotelorlando.com,407-859-1500,Orlando,FL,https://www.thefloridahotelorlando.com,independent_hotel,generic_contact_email | brand:independent
+"The State Hotel",https://www.statehotel.com,info@statehotel.com,206-513-7300,Seattle,WA,https://www.statehotel.com,boutique_hotel,generic_contact_email | brand:independent
+"Westwood Motel",https://www.westwoodmotelwy.com,westwoodmotel@hotmail.com,406-646-7713,West Yellowstone,MT,https://www.westwoodmotelwy.com,motel,likely_owner_or_manager | brand:independent
+"South of the Border Motor Inn",https://www.sobpedro.com,info@sobpedro.com,843-774-2437,Dillon,SC,https://www.sobpedro.com,motel,generic_contact_email | brand:independent
+"The Alaskan Hotel and Bar",https://www.thealaskanhotel.com,reservations@thealaskanhotel.com,,Juneau,AK,https://www.thealaskanhotel.com/contact-us,boutique_hotel,generic_contact_email | brand:independent
+"Timber Ridge Inn",https://www.thetimberridgeinn.com,upnorth@thetimberridgeinn.com,(906) 387-3790,Munising,MI,https://www.thetimberridgeinn.com,independent_hotel,likely_owner_or_manager | brand:independent
+"New Hope Inn and Suites",https://www.newhopeinnpa.com,newhopeinnpa@yahoo.com,(215) 862-5221,New Hope,PA,https://www.newhopeinnpa.com,independent_hotel,likely_owner_or_manager | brand:independent
+"MADE Hotel",https://www.madehotels.com,hello@madehotels.com,212-213-4429,New York,NY,https://www.madehotels.com,boutique_hotel,generic_contact_email | brand:independent
+"Alpine Inn of Pagosa Springs",https://www.alpineinnpagosasprings.com,alpineinnpagosa@gmail.com,970-731-4005,Pagosa Springs,CO,https://www.alpineinnpagosasprings.com,motel,likely_owner_or_manager | brand:independent
+"Hamilton Motel",https://www.hamiltonmotel.com,prafulp64@gmail.com,(843) 873-0220,Summerville,SC,https://www.hamiltonmotel.com,motel,likely_owner_or_manager | brand:independent
+"Motel DuBeau",https://www.modubeau.com,info@modubeau.com,(928) 774-6731,Flagstaff,AZ,https://www.modubeau.com,motel,generic_contact_email | brand:independent
+"Country Squire Motor Inn",https://www.countrysquiremotor.com,countrysquireinn@comcast.net,(717) 354-4166,New Holland,PA,https://www.countrysquiremotor.com,motel,likely_owner_or_manager | brand:independent
+"Monticello Inn",https://www.monticelloinnutah.com,monticelloinnutah@gmail.com,(435) 587-2275,Monticello,UT,https://www.monticelloinnutah.com,motel,likely_owner_or_manager | brand:independent
+"Village Inn Motel",https://www.villageinnoregon.com,frontdesk@villageinnoregon.com,541-747-4546,Springfield,OR,https://www.villageinnoregon.com,motel,generic_contact_email | brand:independent
+"Timbers Inn",https://www.timbersinneugene.com,timbersinneugene@gmail.com,(541) 343-3345,Eugene,OR,https://www.timbersinneugene.com,motel,likely_owner_or_manager | brand:independent
+"Kauai Shores Hotel",https://www.kauaishoreshotel.com,hhr@hawaiihotels.com,808-822-4951,Kapaa,HI,https://www.kauaishoreshotel.com,independent_hotel,likely_owner_or_manager | brand:independent
+"Viking Motel",https://www.vikingmotelportland.com,reservations@vikingmotelportland.com,(503) 285-4896,Portland,OR,https://www.vikingmotelportland.com,motel,generic_contact_email | brand:independent
+"Palms Motel",https://www.palmsmotel.com,info@palmsmotel.com,(503) 287-5788,Portland,OR,https://www.palmsmotel.com,motel,generic_contact_email | brand:independent
+"New England Inn",https://www.newenglandinn.com,frontdesk@newenglandinn.com,(603) 356-5541,North Conway,NH,https://www.newenglandinn.com,boutique_hotel,generic_contact_email | brand:independent
+"Colonial Hotel",https://www.colonial-hotel.com,GM@Colonial-Hotel.com,978-630-2500,Gardner,MA,https://www.colonial-hotel.com,independent_hotel,likely_owner_or_manager | brand:independent
+"Mt. Williamson Motel",https://www.mtwilliamsonmotel.com,Info@mtwilliamsonmotel.com,(760) 878-2121,Independence,CA,https://www.mtwilliamsonmotel.com,motel,generic_contact_email | brand:independent
+"Downtown Inn",https://www.downtowninn.com,info@downtowninn.com,541-345-8739,Eugene,OR,https://www.downtowninn.com,motel,generic_contact_email | brand:independent
+"Coleman Inn",https://www.colemaninn.com,colemaninntx@gmail.com,(325) 625-4176,Coleman,TX,https://www.colemaninn.com,motel,likely_owner_or_manager | brand:independent
+"KC Inn",https://www.kcinn.com,kcinnfrontdesk@outlook.com,(913) 253-6104,Kansas City,MO,https://www.kcinn.com,limited_service_hotel,generic_contact_email | brand:independent
+"Texan Inn and Suites",https://www.texaninnandsuites.com,texaninnandsuites@gmail.com,(361) 274-2267,Tilden,TX,https://www.texaninnandsuites.com,motel,likely_owner_or_manager | brand:independent
+"The L Motel",https://www.thelmotel.com,TheLMotelFlagstaff@gmail.com,928-774-8820,Flagstaff,AZ,https://www.thelmotel.com,motel,likely_owner_or_manager | brand:independent
+"Gulf Coast Inn",https://www.athomeinns.com/gulf-coast-home,gulfcoastinn@athomeinns.com,(850) 932-2222,Gulf Breeze,FL,https://www.athomeinns.com/gulf-coast-home,motel,likely_owner_or_manager | brand:independent
+"Arizona Inn",https://www.arizonainn.com,reservations@arizonainn.com,520-325-1541,Tucson,AZ,https://www.arizonainn.com,boutique_hotel,generic_contact_email | brand:independent
+"Canyon Inn Motel",https://www.canyoninnmotel.com,501canyoninn@gmail.com,928-774-7301,Flagstaff,AZ,https://www.canyoninnmotel.com,motel,likely_owner_or_manager | brand:independent
+"Blue Swallow Motel",https://www.blueswallowmotel.com,blueswallowmotel@gmail.com,575-461-9849,Tucumcari,NM,https://www.blueswallowmotel.com,motel,likely_owner_or_manager | brand:independent
+"Santa Fe Motel & Inn",https://www.santafemotel.com,info@santafemotel.com,(505) 982-1039,Santa Fe,NM,https://www.santafemotel.com,motel,generic_contact_email | brand:independent
+"Little Canyon Inn",https://www.littlecanyoninn.com,littlecanyoninn@gmail.com,(719) 285-3934,Canon City,CO,https://www.littlecanyoninn.com,motel,likely_owner_or_manager | brand:independent
+"Americana Motor Hotel",https://www.americanamotorhotel.com,hello@americanamotorhotel.com,(928) 833-3060,Flagstaff,AZ,https://www.americanamotorhotel.com,independent_hotel,generic_contact_email | brand:independent
+"Murray Inn and Art Gallery",https://www.murrayinnandartgallery.com,murrayinnky@gmail.com,(270) 753-2682,Murray,KY,https://www.murrayinnandartgallery.com,motel,likely_owner_or_manager | brand:independent
+"Seasons Inn Motel & Plaza",https://www.seasons-inn.com,seasonsinn@windstream.net,(706) 745-1631,Blairsville,GA,https://www.seasons-inn.com/contactUs.html,motel,likely_owner_or_manager | brand:independent
+"The Regency Inn",https://www.eurekaregency.com,info@eurekaregency.com,,Eureka Springs,AR,https://www.eurekaregency.com,motel,generic_contact_email | brand:independent
+"The Lodge",https://www.thelodgeeurekasprings.com,info@thelodgeeurekasprings.com,(479) 363-9700,Eureka Springs,AR,https://www.thelodgeeurekasprings.com/contact.htm,motel,generic_contact_email | brand:independent
+"Fitzgerald's Motel",https://www.fitzgeraldsmotel.com,fitzgeraldsmotel@yahoo.com,(608) 253-1651,Wisconsin Dells,WI,https://www.fitzgeraldsmotel.com,motel,likely_owner_or_manager | brand:independent
+"Dell Creek Motel",https://www.dellcreek.com,info@dellcreek.com,(608) 253-7301,Wisconsin Dells,WI,https://www.dellcreek.com,motel,generic_contact_email | brand:independent
+"Crest Country Inn",https://www.crestcountryinn.com,stay@crestcountryinn.com,(319) 668-1522,Williamsburg,IA,https://www.crestcountryinn.com/ContactUs.html,motel,generic_contact_email | brand:independent
+"McClusky Motor Motel",https://www.mccluskymotormotel.com,mccluskymotormotel@outlook.com,(701) 363-2507,McClusky,ND,https://www.mccluskymotormotel.com/contact-us,motel,likely_owner_or_manager | brand:independent
+"Mozy Inn",https://www.mozyinn.com,moser@bektel.com,(701) 321-2451,Napoleon,ND,https://www.mozyinn.com,motel,likely_owner_or_manager | brand:independent
+"Little Missouri Inn & Suites",https://www.newtownlmis.com,gm@newtownlmis.com,(701) 627-4488,New Town,ND,https://www.newtownlmis.com/location,limited_service_hotel,likely_owner_or_manager | brand:independent
+"Anvil Hotel",https://www.anvilhotel.com,reservations@anvilhotel.com,(307) 733-3668,Jackson,WY,https://anvilhotel.com/contact/,boutique_hotel,generic_contact_email | brand:independent
+"Wyoming Inn of Jackson Hole",https://www.wyominginn.com,guestservices@thewyominginn.com,(307) 734-0035,Jackson,WY,https://www.wyominginn.com,boutique_hotel,generic_contact_email | brand:independent
+"Cedar Wood Inn",https://www.cedarwoodinn.com,info@cedarwoodinn.com,(605) 578-2725,Deadwood,SD,https://www.cedarwoodinn.com,motel,generic_contact_email | brand:independent
+"Iron Horse Inn",https://www.ironhorseinndeadwood.com,info@ironhorseinndeadwood.com,(605) 717-2585,Deadwood,SD,https://ironhorseinndeadwood.com/contact/,boutique_hotel,generic_contact_email | brand:independent
+"Aroostook Hospitality Inn",https://www.ahiwashburn.com,ahi.washburn@gmail.com,(207) 455-8567,Washburn,ME,https://www.ahiwashburn.com,motel,likely_owner_or_manager | brand:independent
+"Nevada Inn",https://www.nevadainnmotel.com,reserve@nevadainnmotel.com,417-667-5273,Nevada,MO,https://www.nevadainnmotel.com,motel,generic_contact_email | brand:independent
+"Four Kachinas Inn",https://www.fourkachinas.com,info@fourkachinas.com,505-988-1631,Santa Fe,NM,https://www.fourkachinas.com,boutique_hotel,generic_contact_email | brand:independent
+"Adobe Pines Inn",https://www.adobepines.com,mail@adobepines.com,575-751-0947,Taos,NM,https://www.adobepines.com,boutique_hotel,generic_contact_email | brand:independent
+"Turquoise Bear B&B",https://www.turquoisebear.com,innkeeper@turquoisebear.com,505-983-0798,Santa Fe,NM,https://www.turquoisebear.com,boutique_hotel,likely_owner_or_manager | brand:independent
+"Red Horse B&B",https://www.redhorsebb.com,info@redhorsebb.com,505-967-7610,Albuquerque,NM,https://www.redhorsebb.com,boutique_hotel,generic_contact_email | brand:independent
+"El Pueblo Lodge",https://www.stayintaos.com,info@stayintaos.com,575-758-9000,Taos,NM,https://www.stayintaos.com,boutique_hotel,generic_contact_email | brand:independent
+"Alamo Inn",https://www.alamoinnnevada.com,thehappyholaday@icloud.com,775-725-3371,Alamo,NV,https://www.alamoinnnevada.com/contact-us.html,motel,likely_owner_or_manager | brand:independent
+"Shady Motel",https://www.shadymotel.net,shadymotel1@gmail.com,(775) 726-3106,Caliente,NV,https://shadymotel.net/contact/,motel,likely_owner_or_manager | brand:independent
+"Austin Motel",https://www.austinmotel.com,reservations@austinmotel.com,512-441-1157,Austin,TX,https://www.bunkhousehotels.com/austin-motel/contact,motel,generic_contact_email | brand:independent
+"Sun Coast Inn",https://www.suncoastinn.com,suncoastinn@suncoastinn.com,(941) 475-6533,Englewood,FL,https://www.suncoastinn.com,motel,likely_owner_or_manager | brand:independent
+"Sequim West Inn",https://www.sequimwestinn.com,Sequimwestinn.rv@gmail.com,360-683-4144,Sequim,WA,https://www.sequimwestinn.com,motel,likely_owner_or_manager | brand:independent
+"Harborside Inn",https://www.harborsideinnpt.com,harborsideinn@gmail.com,360-385-7909,Port Townsend,WA,https://harborsideinnpt.com/contact/,boutique_hotel,likely_owner_or_manager | brand:independent
+"Boothill Inn & Suites",https://www.boothillinn.com,Lacey.gardner@boothillinn.com,(406) 245-2000,Billings,MT,https://www.boothillinn.com/contact,independent_hotel,likely_owner_or_manager | brand:independent
+"Cedar Crest Inn",https://www.cedarcrestinn.com,stay@cedarcrestinn.com,(828) 252-1389,Asheville,NC,https://www.cedarcrestinn.com,boutique_hotel,generic_contact_email | brand:independent
+"Admiral Motor Inn",https://www.admiralmotorinn.com,info@admiralmotorinn.com,843-448-7435,Myrtle Beach,SC,https://www.admiralmotorinn.com,motel,generic_contact_email | brand:independent
+"Starlight Motor Inn",https://www.starlightchs.com,info@starlightchs.com,(843) 874-2843,North Charleston,SC,https://www.starlightchs.com/contact,motel,generic_contact_email | brand:independent
+"Outer Banks Motel",https://www.outerbanksmotel.com,obmotel@aol.com,(252) 995-5601,Buxton,NC,https://www.outerbanksmotel.com/locations,motel,likely_owner_or_manager | brand:independent
+"Natchez Grand Hotel",https://www.natchezgrandhotel.com,dclifton@natchez.com,(601) 446-9994,Natchez,MS,https://www.natchezgrandhotel.com/contact,boutique_hotel,likely_owner_or_manager | brand:independent
+"Adventure Inn Moab",https://www.adventureinnmoab.com,info@adventureinnmoab.com,(435) 259-6122,Moab,UT,https://www.adventureinnmoab.com/budget-motel-in-moab-contact-us.html,motel,generic_contact_email | brand:independent
+"Siesta Motel",https://www.siestamotel.com,Marlene_Haddon@siestamotel.com,(970) 422-5542,Durango,CO,https://www.siestamotel.com,motel,likely_owner_or_manager | brand:independent
+"Motel Long Lake & Cottages",https://www.motellonglake.com,reservations@motellonglake.com,(518) 624-2613,Long Lake,NY,https://www.motellonglake.com/home,motel,generic_contact_email | brand:independent
+"Gonzo Inn",https://www.gonzoinn.com,info@gonzoinn.com,435-259-2515,Moab,UT,https://gonzoinn.com/contact-us/,boutique_hotel,generic_contact_email | brand:independent
+"Mitchell Creek Inn",https://www.mitchellcreek.com,mitchellcreekinn@gmail.com,(231) 947-9330,Traverse City,MI,https://www.mitchellcreek.com,motel,likely_owner_or_manager | brand:independent
+"Western Inn Motel",https://www.mywesterninn.com,info@westerninn.com,(717) 334-1339,Gettysburg,PA,https://www.mywesterninn.com,motel,generic_contact_email | brand:independent
+"Shearwater Inn",https://www.theshearwaterinn.com,stay@theshearwaterinn.com,,Lincoln City,OR,https://www.theshearwaterinn.com,motel,generic_contact_email | brand:independent
+"Seagull Beachfront Motel",https://www.seagullmoteloregon.com,stay@seagullmoteloregon.com,(541) 994-2948,Lincoln City,OR,https://www.seagullmoteloregon.com,motel,generic_contact_email | brand:independent
+"Sunbeam Motel",https://www.sunbeammotel.com,sunbeammotel@gmail.com,(805) 543-8141,San Luis Obispo,CA,https://www.sunbeammotel.com/contact-us.html,motel,likely_owner_or_manager | brand:independent
+"Ester Lee Oceanview Inn",https://www.esterlee.com,Reservations@esterlee.com,(541) 897-8422,Lincoln City,OR,https://www.esterlee.com/contact-us,motel,generic_contact_email | brand:independent
+"Newport Inn and Suites",https://www.newportinnoregon.com,reservations@newportinnsuites.com,(541) 265-4533,Newport,OR,https://www.newportinnoregon.com/contact-us,motel,generic_contact_email | brand:independent
+"Bar Harbor Motel",https://www.barharbormotel.com,info@barharbormotel.com,207-288-3453,Bar Harbor,ME,https://www.barharbormotel.com,motel,generic_contact_email | brand:independent
+"Cromwell Harbor Motel",https://www.cromwellharbor.com,info@cromwellharbor.com,207-288-3201,Bar Harbor,ME,https://www.cromwellharbor.com,motel,generic_contact_email | brand:independent
+"Moorings Inn",https://www.mooringsinnwaterfront.com,mooringsinnwaterfront@gmail.com,207-244-5523,Southwest Harbor,ME,https://www.mooringsinnwaterfront.com,boutique_hotel,likely_owner_or_manager | brand:independent
+"Acacia House Inn",https://www.acaciahouseinn.com,stay@acaciahouseinn.com,207-288-8122,Bar Harbor,ME,https://www.acaciahouseinn.com,boutique_hotel,generic_contact_email | brand:independent
+"Sandwich Inn & Suites",https://www.sandwichinnandsuites.com,frontdesk@sandwichinnandsuites.com,(508) 888-0409,Sandwich,MA,https://www.sandwichinnandsuites.com/contact,independent_hotel,generic_contact_email | brand:independent
+"Southfleet Motor Inn",https://www.southfleetmotorinn.com,info@southfleetmotorinn.com,508-349-3580,Wellfleet,MA,https://www.southfleetmotorinn.com/contact/,motel,generic_contact_email | brand:independent
+"Charlroy Motel",https://www.charlroymotel.com,reservations@Charlroymotel.com,732-793-0712,Seaside Park,NJ,https://www.charlroymotel.com/contactus,motel,generic_contact_email | brand:independent
+"Sea Breeze Inn",https://www.theseabreezeinn.com,leeza@theseabreezeinn.com,401-849-1211,Middletown,RI,https://theseabreezeinn.com/contact,boutique_hotel,likely_owner_or_manager | brand:independent
+"The Galena Inn",https://www.galenainn.com,stay@victorianmansion.com,815-777-0675,Galena,IL,https://www.galenainn.com/contact/,boutique_hotel,generic_contact_email | brand:independent
+"Irish Hollow",https://www.irishhollow.com,IrishHollow@gmail.com,815-777-6000,Galena,IL,https://www.irishhollow.com,boutique_hotel,likely_owner_or_manager | brand:independent
+"Golden North Inn",https://www.goldennorthinn.com,info@goldennorthinn.com,(907) 479-6201,Fairbanks,AK,https://www.goldennorthinn.com/contact,motel,generic_contact_email | brand:independent
+"Classen Inn",https://www.classeninn.com,hello@classeninn.com,405-429-7500,Oklahoma City,OK,https://www.classeninn.com/contact,boutique_hotel,generic_contact_email | brand:independent
+"South Branch Inn",https://www.southbranchinn.com,southbranchinnwv@gmail.com,(304) 538-2033,Moorefield,WV,https://www.southbranchinn.com/contact-and-location,motel,likely_owner_or_manager | brand:independent
+"Firefly Inn",https://www.fireflyinnwv.com,jen@fireflyinnwv.com,(304) 874-3666,Wardensville,WV,https://www.fireflyinnwv.com,boutique_hotel,likely_owner_or_manager | brand:independent
+"Kamuela Inn",https://www.thekamuelainn.com,thekamuelainn@gmail.com,(808) 885-4243,Waimea,HI,https://www.thekamuelainn.com/contact-us/,boutique_hotel,likely_owner_or_manager | brand:independent
+"Historic Wailuku Inn",https://www.mauiinn.com,bookings@mauiinn.com,808-244-5897,Wailuku,HI,https://www.mauiinn.com/contact-us/,boutique_hotel,generic_contact_email | brand:independent
+"Discovery Inn",https://www.discoveryinn-ga.com,Jayanti.G.Patel@gmail.com,478-781-2810,Macon,GA,https://www.discoveryinn-ga.com,motel,likely_owner_or_manager | brand:independent
+"Hamilton-Turner Inn",https://www.hamilton-turnerinn.com,info@hamilton-turnerinn.com,(912) 233-1833,Savannah,GA,https://www.hamilton-turnerinn.com,boutique_hotel,generic_contact_email | brand:independent
