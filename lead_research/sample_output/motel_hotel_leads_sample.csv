@@ -1,0 +1,11 @@
+hotel_name,website,email,phone,city,state,source_url,category,notes
+"Sunrise Motel",https://www.sunrisemotel.com,owner@sunrisemotel.com,(512) 555-0142,Austin,TX,https://www.sunrisemotel.com/contact,motel,likely_owner_or_manager | brand:independent
+"Pinehurst Inn & Suites",https://www.pinehurstinn.com,info@pinehurstinn.com,(615) 555-0293,Nashville,TN,https://www.pinehurstinn.com/contact-us,boutique_hotel,generic_contact_email | brand:independent
+"Blue Ridge Motel",https://www.blueridgemotel.net,reservations@blueridgemotel.net,(828) 555-0381,Asheville,NC,https://www.blueridgemotel.net/contact,motel,generic_contact_email | brand:independent
+"Harbor View Inn",https://www.harborviewinn.org,manager@harborviewinn.org,(207) 555-0174,Portland,ME,https://www.harborviewinn.org/about-us,boutique_hotel,likely_owner_or_manager | brand:independent
+"Desert Rose Budget Hotel",https://www.desertrosemotel.com,frontdesk@desertrosemotel.com,(520) 555-0256,Tucson,AZ,https://www.desertrosemotel.com,limited_service_hotel,generic_contact_email | brand:independent
+"Mountain Top Motel",https://www.mountaintopmotel.com,stay@mountaintopmotel.com,(435) 555-0318,Moab,UT,https://www.mountaintopmotel.com/contact,motel,generic_contact_email | brand:independent
+"Lakeside Lodge",https://www.lakesidelodge.net,reservations@lakesidelodge.net,(715) 555-0429,Wausau,WI,https://www.lakesidelodge.net/contact,boutique_hotel,generic_contact_email | brand:independent
+"Heritage Inn",https://www.heritageinncleveland.com,info@heritageinncleveland.com,(216) 555-0537,Cleveland,OH,https://www.heritageinncleveland.com/contact-us,independent_hotel,generic_contact_email | brand:independent
+"Pacific Coast Motel",https://www.pacificcoastmotel.com,john@pacificcoastmotel.com,(805) 555-0662,Santa Barbara,CA,https://www.pacificcoastmotel.com/about,motel,likely_owner_or_manager | brand:independent
+"Silver Star Motel",https://www.silverstarmotel.biz,contact@silverstarmotel.biz,(406) 555-0713,Billings,MT,https://www.silverstarmotel.biz/contact,motel,generic_contact_email | brand:independent

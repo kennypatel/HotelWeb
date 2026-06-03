@@ -1,0 +1,4 @@
+hotel_name,website,email,phone,city,state,source_url,category,notes
+"Canyon View Motel",https://www.canyonviewmotel.com,,(928) 555-0821,Flagstaff,AZ,https://www.canyonviewmotel.com,motel,no_email_found | brand:independent
+"Best Western Lakeview",https://www.bwlakeview.com,,(608) 555-0934,Madison,WI,https://www.bwlakeview.com/contact,small_franchise_hotel,no_email_found | brand:franchise (Best Western)
+"Magnolia Boutique Hotel",https://www.magnoliaboutiquehotel.com,,(504) 555-0145,New Orleans,LA,https://www.magnoliaboutiquehotel.com,boutique_hotel,no_email_found | brand:independent

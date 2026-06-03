@@ -1,0 +1,8 @@
+.env
+# Generated output files (not sample files)
+motel_hotel_leads.csv
+no_email_found.csv
+*.log
+__pycache__/
+*.pyc
+.DS_Store
