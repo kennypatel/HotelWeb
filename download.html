@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download stripe-launch — Thank You!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #12121a; --border: #1e1e2e;
+      --accent: #6366f1; --accent-light: #818cf8; --green: #22c55e;
+      --text: #e2e8f0; --muted: #94a3b8; --card: #15151f;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+    .card { background: var(--card); border: 1px solid rgba(99,102,241,0.4); border-radius: 20px; padding: 3rem 2.5rem; max-width: 600px; width: 100%; text-align: center; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), #22c55e); }
+    .check-circle { width: 72px; height: 72px; background: rgba(34,197,94,0.15); border: 2px solid var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem; }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .sub { color: var(--muted); margin-bottom: 2.5rem; font-size: 1rem; }
+    .download-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--accent); color: #fff; padding: 1rem 2rem; border-radius: 12px; font-weight: 700; font-size: 1.1rem; text-decoration: none; transition: all 0.15s; margin-bottom: 1rem; }
+    .download-btn:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.4); }
+    .steps { text-align: left; background: #0d0d14; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top: 2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; line-height: 2; }
+    .step-comment { color: #64748b; }
+    .step-cmd { color: #e2e8f0; }
+    .step-green { color: var(--green); }
+    .note { margin-top: 1.5rem; font-size: 0.82rem; color: var(--muted); }
+    .note a { color: var(--accent-light); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check-circle">✓</div>
+    <h1>You're all set!</h1>
+    <p class="sub">Your purchase of <strong>stripe-launch</strong> is confirmed. Download your skill file below.</p>
+
+    <a href="https://raw.githubusercontent.com/kennypatel/HotelWeb/main/SKILL.md"
+       download="stripe-launch.md"
+       class="download-btn">
+      ↓&nbsp; Download SKILL.md
+    </a>
+
+    <div class="steps">
+      <div><span class="step-comment"># 1. Copy the file into your project</span></div>
+      <div><span class="step-cmd">mkdir -p your-project/.claude/skills</span></div>
+      <div><span class="step-cmd">cp stripe-launch.md your-project/.claude/skills/stripe-launch.md</span></div>
+      <br/>
+      <div><span class="step-comment"># 2. Open your project in Claude Code</span></div>
+      <div><span class="step-cmd">cd your-project && claude</span></div>
+      <br/>
+      <div><span class="step-comment"># 3. Run the skill</span></div>
+      <div><span class="step-green">you&gt;</span> <span class="step-cmd">/stripe-launch</span></div>
+      <div><span class="step-comment"># or for subscriptions:</span></div>
+      <div><span class="step-green">you&gt;</span> <span class="step-cmd">/stripe-launch subscriptions</span></div>
+    </div>
+
+    <p class="note">Need help? Open an issue at <a href="https://github.com/kennypatel/HotelWeb/issues">github.com/kennypatel/HotelWeb</a><br/>Full setup guide: <a href="docs/setup.md">docs/setup.md</a></p>
+  </div>
+</body>
+</html>
