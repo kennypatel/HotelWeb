@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stripe-launch — Add Stripe Payments to Any App in 5 Minutes</title>
+  <meta name="description" content="Claude Code skill that automatically adds complete Stripe payment infrastructure to any web project. One command. Production-ready code. $99 one-time." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --green: #22c55e;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --card: #15151f;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+    a { color: var(--accent-light); text-decoration: none; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+
+    /* NAV */
+    nav { padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,10,15,0.92); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+    .nav-logo span { color: var(--accent-light); }
+    .nav-cta { background: var(--accent); color: #fff; padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: opacity 0.15s; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 4rem; text-align: center; }
+    .badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); border-radius: 999px; padding: 0.35rem 1rem; font-size: 0.8rem; color: var(--accent-light); font-weight: 600; margin-bottom: 2rem; }
+    .badge-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent-light), #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; transition: all 0.15s; border: none; cursor: pointer; display: inline-block; }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.4); }
+    .btn-secondary { background: transparent; color: var(--text); padding: 0.85rem 2rem; border-radius: 10px; font-weight: 600; font-size: 1rem; border: 1px solid var(--border); transition: all 0.15s; display: inline-block; }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent-light); }
+    .hero-note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
+
+    /* SOCIAL PROOF */
+    .social-proof { text-align: center; padding: 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .social-proof p { color: var(--muted); font-size: 0.9rem; }
+    .social-proof strong { color: var(--text); }
+
+    /* TERMINAL DEMO */
+    .section { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+    .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 0.75rem; }
+    .section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 1rem; }
+    .section p.lead { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; }
+    .terminal { background: #0d0d14; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .terminal-bar { background: var(--surface); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+    .terminal-title { font-size: 0.8rem; color: var(--muted); margin-left: auto; margin-right: auto; }
+    .terminal-body { padding: 1.5rem; font-size: 0.88rem; line-height: 1.8; }
+    .t-prompt { color: var(--green); }
+    .t-cmd { color: var(--text); }
+    .t-comment { color: #64748b; }
+    .t-output { color: #94a3b8; }
+    .t-success { color: var(--green); }
+    .t-file { color: #60a5fa; }
+    .t-highlight { color: #fbbf24; }
+
+    /* FEATURES GRID */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color 0.15s; }
+    .feature-card:hover { border-color: rgba(99,102,241,0.4); }
+    .feature-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feature-card p { font-size: 0.88rem; color: var(--muted); }
+
+    /* COMPAT TABLE */
+    table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+    th { text-align: left; padding: 0.75rem 1rem; font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--border); }
+    td { padding: 0.9rem 1rem; font-size: 0.9rem; border-bottom: 1px solid #0f0f1a; }
+    tr:last-child td { border-bottom: none; }
+    .check { color: var(--green); font-weight: 700; }
+
+    /* PRICING */
+    .pricing-card { background: var(--card); border: 1px solid rgba(99,102,241,0.5); border-radius: 16px; padding: 2.5rem; max-width: 480px; margin: 2rem auto; text-align: center; position: relative; overflow: hidden; }
+    .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), #c084fc); }
+    .price-amount { font-size: 3.5rem; font-weight: 800; line-height: 1; }
+    .price-period { color: var(--muted); font-size: 1rem; margin-top: 0.25rem; }
+    .price-features { text-align: left; margin: 2rem 0; display: flex; flex-direction: column; gap: 0.75rem; }
+    .price-features li { list-style: none; display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.95rem; }
+    .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .btn-buy { display: block; background: var(--accent); color: #fff; padding: 1rem; border-radius: 10px; font-weight: 700; font-size: 1.05rem; width: 100%; margin-bottom: 0.75rem; transition: all 0.15s; }
+    .btn-buy:hover { background: var(--accent-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(99,102,241,0.4); }
+    .btn-paypal { display: block; background: #ffc439; color: #1a1a1a; padding: 1rem; border-radius: 10px; font-weight: 700; font-size: 1.05rem; width: 100%; transition: all 0.15s; }
+    .btn-paypal:hover { opacity: 0.9; transform: translateY(-1px); }
+    .guarantee { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+    .faq-item h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+    .faq-item p { font-size: 0.88rem; color: var(--muted); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">/stripe-<span>launch</span></div>
+  <a href="#pricing" class="nav-cta">Buy — $99</a>
+</nav>
+
+<section class="hero">
+  <div class="badge"><span class="badge-dot"></span> Claude Code Skill — Works on any framework</div>
+  <h1>Add <em>Stripe Payments</em><br/>to Any App in 5 Minutes</h1>
+  <p class="hero-sub">One command. Claude Code detects your framework, installs Stripe, wires up checkout, webhooks, and customer portal — and commits production-ready code.</p>
+  <div class="hero-actions">
+    <a href="#pricing" class="btn-primary">Get stripe-launch — $99</a>
+    <a href="#demo" class="btn-secondary">See it in action ↓</a>
+  </div>
+  <p class="hero-note">One-time purchase · Unlimited projects · Lifetime updates</p>
+</section>
+
+<div class="social-proof">
+  <p>Works with <strong>Next.js · React · Django · Flask · FastAPI · Rails · Laravel · Go</strong></p>
+</div>
+
+<!-- DEMO -->
+<div class="section" id="demo">
+  <div class="section-label">See it work</div>
+  <h2>From zero to working payments in one command</h2>
+  <p class="lead">Type <code>/stripe-launch</code> in Claude Code. That's it. Here's what happens next.</p>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="dot dot-red"></div>
+      <div class="dot dot-yellow"></div>
+      <div class="dot dot-green"></div>
+      <div class="terminal-title">Claude Code — your-project</div>
+    </div>
+    <div class="terminal-body">
+      <div><span class="t-prompt">you&gt;</span> <span class="t-cmd">/stripe-launch subscriptions</span></div>
+      <br/>
+      <div><span class="t-output">▸ Detected: Next.js 14 + TypeScript</span></div>
+      <div><span class="t-output">▸ Payment mode: subscriptions</span></div>
+      <div><span class="t-output">▸ Running: npm install stripe @stripe/stripe-js</span></div>
+      <br/>
+      <div><span class="t-output">▸ Creating payment infrastructure...</span></div>
+      <div>&nbsp;&nbsp;<span class="t-file">app/api/checkout/route.ts</span> <span class="t-comment">← Stripe Checkout session</span></div>
+      <div>&nbsp;&nbsp;<span class="t-file">app/api/webhook/route.ts</span> <span class="t-comment">← Webhook + signature verification</span></div>
+      <div>&nbsp;&nbsp;<span class="t-file">app/api/portal/route.ts</span> <span class="t-comment">← Customer billing portal</span></div>
+      <div>&nbsp;&nbsp;<span class="t-file">components/CheckoutButton.tsx</span> <span class="t-comment">← Drop-in React component</span></div>
+      <div>&nbsp;&nbsp;<span class="t-file">.env.example</span> <span class="t-comment">← Updated with Stripe keys</span></div>
+      <div>&nbsp;&nbsp;<span class="t-file">STRIPE_SETUP.md</span> <span class="t-comment">← Your go-live checklist</span></div>
+      <div>&nbsp;&nbsp;<span class="t-file">__tests__/payments.test.ts</span> <span class="t-comment">← Mocked Stripe tests</span></div>
+      <br/>
+      <div><span class="t-success">✓ Committed: feat: add Stripe payment infrastructure via stripe-launch</span></div>
+      <br/>
+      <div><span class="t-highlight">Next steps:</span></div>
+      <div><span class="t-output">  1. Copy .env.example → .env and add your Stripe test keys</span></div>
+      <div><span class="t-output">  2. stripe listen --forward-to localhost:3000/api/webhook</span></div>
+      <div><span class="t-output">  3. Test with card: 4242 4242 4242 4242</span></div>
+      <div><span class="t-output">  4. See STRIPE_SETUP.md to go live</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+  <div class="section-label">What you get</div>
+  <h2>Everything Stripe requires. Nothing you don't need.</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🔍</div>
+      <h3>Framework detection</h3>
+      <p>Automatically detects Next.js, React, Django, Flask, Rails, Laravel, or Go and generates idiomatic code for each.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💳</div>
+      <h3>Checkout endpoint</h3>
+      <p>One-time payments or subscriptions. Includes promotion codes, correct success/cancel URLs, and error handling.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🪝</div>
+      <h3>Webhook handler</h3>
+      <p>Proper signature verification (the part everyone gets wrong). Handles all critical events with clear fulfillment TODOs.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔑</div>
+      <h3>Customer portal</h3>
+      <p>Let subscribers upgrade, downgrade, or cancel their own plan. One endpoint, fully handled.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚛️</div>
+      <h3>React checkout button</h3>
+      <p>Drop-in component with loading state, error handling, and TypeScript types if your project uses TS.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧪</div>
+      <h3>Tests included</h3>
+      <p>Mocked Stripe integration tests — no real API calls. Covers happy path, missing params, and bad webhook signatures.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📋</div>
+      <h3>Go-live checklist</h3>
+      <p>STRIPE_SETUP.md walks you from test mode to production, including Stripe CLI setup and webhook registration.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Security by default</h3>
+      <p>Keys only in env vars, raw body parsing for webhooks, .env in .gitignore — all the best practices baked in.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COMPAT -->
+<div class="section">
+  <div class="section-label">Compatibility</div>
+  <h2>Works with your stack</h2>
+  <table>
+    <thead><tr><th>Framework</th><th>Language</th><th>One-time</th><th>Subscriptions</th></tr></thead>
+    <tbody>
+      <tr><td>Next.js 13/14/15</td><td>TypeScript / JS</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>React + Express</td><td>JavaScript</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Django</td><td>Python</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Flask / FastAPI</td><td>Python</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Ruby on Rails</td><td>Ruby</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Laravel</td><td>PHP</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Go (net/http)</td><td>Go</td><td class="check">✓</td><td class="check">✓</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PRICING -->
+<div class="section" id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2>Simple, honest pricing</h2>
+  <div class="pricing-card">
+    <div class="price-amount">$99</div>
+    <div class="price-period">one-time · unlimited projects</div>
+    <ul class="price-features">
+      <li>SKILL.md file — works in Claude Code instantly</li>
+      <li>One-time payments AND subscriptions</li>
+      <li>All 7 supported frameworks</li>
+      <li>Tests, go-live guide, React component</li>
+      <li>Lifetime updates as Stripe API evolves</li>
+      <li>Use on unlimited personal and client projects</li>
+    </ul>
+    <a href="STRIPE_PAYMENT_LINK_PLACEHOLDER" class="btn-buy">Buy with Card — $99</a>
+    <a href="PAYPAL_PAYMENT_LINK_PLACEHOLDER" class="btn-paypal">Pay with PayPal</a>
+    <p class="guarantee">🔒 Secure checkout &nbsp;·&nbsp; Instant delivery &nbsp;·&nbsp; 7-day refund if it doesn't work on your stack</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <div class="section-label">FAQ</div>
+  <h2>Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>Do I need a Stripe account first?</h3>
+      <p>Yes, but it's free. stripe.com → create account → grab your test API keys. The skill tells you exactly where to find them.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Will it break my existing code?</h3>
+      <p>No. The skill only adds new files. It never overwrites existing routes or components. If Stripe is already partially set up, it detects that and builds on it.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does it work with TypeScript?</h3>
+      <p>Yes. It detects .ts/.tsx files and outputs fully typed code with proper Stripe type imports.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I install the skill in Claude Code?</h3>
+      <p>Copy SKILL.md into your project at <code>.claude/skills/stripe-launch.md</code>. Then type <code>/stripe-launch</code> in Claude Code.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if my framework isn't listed?</h3>
+      <p>Open a GitHub issue. New frameworks are added within 48 hours. You'll get the updated file at no extra cost.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I use this on client projects?</h3>
+      <p>Yes. One purchase covers unlimited personal and commercial projects. No per-project licensing.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>stripe-launch · Claude Code Skill · <a href="https://github.com/kennypatel/hotelweb">GitHub</a> · Built for developers who ship</p>
+</footer>
+
+</body>
+</html>
