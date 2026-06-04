@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-apollo-navy text-white font-sans text-sm antialiased;
+    margin: 0;
+    padding: 0;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-apollo-navy;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-apollo-navy-mid rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+@layer components {
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 cursor-pointer text-sm font-medium;
+  }
+  .sidebar-nav-item.active {
+    @apply text-white bg-white/10;
+  }
+  .btn-primary {
+    @apply bg-apollo-purple hover:bg-apollo-purple-dark text-white px-4 py-2 rounded-lg font-medium transition-colors duration-150 flex items-center gap-2 text-sm;
+  }
+  .btn-secondary {
+    @apply bg-white/5 hover:bg-white/10 text-white border border-white/10 px-4 py-2 rounded-lg font-medium transition-colors duration-150 flex items-center gap-2 text-sm;
+  }
+  .card {
+    @apply bg-apollo-navy-light border border-white/5 rounded-xl p-5;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+  .table-row {
+    @apply border-b border-white/5 hover:bg-white/5 transition-colors duration-100;
+  }
+  .input {
+    @apply bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-apollo-purple/50 focus:bg-white/10 transition-all text-sm;
+  }
+  .tag {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 bg-white/5 border border-white/10 rounded text-xs text-slate-300;
+  }
+}
