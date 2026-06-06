@@ -38,13 +38,13 @@ app.use(express.static(path.join(__dirname, 'public'), {
   lastModified: true
 }));
 
-// Rate limiting — 120 requests per minute per IP
+// Rate limiting: 120 requests per minute per IP
 const limiter = rateLimit({
   windowMs: 60 * 1000,
   max: 120,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { success: false, error: 'Too many requests — please slow down.' }
+  message: { success: false, error: 'Too many requests. Please slow down.' }
 });
 app.use('/api/', limiter);
 
@@ -91,7 +91,7 @@ const HOTEL = {
   lng:        -86.6482,
   checkIn:    '15:00',
   checkOut:   '11:00',
-  // Nearby demand generators — key for local SEO
+  // Nearby demand generators: key for local SEO
   nearbyAttractions: [
     'University of Alabama in Huntsville (UAH)',
     'NASA Marshall Space Flight Center',
@@ -151,7 +151,7 @@ function generateTrafficData() {
     }
     afterOptimization.push(Math.max(afterVal, baseVisitors));
 
-    // Conversion 4–8% — mid-scale direct booking rate
+    // Conversion 4-8% (mid-scale direct booking rate)
     const convRate    = 0.04 + seededRandom(seed + 3000) * 0.04;
     const dayBookings = Math.max(1, Math.floor(afterOptimization[dayIndex] * convRate));
     bookings.push(dayBookings);
@@ -225,7 +225,7 @@ function generateSEOData() {
       {
         id: 2,
         title: 'Create "Hotel Near UAH" Landing Page',
-        description: 'Build a dedicated page targeting "hotel near University of Alabama Huntsville" — a high-intent keyword from parents, visiting faculty, and event attendees. Include UAH shuttle info and proximity.',
+        description: 'Build a dedicated page targeting "hotel near University of Alabama Huntsville," a high-intent keyword from parents, visiting faculty, and event attendees. Include UAH shuttle info and proximity.',
         impact: '+180 visitors/month',
         priority: 'high',
         status: 'pending',
@@ -515,7 +515,7 @@ function generateOptimizationRecommendations() {
     {
       id: 5,
       title: 'Respond to All Unanswered Reviews',
-      description: 'You have fewer reviews than Hampton Inn (1,842) and La Quinta (1,102). Responding to every review — positive and negative — improves trust signals and can increase review volume by 15%.',
+      description: 'You have fewer reviews than Hampton Inn (1,842) and La Quinta (1,102). Responding to every review, positive and negative, improves trust signals and can increase review volume by 15%.',
       estimatedImpact: '+0.2 star rating avg',
       category: 'Reputation',
       priority: 'high',
@@ -548,7 +548,7 @@ function generateOptimizationRecommendations() {
     {
       id: 8,
       title: 'Run Google Hotel Ads via Choice Hotels',
-      description: 'Choice Hotels runs Google Hotel Ads centrally — confirm your property is enrolled and your rates are up to date. Google Hotel Ads appear above standard search results for hotel queries.',
+      description: 'Choice Hotels runs Google Hotel Ads centrally. Confirm your property is enrolled and your rates are up to date. Google Hotel Ads appear above standard search results for hotel queries.',
       estimatedImpact: '+12% direct booking revenue',
       category: 'Paid Marketing',
       priority: 'medium',
@@ -559,24 +559,24 @@ function generateOptimizationRecommendations() {
   ];
 }
 
-// Real-time activity pool — US domestic cities & Comfort Inn room types
+// Real-time activity pool: US domestic cities and Comfort Inn room types
 // Realistic real-time activities specific to Comfort Inn Huntsville,
-// 4725 University Drive NW — guests are UAH visitors, NASA/Redstone
+// 4725 University Drive NW: guests are UAH visitors, NASA/Redstone
 // contractors, families, road trippers from the Southeast US.
 const specificActivities = [
-  // Bookings — real room types, real nightly rates, real stay lengths
-  { type: 'booking', message: 'Booking confirmed: Double Queen, 2 nights (UAH Graduation weekend) — $238' },
-  { type: 'booking', message: 'New reservation: Standard King, 3 nights — $327 (NASA contractor from Huntsville)' },
-  { type: 'booking', message: 'Choice Rewards member booked King Suite, 1 night — $139' },
-  { type: 'booking', message: 'Direct booking: Double Queen, 2 nights — $238 (family visiting UAH)' },
-  { type: 'booking', message: 'Reservation confirmed: Standard Queen, 4 nights — $396 (Redstone Arsenal contractor)' },
-  { type: 'booking', message: 'New booking: Standard King, 2 nights — $218 (Boeing employee)' },
-  { type: 'booking', message: 'AAA rate booking: Double Queen, 3 nights — $321' },
-  { type: 'booking', message: 'Government rate confirmed: Standard Queen, 5 nights — $495 (DoD contractor)' },
-  { type: 'booking', message: 'Choice Rewards booking: Standard Queen, 1 night — $99' },
-  { type: 'booking', message: 'Reservation: King Suite, 2 nights — $278 (anniversary trip)' },
+  // Bookings: real room types, real nightly rates, real stay lengths
+  { type: 'booking', message: 'Booking confirmed: Double Queen, 2 nights (UAH Graduation weekend), $238' },
+  { type: 'booking', message: 'New reservation: Standard King, 3 nights, $327 (NASA contractor from Huntsville)' },
+  { type: 'booking', message: 'Choice Rewards member booked King Suite, 1 night, $139' },
+  { type: 'booking', message: 'Direct booking: Double Queen, 2 nights, $238 (family visiting UAH)' },
+  { type: 'booking', message: 'Reservation confirmed: Standard Queen, 4 nights, $396 (Redstone Arsenal contractor)' },
+  { type: 'booking', message: 'New booking: Standard King, 2 nights, $218 (Boeing employee)' },
+  { type: 'booking', message: 'AAA rate booking: Double Queen, 3 nights, $321' },
+  { type: 'booking', message: 'Government rate confirmed: Standard Queen, 5 nights, $495 (DoD contractor)' },
+  { type: 'booking', message: 'Choice Rewards booking: Standard Queen, 1 night, $99' },
+  { type: 'booking', message: 'Reservation: King Suite, 2 nights, $278 (anniversary trip)' },
 
-  // Room views — specific to this hotel and local demand drivers
+  // Room views: specific to this hotel and local demand drivers
   { type: 'view', message: 'Guest from Nashville checking Double Queen availability for UAH move-in weekend' },
   { type: 'view', message: 'Visitor from Atlanta browsing Standard King room photos' },
   { type: 'view', message: 'Family from Birmingham viewing Double Queen room details' },
@@ -588,28 +588,28 @@ const specificActivities = [
   { type: 'view', message: 'Military family from Montgomery viewing Accessible Room details' },
   { type: 'view', message: 'Parent from Georgia browsing rooms for UAH orientation week' },
 
-  // Actions — real things Comfort Inn guests do on the website
+  // Actions: real things Comfort Inn guests do on the website
   { type: 'action', message: 'Guest from Nashville clicked "Check Availability" for UAH Homecoming weekend' },
   { type: 'action', message: 'Visitor asked: "How far is the hotel from Redstone Arsenal main gate?" (3.4 miles)' },
   { type: 'action', message: 'Guest from Atlanta searched government/military rates for 5-night stay' },
   { type: 'action', message: 'Family from Birmingham checking EV charging availability before booking' },
   { type: 'action', message: 'Boeing contractor from Texas requesting corporate rate quote' },
   { type: 'action', message: 'Guest clicked "Directions" from US Space & Rocket Center (2.1 miles away)' },
-  { type: 'action', message: 'Visitor from Knoxville checking AAA discount rate — saved $12/night' },
+  { type: 'action', message: 'Visitor from Knoxville checking AAA discount rate, saved $12/night' },
   { type: 'action', message: 'Guest from Charlotte checking pool hours and outdoor area details' },
-  { type: 'action', message: 'Couple from New Orleans checking in to King Suite — Bridge Street Town Centre trip' },
+  { type: 'action', message: 'Couple from New Orleans checking in to King Suite, Bridge Street Town Centre trip' },
   { type: 'action', message: 'Lockheed Martin contractor checking long-stay weekly rate options' },
   { type: 'action', message: 'Guest enrolled in Choice Privileges rewards during checkout' },
   { type: 'action', message: 'Visitor checking pet fee policy ($20/night, max 2 pets, under 40 lbs)' },
 
-  // Reviews — specific to real Comfort Inn Huntsville guest experiences
-  { type: 'review', message: '5-star review: "Perfect location for our UAH visit — 10 min walk to campus!"' },
+  // Reviews: specific to real Comfort Inn Huntsville guest experiences
+  { type: 'review', message: '5-star review: "Perfect location for our UAH visit, 10 min walk to campus!"' },
   { type: 'review', message: '4-star review: "Free hot breakfast was great, clean rooms, easy parking"' },
-  { type: 'review', message: '5-star review: "Stayed for Redstone Arsenal work — quiet, comfortable, good value"' },
+  { type: 'review', message: '5-star review: "Stayed for Redstone Arsenal work, quiet, comfortable, good value"' },
   { type: 'review', message: '4-star review: "Friendly staff, close to Bridge Street shopping and restaurants"' },
-  { type: 'review', message: '5-star review: "Great stop on our way through Huntsville — will book again!"' },
+  { type: 'review', message: '5-star review: "Great stop on our way through Huntsville, will book again!"' },
   { type: 'review', message: '4-star review: "Pool was clean, breakfast had lots of options, very convenient"' },
-  { type: 'review', message: '5-star review: "Best value on University Drive — NASA trip was a success!"' }
+  { type: 'review', message: '5-star review: "Best value on University Drive, NASA trip was a success!"' }
 ];
 
 function generateActivity() {
@@ -626,7 +626,7 @@ function generateActivity() {
 // ─── Local Events Generator ───────────────────────────────────────────────────
 
 function generateLocalEvents() {
-  // Upcoming Huntsville, AL events — real recurring events with realistic data.
+  // Upcoming Huntsville, AL events: real recurring events with realistic data.
   // Dates are set relative to today so the feed stays current.
   const now = new Date();
   function daysFromNow(d) {
@@ -653,7 +653,7 @@ function generateLocalEvents() {
       contactEmail: 'registrar@uah.edu',
       contactPhone: '(256) 824-6090',
       contactWebsite: 'https://www.uah.edu/registrar',
-      outreachScript: 'Hi, I\'m the manager at Comfort Inn Huntsville on University Drive — just 1.2 miles from UAH. We\'d love to offer your graduation guests a special room block rate. Can we discuss an affiliation?',
+      outreachScript: 'Hi, I\'m the manager at Comfort Inn Huntsville on University Drive, just 1.2 miles from UAH. We\'d love to offer your graduation guests a special room block rate. Can we discuss an affiliation?',
       status: 'not_contacted',
       notes: 'Families travel from across the Southeast for UAH graduation. Book room block 6–8 weeks ahead.'
     },
@@ -674,9 +674,9 @@ function generateLocalEvents() {
       contactEmail: 'info@aiaa.org',
       contactPhone: '(703) 264-7500',
       contactWebsite: 'https://www.aiaa.org',
-      outreachScript: 'Hello, I\'m reaching out from Comfort Inn Huntsville — 4 miles from Von Braun Center. We offer government/corporate rates and free hot breakfast. We\'d like to be listed as a preferred hotel for AIAA attendees.',
+      outreachScript: 'Hello, I\'m reaching out from Comfort Inn Huntsville, 4 miles from Von Braun Center. We offer government/corporate rates and a hot breakfast. We\'d like to be listed as a preferred hotel for AIAA attendees.',
       status: 'not_contacted',
-      notes: 'Aerospace professionals — many have government per diem rates. High-value multi-night stays.'
+      notes: 'Aerospace professionals: many have government per diem rates. High-value multi-night stays.'
     },
     {
       id: 3,
@@ -695,7 +695,7 @@ function generateLocalEvents() {
       contactEmail: 'usarmy.redstone.imcom.mbx.pao@army.mil',
       contactPhone: '(256) 876-2151',
       contactWebsite: 'https://www.army.mil/redstone',
-      outreachScript: 'Hi, I\'m the manager at Comfort Inn Huntsville — 3.4 miles from Redstone\'s main gate. We accept government rates and have free parking. We\'d love to be recommended to visiting families for Family Day.',
+      outreachScript: 'Hi, I\'m the manager at Comfort Inn Huntsville, 3.4 miles from Redstone\'s main gate. We accept government rates and have on-site parking. We\'d love to be recommended to visiting families for Family Day.',
       status: 'not_contacted',
       notes: 'Military families visiting from out of state. Government per diem rates. Patriotic branding helps.'
     },
@@ -758,7 +758,7 @@ function generateLocalEvents() {
       contactEmail: 'foundation@huntsvillehospital.org',
       contactPhone: '(256) 265-8000',
       contactWebsite: 'https://www.huntsvillehospital.org',
-      outreachScript: 'Hello, I\'m reaching out from Comfort Inn Huntsville — we\'d love to offer a preferred group rate for physicians and staff attending your upcoming conference.',
+      outreachScript: 'Hello, I\'m reaching out from Comfort Inn Huntsville. We\'d love to offer a preferred group rate for physicians and staff attending your upcoming conference.',
       status: 'not_contacted',
       notes: 'Medical professionals often have employer-covered travel. Professional, quiet atmosphere important.'
     },
@@ -779,7 +779,7 @@ function generateLocalEvents() {
       contactEmail: 'info@artshuntsville.org',
       contactPhone: '(256) 519-2787',
       contactWebsite: 'https://www.artshuntsville.org',
-      outreachScript: 'Hi, I\'m from Comfort Inn Huntsville. Panoply draws visitors from across Alabama — we\'d love to be listed as a recommended hotel on your website and sponsor materials.',
+      outreachScript: 'Hi, I\'m from Comfort Inn Huntsville. Panoply draws visitors from across Alabama, and we\'d love to be listed as a recommended hotel on your website and sponsor materials.',
       status: 'not_contacted',
       notes: 'Large regional draw. Families and couples. Consider offering a "Panoply Weekend Package" rate.'
     },
@@ -800,7 +800,7 @@ function generateLocalEvents() {
       contactEmail: 'ausa-info@ausa.org',
       contactPhone: '(800) 336-4570',
       contactWebsite: 'https://www.ausa.org',
-      outreachScript: 'Hello, I\'m the manager at Comfort Inn Huntsville — 4 miles from Von Braun Center. We offer government per diem rates, free hot breakfast, and free parking. We\'d like to be a preferred hotel for AUSA attendees.',
+      outreachScript: 'Hello, I\'m the manager at Comfort Inn Huntsville, 4 miles from Von Braun Center. We offer government per diem rates, a hot breakfast, and on-site parking. We\'d like to be a preferred hotel for AUSA attendees.',
       status: 'not_contacted',
       notes: 'Defense contractors, Army officers, government officials. High per diem rates. Very high revenue opportunity.'
     },
@@ -821,13 +821,13 @@ function generateLocalEvents() {
       contactEmail: 'alumni@uah.edu',
       contactPhone: '(256) 824-6083',
       contactWebsite: 'https://www.uah.edu/alumni',
-      outreachScript: 'Hi, we\'re the Comfort Inn just 1.2 miles from UAH campus — the closest Comfort Inn to campus. We\'d love to offer returning alumni a special Homecoming rate and be featured in your Homecoming communications.',
+      outreachScript: 'Hi, we\'re the Comfort Inn just 1.2 miles from UAH campus, the closest Comfort Inn to campus. We\'d love to offer returning alumni a special Homecoming rate and be featured in your Homecoming communications.',
       status: 'not_contacted',
       notes: 'Alumni returning from around the country. Brand loyalty to UAH helps. Offer a Charger Blue discount.'
     },
     {
       id: 10,
-      name: 'Galaxy of Lights — Huntsville Botanical Garden',
+      name: 'Galaxy of Lights: Huntsville Botanical Garden',
       type: 'Holiday / Tourism',
       venue: 'Huntsville Botanical Garden',
       address: '4747 Bob Wallace Ave SW, Huntsville, AL',
@@ -842,30 +842,93 @@ function generateLocalEvents() {
       contactEmail: 'info@hbg.org',
       contactPhone: '(256) 830-4447',
       contactWebsite: 'https://hbg.org',
-      outreachScript: 'Hi, I\'m from Comfort Inn Huntsville — just 2.8 miles from the Botanical Garden. Galaxy of Lights draws families from across the region. We\'d love to be your recommended hotel partner this holiday season.',
+      outreachScript: 'Hi, I\'m from Comfort Inn Huntsville, just 2.8 miles from the Botanical Garden. Galaxy of Lights draws families from across the region. We\'d love to be your recommended hotel partner this holiday season.',
       status: 'not_contacted',
-      notes: 'Families drive from Birmingham, Nashville, Atlanta for this event. Holiday season — book up fast.'
+      notes: 'Families drive from Birmingham, Nashville, Atlanta for this event. Holiday season books up fast.'
     },
     {
       id: 11,
-      name: 'Orion Amphitheater — Concert Season Partnership',
+      name: 'Orion Amphitheater: Concert Season Partnership',
       type: 'Live Music / Entertainment',
       venue: 'Orion Amphitheater',
       address: '701 Amphitheater Dr NW, Huntsville, AL 35806',
-      dateLabel: 'Ongoing — Spring through Fall',
+      dateLabel: 'Ongoing, spring through fall',
       durationNights: 1,
       expectedAttendance: 8000,
       estimatedRoomNights: 940,
       distanceMiles: 4.2,
       priority: 'high',
       revenueOpportunity: 102460,
-      contactOrg: 'Orion Amphitheater — Venue Management (Oak View Group)',
+      contactOrg: 'Orion Amphitheater, Venue Management (Oak View Group)',
       contactEmail: 'info@orionamphitheater.com',
       contactPhone: '(256) 427-5400',
       contactWebsite: 'https://www.orionamphitheater.com',
-      outreachScript: 'Hi, I\'m Sam Patel, GM at Comfort Inn Huntsville — 4.2 miles from Orion Amphitheater. We\'d love to be your official recommended hotel for concert-goers who need overnight accommodations. We offer free parking, free hot breakfast the morning after, and can set up a dedicated booking link for your guests.',
+      outreachScript: 'Hi, I\'m Sam Patel, GM at Comfort Inn Huntsville, 4.2 miles from Orion Amphitheater. We\'d love to be your official recommended hotel for concert-goers who need overnight accommodations. We offer on-site parking, a hot breakfast the morning after, and can set up a dedicated booking link for your guests.',
       status: 'not_contacted',
-      notes: 'Orion hosts 8,000-capacity shows all season. Out-of-town concert fans drive from Nashville, Atlanta, Birmingham — many need a hotel. High-volume, recurring opportunity every show night.'
+      notes: 'Orion hosts 8,000-capacity shows all season. Out-of-town concert fans drive from Nashville, Atlanta, Birmingham, and many need a hotel. High-volume, recurring opportunity every show night.'
+    },
+    {
+      id: 12,
+      name: 'Huntsville Havoc Hockey Season',
+      type: 'Minor League Sports',
+      venue: 'Propst Arena, Von Braun Center',
+      address: '700 Monroe St SW, Huntsville, AL',
+      dateLabel: 'Recurring, October through April',
+      durationNights: 1,
+      expectedAttendance: 3500,
+      estimatedRoomNights: 280,
+      distanceMiles: 4.1,
+      priority: 'medium',
+      revenueOpportunity: 30520,
+      contactOrg: 'Huntsville Havoc Hockey Club (SPHL)',
+      contactEmail: 'info@huntsvillehavoc.com',
+      contactPhone: '(256) 551-2400',
+      contactWebsite: 'https://www.huntsvillehavoc.com',
+      outreachScript: 'Hi, I\'m Sam Patel, GM at Comfort Inn Huntsville, just minutes from Propst Arena. We\'d love to host visiting teams, officials, and traveling fans for home games this season with a standing room block rate.',
+      status: 'not_contacted',
+      notes: 'Roughly 28 home games each season bring visiting SPHL teams, officials, and traveling fans. A standing season-long block is a steady, recurring revenue stream rather than a one-off event.'
+    },
+    {
+      id: 13,
+      name: 'Cotton Row Run',
+      type: 'Road Race / Sports Tourism',
+      venue: 'Downtown Huntsville / Big Spring Park',
+      address: '200 Church St SW, Huntsville, AL',
+      dateLabel: daysFromNow(125),
+      durationNights: 1,
+      expectedAttendance: 2200,
+      estimatedRoomNights: 240,
+      distanceMiles: 4.3,
+      priority: 'medium',
+      revenueOpportunity: 26160,
+      contactOrg: 'Huntsville Track Club',
+      contactEmail: 'info@huntsvilletrackclub.org',
+      contactPhone: '(256) 533-6132',
+      contactWebsite: 'https://www.cottonrowrun.com',
+      outreachScript: 'Hi, I\'m Sam Patel, GM at Comfort Inn Huntsville, about 4 miles from the start line downtown. We\'d love to offer runners and their families a special race-weekend rate and be listed as a recommended hotel for Cotton Row.',
+      status: 'not_contacted',
+      notes: 'Memorial Day weekend road race that draws competitive and recreational runners from across the Southeast, often with family in tow. Early morning race start means guests value a quiet, well-rested night before.'
+    },
+    {
+      id: 14,
+      name: 'Huntsville City FC Match Day',
+      type: 'Professional Sports',
+      venue: 'Joe Davis Stadium',
+      address: '3125 Leeman Ferry Rd SW, Huntsville, AL',
+      dateLabel: daysFromNow(40),
+      durationNights: 1,
+      expectedAttendance: 3000,
+      estimatedRoomNights: 150,
+      distanceMiles: 6.5,
+      priority: 'low',
+      revenueOpportunity: 16350,
+      contactOrg: 'Huntsville City Football Club (USL League One)',
+      contactEmail: 'info@huntsvillecityfc.com',
+      contactPhone: '(256) 233-4625',
+      contactWebsite: 'https://www.huntsvillecityfc.com',
+      outreachScript: 'Hi, I\'m Sam Patel, GM at Comfort Inn Huntsville. We\'d love to be the recommended hotel for visiting club staff, officials, and traveling supporters on match weekends, with a standing group rate available.',
+      status: 'not_contacted',
+      notes: 'Visiting club staff, match officials, and traveling supporter groups need lodging on match weekends. Smaller draw than other venues, but a recurring opportunity throughout the season.'
     }
   ];
 }
@@ -928,20 +991,20 @@ function generateEmailTemplates() {
       id: 1,
       eventName: 'UAH Summer Graduation Ceremony',
       to: 'registrar@uah.edu',
-      subject: 'Room Block Offer for UAH Summer Graduation Families — Comfort Inn (1.2 mi from Campus)',
+      subject: 'Room Block Offer for UAH Summer Graduation Families: Comfort Inn (1.2 mi from Campus)',
       body: `Dear UAH Registrar's Office,
 
-Congratulations on another graduating class. I'm Sam Patel, General Manager of the Comfort Inn Huntsville at 4725 University Drive NW — just 1.2 miles from the UAH campus, which makes us one of the most convenient lodging options for families traveling to Huntsville for graduation weekend.
+Congratulations on another graduating class. I'm Sam Patel, General Manager of the Comfort Inn Huntsville at 4725 University Drive NW, just 1.2 miles from the UAH campus, which makes us one of the most convenient lodging options for families traveling to Huntsville for graduation weekend.
 
 Every spring and summer, we see a surge of parents, grandparents, siblings, and extended family members arriving from across Alabama, Tennessee, Georgia, and beyond to celebrate their graduates. Many of them struggle to find available rooms close to campus at a reasonable rate, and I'd love to solve that problem for your graduation community.
 
 I'd like to propose a dedicated room block arrangement for UAH Summer Graduation. Here's what we can offer:
 
 - A reserved block of 20–30 rooms held at a preferred group rate of $109/night for Standard Queen and King rooms, and $119/night for Double Queen rooms (ideal for larger families)
-- A complimentary room for the graduation coordinator or a designated UAH contact
-- Free hot breakfast included daily for all block guests
+- A discounted rate for the graduation coordinator or a designated UAH contact who needs to stay on-site
+- Hot breakfast included daily for all block guests
 - Flexible cutoff date so families can reserve without pressure
-- Free parking — no hidden fees
+- On-site parking with no hidden fees
 
 Our hotel is walking distance from several great restaurants on University Drive, and guests frequently tell us they love the convenience of being able to drop things off between the ceremony and dinner without a long drive.
 
@@ -962,21 +1025,21 @@ Comfort Inn Huntsville
       id: 2,
       eventName: 'AIAA Space Conference & Exposition',
       to: 'info@aiaa.org',
-      subject: 'Preferred Hotel Partnership for AIAA Space Conference — Huntsville, AL',
+      subject: 'Preferred Hotel Partnership for AIAA Space Conference, Huntsville, AL',
       body: `Dear AIAA Conference Team,
 
-My name is Sam Patel, and I'm the General Manager of Comfort Inn Huntsville, located at 4725 University Drive NW — approximately 4 miles from the Von Braun Center. I'm reaching out ahead of your upcoming Space Conference & Exposition to explore a preferred hotel partnership for your attendees.
+My name is Sam Patel, and I'm the General Manager of Comfort Inn Huntsville, located at 4725 University Drive NW, approximately 4 miles from the Von Braun Center. I'm reaching out ahead of your upcoming Space Conference & Exposition to explore a preferred hotel partnership for your attendees.
 
-Huntsville is, of course, the Rocket City — and our guests frequently include engineers, scientists, and aerospace professionals visiting NASA Marshall Space Flight Center, Redstone Arsenal, and Cummings Research Park. We understand what working professionals in the defense and aerospace industries need: a clean, quiet, well-connected place to rest and prepare.
+Huntsville is, of course, the Rocket City, and our guests frequently include engineers, scientists, and aerospace professionals visiting NASA Marshall Space Flight Center, Redstone Arsenal, and Cummings Research Park. We understand what working professionals in the defense and aerospace industries need: a clean, quiet, well-connected place to rest and prepare.
 
 Here is what I'd like to offer AIAA conference attendees:
 
 - Negotiated room block rate of $109/night (Standard Queen/King), with government and corporate per diem rates honored where applicable
 - A reserved block of 30–40 rooms with a 72-hour cancellation policy for flexibility
-- Free hot breakfast each morning — a genuine time-saver for attendees with full conference days
+- Hot breakfast each morning, a genuine time-saver for attendees with full conference days
 - Free high-speed WiFi throughout the property, including conference-ready business center access
 - Free parking with no daily fee
-- A quiet, professionally managed environment — our guests consistently mention the calm atmosphere in reviews
+- A quiet, professionally managed environment that our guests consistently mention in their reviews
 
 AIAA attracts serious professionals, and many will be traveling under government per diem or corporate travel policies. Our rates are structured to align with federal per diem levels for Huntsville, and we can provide confirmation documentation to attendees as needed.
 
@@ -995,18 +1058,18 @@ Comfort Inn Huntsville
       id: 3,
       eventName: 'Redstone Arsenal Family Day & Open House',
       to: 'usarmy.redstone.imcom.mbx.pao@army.mil',
-      subject: 'Hotel Partnership for Redstone Arsenal Family Day — Government Rates Available',
+      subject: 'Hotel Partnership for Redstone Arsenal Family Day: Government Rates Available',
       body: `Dear Redstone Arsenal Public Affairs Office,
 
 My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Our hotel is located 3.4 miles from Redstone Arsenal's main gate, and I'm writing to offer our support for the upcoming Family Day and Open House event.
 
-Family Day is a special occasion — and the families who travel from across the country to be part of it deserve comfortable, affordable accommodations that honor their sacrifice and commitment. We'd be proud to be a recommended lodging option for visiting military families.
+Family Day is a special occasion, and the families who travel from across the country to be part of it deserve comfortable, affordable accommodations that honor their sacrifice and commitment. We'd be proud to be a recommended lodging option for visiting military families.
 
 Here is what Comfort Inn Huntsville can offer for this event:
 
-- Government per diem room rates (currently $99/night for Standard Queen, $109/night for Standard King) — rates aligned with the federal per diem for the Huntsville, AL area
+- Government per diem room rates (currently $99/night for Standard Queen, $109/night for Standard King), aligned with the federal per diem for the Huntsville, AL area
 - A reserved room block of 20–25 rooms held specifically for Family Day guests
-- Free hot breakfast daily — we know military families are up early and appreciate a hearty start to the day
+- Hot breakfast daily, since we know military families are up early and appreciate a hearty start to the day
 - Free parking with no fees, including space for larger vehicles
 - Pet-friendly accommodations for families traveling with animals
 - 24-hour front desk staffed by our friendly team
@@ -1028,24 +1091,24 @@ Comfort Inn Huntsville
       id: 4,
       eventName: 'Rocket City Brewfest',
       to: 'info@rocketcitybrewfest.com',
-      subject: 'Official Hotel Partner Inquiry — Rocket City Brewfest Weekend',
+      subject: 'Official Hotel Partner Inquiry: Rocket City Brewfest Weekend',
       body: `Dear Rocket City Brewfest Team,
 
-I'm Sam Patel, General Manager of Comfort Inn Huntsville on University Drive — and I have to say, Brewfest is one of my favorite Huntsville events of the year. The energy it brings to MidCity is fantastic.
+I'm Sam Patel, General Manager of Comfort Inn Huntsville on University Drive, and I have to say Brewfest is one of my favorite Huntsville events of the year. The energy it brings to MidCity is fantastic.
 
-I'm reaching out because I think there's a natural partnership opportunity here that would benefit both your attendees and our hotel. Comfort Inn Huntsville is located 5.2 miles from MidCity — close enough to be convenient, far enough that your guests can enjoy the festival without worrying about driving home. That's exactly the peace of mind that makes a great festival experience.
+I'm reaching out because I think there's a natural partnership opportunity here that would benefit both your attendees and our hotel. Comfort Inn Huntsville is located 5.2 miles from MidCity, close enough to be convenient and far enough that your guests can enjoy the festival without worrying about driving home. That's exactly the peace of mind that makes a great festival experience.
 
 Here's what I'd like to propose:
 
-- A "Brewfest Stay Safe" room block — 15–20 rooms held at a special event rate of $109/night for festival weekend
-- The ability to list Comfort Inn as the recommended "designated driver solution" on your website and event app — that framing resonates with festival-goers who are planning to fully enjoy themselves
-- Shuttle coordination assistance — we can help guests connect with local rideshare or shuttle options between the hotel and MidCity
-- Free hot breakfast the morning after the festival — because recovery mornings matter
+- A "Brewfest Stay Safe" room block: 15-20 rooms held at a special event rate of $109/night for festival weekend
+- The ability to list Comfort Inn as the recommended "designated driver solution" on your website and event app, framing that resonates with festival-goers who are planning to fully enjoy themselves
+- Shuttle coordination assistance: we can help guests connect with local rideshare or shuttle options between the hotel and MidCity
+- Hot breakfast the morning after the festival, because recovery mornings matter
 - Late checkout option (12:30 PM) for Brewfest guests when available, at no extra charge
 
 Many of your attendees travel from Birmingham, Nashville, and Atlanta for this event. They're looking for a safe, affordable place to stay without worrying about logistics. A quick mention on your "Plan Your Visit" page or in your email communications could mean a great deal to both our businesses.
 
-I'd love to grab coffee and talk through the details — or we can keep it simple and get a partnership agreement in place over email. Whatever works best for you.
+I'd love to grab coffee and talk through the details, or we can keep it simple and get a partnership agreement in place over email. Whatever works best for you.
 
 Cheers,
 Sam Patel
@@ -1058,16 +1121,16 @@ Comfort Inn Huntsville
       id: 5,
       eventName: 'UAH Charger Football Home Opener',
       to: 'athletics@uah.edu',
-      subject: 'Room Block Partnership for UAH Charger Football Season — Comfort Inn (1.2 mi from Campus)',
+      subject: 'Room Block Partnership for UAH Charger Football Season: Comfort Inn (1.2 mi from Campus)',
       body: `Dear UAH Athletics Department,
 
-My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. At 1.2 miles from the UAH campus, we're in a position to be a tremendous resource for your visiting teams, coaches, and traveling fans throughout the football season — and I'd love to explore a partnership.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. At 1.2 miles from the UAH campus, we're in a position to be a tremendous resource for your visiting teams, coaches, and traveling fans throughout the football season, and I'd love to explore a partnership.
 
 Every home game weekend brings visiting schools, fans, and families to Huntsville, and finding quality accommodations close to Roberts Stadium shouldn't be a challenge for any of them. Here's what Comfort Inn Huntsville can offer:
 
-- A recurring visiting team room block — we can hold 15–20 rooms per home game weekend at a preferred athletic group rate of $109/night
+- A recurring visiting team room block: we can hold 15-20 rooms per home game weekend at a preferred athletic group rate of $109/night
 - Quiet, comfortable rooms suitable for athletes and coaches who need genuine rest before and after competition
-- Free hot breakfast — perfect for pre-game fueling or post-travel recovery
+- Hot breakfast, perfect for pre-game fueling or post-travel recovery
 - Flexible cutoff policies that work with your season scheduling
 - Free parking with room for team vehicles and buses nearby
 
@@ -1077,7 +1140,7 @@ UAH athletics is growing, and we'd love to grow alongside it. Being the go-to ho
 
 I'd be delighted to speak with your travel coordinator or group sales contact. Please reach me at (256) 562-2525, or reply here and we'll set something up.
 
-Go Chargers — and safe travels to all who visit.
+Go Chargers, and safe travels to all who visit.
 
 Warmly,
 Sam Patel
@@ -1095,16 +1158,16 @@ Comfort Inn Huntsville
 
 My name is Sam Patel, and I serve as General Manager of Comfort Inn Huntsville at 4725 University Drive NW, located approximately 4.8 miles from Huntsville Hospital. I'm writing ahead of your upcoming medical conference to offer preferred lodging arrangements for your physician and staff attendees.
 
-Medical conferences demand a lodging environment that meets a high standard — reliable WiFi for reviewing materials, genuinely quiet rooms for rest between long conference days, a professional atmosphere, and efficient service for guests who are on tight schedules. These are things we take seriously at our property.
+Medical conferences demand a lodging environment that meets a high standard: reliable WiFi for reviewing materials, genuinely quiet rooms for rest between long conference days, a professional atmosphere, and efficient service for guests who are on tight schedules. These are things we take seriously at our property.
 
 Here is what I'd like to offer conference attendees:
 
 - A reserved room block of 20–30 rooms at a preferred conference rate of $109/night for Standard rooms and $119/night for Double Queen configurations
 - Early check-in starting at 1:00 PM for arriving attendees when rooms are available
-- Free hot breakfast included daily — a meaningful convenience for physicians with packed conference agendas
+- Hot breakfast included daily, a meaningful convenience for physicians with packed conference agendas
 - Business center access for printing materials, reviewing presentations, or quick remote meetings
 - Free high-speed WiFi throughout the property
-- Complimentary parking — no daily fees
+- On-site parking with no daily fees
 
 Many of your attendees may be traveling under employer or institutional reimbursement, and we're happy to provide itemized folios, direct billing inquiries, and any documentation needed to support expense reporting.
 
@@ -1123,24 +1186,24 @@ Comfort Inn Huntsville
       id: 7,
       eventName: 'Panoply Arts Festival',
       to: 'info@artshuntsville.org',
-      subject: 'Hotel Partnership for Panoply Arts Festival — Comfort Inn Huntsville',
+      subject: 'Hotel Partnership for Panoply Arts Festival: Comfort Inn Huntsville',
       body: `Dear Arts Huntsville Team,
 
-I'm Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Panoply is one of the events I look forward to most each year — it brings an energy and creativity to Huntsville that's genuinely special, and I'd love for Comfort Inn to be part of the experience for your out-of-town visitors.
+I'm Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. Panoply is one of the events I look forward to most each year. It brings an energy and creativity to Huntsville that's genuinely special, and I'd love for Comfort Inn to be part of the experience for your out-of-town visitors.
 
 We're located 4.3 miles from Big Spring Park, making us a comfortable and convenient base for couples and families coming in from Birmingham, Nashville, Chattanooga, and beyond for the festival weekend.
 
 Here's what I'd like to propose for a Panoply Arts Festival partnership:
 
-- A "Panoply Weekend" room block — 20–30 rooms at a special festival rate of $109/night for Standard rooms and $119/night for Double Queens, ideal for families with children
+- A "Panoply Weekend" room block: 20-30 rooms at a special festival rate of $109/night for Standard rooms and $119/night for Double Queens, ideal for families with children
 - The ability to be listed as a recommended hotel on the Panoply website, event program, or Arts Huntsville communications
-- A complimentary room for your event staff or visiting artists if needed
-- Free hot breakfast included — a relaxed morning start before heading out to the park
+- A discounted staff/artist rate for your event team or visiting artists who need a place to stay
+- Hot breakfast included, for a relaxed morning start before heading out to the park
 - Recommendations for nearby dining and local attractions that our front desk team shares with every Panoply guest
 
-The families and couples who attend Panoply tend to be thoughtful, community-minded visitors who want to support local businesses and have a genuinely good weekend experience. That's exactly the kind of guest we love hosting — and they tend to leave great reviews.
+The families and couples who attend Panoply tend to be thoughtful, community-minded visitors who want to support local businesses and have a genuinely good weekend experience. That's exactly the kind of guest we love hosting, and they tend to leave great reviews.
 
-If there's an opportunity to co-promote the partnership — even a simple "Stay & Enjoy Panoply" mention — I'd be grateful for the visibility. In return, we're happy to display Panoply signage in our lobby and recommend the festival to all of our guests that weekend.
+If there's an opportunity to co-promote the partnership, even a simple "Stay & Enjoy Panoply" mention, I'd be grateful for the visibility. In return, we're happy to display Panoply signage in our lobby and recommend the festival to all of our guests that weekend.
 
 Let's make Panoply weekend even better for Huntsville visitors together. I'd love to connect at your convenience.
 
@@ -1155,20 +1218,20 @@ Comfort Inn Huntsville
       id: 8,
       eventName: 'AUSA Annual Meeting & Exposition',
       to: 'ausa-info@ausa.org',
-      subject: 'Preferred Hotel Partnership Proposal — AUSA Annual Meeting, Huntsville, AL',
+      subject: 'Preferred Hotel Partnership Proposal: AUSA Annual Meeting, Huntsville, AL',
       body: `Dear AUSA Events Team,
 
-My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. With the AUSA Annual Meeting & Exposition returning to the Von Braun Center — approximately 4 miles from our property — I'm reaching out to explore a formal preferred hotel arrangement for your attendees.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. With the AUSA Annual Meeting & Exposition returning to the Von Braun Center, approximately 4 miles from our property, I'm reaching out to explore a formal preferred hotel arrangement for your attendees.
 
 AUSA brings together some of the most important voices in national defense: Army officials, defense industry executives, government contractors, and policy leaders. These are professionals with high standards for their accommodations, and I want to make sure Comfort Inn Huntsville is positioned to meet those standards and serve them well.
 
 Here is what we're prepared to offer AUSA attendees:
 
-- A reserved room block of 30–40 rooms at government per diem rates ($99/night Standard Queen, $109/night Standard King) — aligned with federal per diem for the Huntsville, AL area
+- A reserved room block of 30-40 rooms at government per diem rates ($99/night Standard Queen, $109/night Standard King), aligned with federal per diem for the Huntsville, AL area
 - Corporate negotiated rates for non-government attendees at $115/night
 - Direct billing capability for companies and government agencies that require invoice-based payment
 - A quiet, professional environment well-suited to attendees who have early morning briefings or evening working sessions
-- Free hot breakfast daily — a genuine asset when conference days start at 7:30 AM
+- Hot breakfast daily, a genuine asset when conference days start at 7:30 AM
 - Free parking with no daily charges, and convenient shuttle coordination to Von Braun Center
 - Business center access for printing, document review, and secure remote work
 
@@ -1187,24 +1250,24 @@ Comfort Inn Huntsville
       id: 9,
       eventName: 'UAH Homecoming Weekend',
       to: 'alumni@uah.edu',
-      subject: 'Homecoming Room Block for Returning UAH Alumni — Closest Comfort Inn to Campus',
+      subject: 'Homecoming Room Block for Returning UAH Alumni: Closest Comfort Inn to Campus',
       body: `Dear UAH Alumni Relations Team,
 
 My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW. As Homecoming weekend approaches, I wanted to reach out to see if we could work together to make the experience even better for returning UAH alumni.
 
-We're located just 1.2 miles from campus — the closest Comfort Inn to UAH — which means returning alumni can walk to events, avoid parking headaches, and feel genuinely close to the campus they love. For alumni who haven't been back in years, that proximity can make the whole weekend feel more meaningful.
+We're located just 1.2 miles from campus, the closest Comfort Inn to UAH, which means returning alumni can walk to events, avoid parking headaches, and feel genuinely close to the campus they love. For alumni who haven't been back in years, that proximity can make the whole weekend feel more meaningful.
 
 Here's what I'd like to offer for UAH Homecoming:
 
-- A "Charger Homecoming" room block — 20–25 rooms held at a special alumni rate of $109/night, available exclusively to UAH Homecoming guests
-- A "Charger Blue" welcome gift at check-in — a small token to celebrate the weekend (we're happy to discuss logistics with your team)
+- A "Charger Homecoming" room block: 20-25 rooms held at a special alumni rate of $109/night, available exclusively to UAH Homecoming guests
+- A "Charger Blue" welcome gift at check-in, a small token to celebrate the weekend (we're happy to discuss logistics with your team)
 - Free hot breakfast both mornings of the weekend
 - Flexible checkout until noon on Sunday to give alumni time for late-morning campus events without rushing
 - Free parking with no hidden fees
 
-Many returning alumni are bringing families — spouses, kids, parents — and our Double Queen rooms are well-suited for those multi-generational groups. We'd love to be mentioned in your Homecoming communications, weekend schedule, or alumni magazine.
+Many returning alumni are bringing families (spouses, kids, parents), and our Double Queen rooms are well-suited for those multi-generational groups. We'd love to be mentioned in your Homecoming communications, weekend schedule, or alumni magazine.
 
-The relationship between Comfort Inn and UAH is one we value deeply — this campus is our neighborhood, and its alumni community is our community too. It would mean a great deal to us to play a small part in welcoming people home.
+The relationship between Comfort Inn and UAH is one we value deeply. This campus is our neighborhood, and its alumni community is our community too. It would mean a great deal to us to play a small part in welcoming people home.
 
 Please don't hesitate to call me at (256) 562-2525 or reply directly. I'd love to hear from you.
 
@@ -1217,20 +1280,20 @@ Comfort Inn Huntsville
     },
     {
       id: 10,
-      eventName: 'Galaxy of Lights — Huntsville Botanical Garden',
+      eventName: 'Galaxy of Lights: Huntsville Botanical Garden',
       to: 'info@hbg.org',
-      subject: 'Hotel Partner Inquiry for Galaxy of Lights Holiday Season — Comfort Inn Huntsville',
+      subject: 'Hotel Partner Inquiry for Galaxy of Lights Holiday Season: Comfort Inn Huntsville',
       body: `Dear Huntsville Botanical Garden Team,
 
-My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — located just 2.8 miles from the Botanical Garden. I'm reaching out ahead of the Galaxy of Lights season to explore a recommended hotel partnership for your holiday visitors.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW, located just 2.8 miles from the Botanical Garden. I'm reaching out ahead of the Galaxy of Lights season to explore a recommended hotel partnership for your holiday visitors.
 
-Galaxy of Lights is genuinely one of the most beloved holiday experiences in the region, and it draws families from Birmingham, Nashville, Atlanta, and across the Southeast who often turn it into a full overnight trip. Those families need a warm, comfortable, affordable place to stay — and I'd like Comfort Inn Huntsville to be the place they think of first.
+Galaxy of Lights is genuinely one of the most beloved holiday experiences in the region, and it draws families from Birmingham, Nashville, Atlanta, and across the Southeast who often turn it into a full overnight trip. Those families need a warm, comfortable, affordable place to stay, and I'd like Comfort Inn Huntsville to be the place they think of first.
 
 Here's what I'm proposing for a Galaxy of Lights partnership:
 
-- A "Holiday Stay" room block — 20–30 rooms at a special seasonal rate of $109/night for Standard rooms and $119/night for Double Queens, perfect for families with young children
+- A "Holiday Stay" room block: 20-30 rooms at a special seasonal rate of $109/night for Standard rooms and $119/night for Double Queens, perfect for families with young children
 - A welcome packet at check-in with tips for enjoying Galaxy of Lights, including parking info, best arrival times, and nearby dining recommendations
-- Free hot breakfast the morning after their visit — a cozy family breakfast before heading home
+- Hot breakfast the morning after their visit, a cozy family breakfast before heading home
 - The opportunity to be listed as a recommended hotel on the Galaxy of Lights website, event map, or ticket confirmation emails
 
 The families who come for Galaxy of Lights are exactly the kind of guests who write glowing reviews and come back year after year. We already see many of them choosing us during the holiday season, and a formal partnership would help both of us serve them better.
@@ -1248,26 +1311,26 @@ Comfort Inn Huntsville
     },
     {
       id: 11,
-      eventName: 'Orion Amphitheater — Concert Season Partnership',
+      eventName: 'Orion Amphitheater: Concert Season Partnership',
       to: 'info@orionamphitheater.com',
-      subject: 'Official Hotel Partnership Proposal — Comfort Inn Huntsville × Orion Amphitheater',
+      subject: 'Official Hotel Partnership Proposal: Comfort Inn Huntsville and Orion Amphitheater',
       body: `Dear Orion Amphitheater Team,
 
-My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW — just 4.2 miles from Orion Amphitheater. I'm writing to propose an official hotel partnership that would give your out-of-town concert guests a trusted, comfortable place to stay before and after every show.
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW, just 4.2 miles from Orion Amphitheater. I'm writing to propose an official hotel partnership that would give your out-of-town concert guests a trusted, comfortable place to stay before and after every show.
 
 Orion Amphitheater has become one of the premier outdoor music venues in the Southeast, and with an 8,000-seat capacity drawing fans from Nashville, Atlanta, Birmingham, and beyond, a significant portion of your audience needs overnight accommodations in Huntsville. We'd like to be the hotel they find first.
 
 Here's what a Comfort Inn × Orion Amphitheater partnership would look like:
 
-- A dedicated "Concert Guest Rate" — special discounted pricing for Orion concert-goers, bookable through a custom link we create for your website and ticket confirmation emails
-- Priority room availability on show nights — we'll hold a block of rooms specifically for Orion guests so they're never left scrambling for a place to stay
+- A dedicated "Concert Guest Rate": special discounted pricing for Orion concert-goers, bookable through a custom link we create for your website and ticket confirmation emails
+- Priority room availability on show nights: we'll hold a block of rooms specifically for Orion guests so they're never left scrambling for a place to stay
 - A welcome packet for concert guests at check-in: parking tips for Orion, local restaurant recommendations for pre-show dining, and a late check-out option the morning after
-- Free hot breakfast included with every stay — so your guests can fuel up before heading home after a great night of music
-- Co-branded promotion — we'll feature Orion Amphitheater in our lobby, on our guest WiFi landing page, and in our pre-arrival emails to incoming guests
+- Hot breakfast included with every stay, so your guests can fuel up before heading home after a great night of music
+- Co-branded promotion: we'll feature Orion Amphitheater in our lobby, on our guest WiFi landing page, and in our pre-arrival emails to incoming guests
 
 In return, we're asking to be listed as Orion's recommended hotel on your website, social media, and in your ticket confirmation emails. We're also open to sponsorship conversations if there are hospitality or promotional opportunities at the venue.
 
-Concert-goers are some of the most enthusiastic guests we host — they're in a great mood, they leave great reviews, and they come back whenever their favorite artist returns to Huntsville. This partnership is a genuine win for both of us.
+Concert-goers are some of the most enthusiastic guests we host. They're in a great mood, they leave great reviews, and they come back whenever their favorite artist returns to Huntsville. This partnership is a genuine win for both of us.
 
 I'd love to schedule a quick 15-minute call or stop by the venue at your convenience to discuss the details. Please reach me at (256) 562-2525 or reply to this email anytime.
 
@@ -1280,6 +1343,94 @@ Comfort Inn Huntsville
 4725 University Drive NW, Huntsville, AL 35816
 (256) 562-2525
 comfortinnhuntsville.com`
+    },
+    {
+      id: 12,
+      eventName: 'Huntsville Havoc Hockey Season',
+      to: 'info@huntsvillehavoc.com',
+      subject: 'Standing Hotel Partnership for Huntsville Havoc Home Games: Comfort Inn Huntsville',
+      body: `Dear Huntsville Havoc Team,
+
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW, just a short drive from Propst Arena. I'm writing to propose a standing hotel partnership for the upcoming season, covering visiting teams, officials, and traveling fans.
+
+With roughly 28 home games each season, your organization works with a steady stream of visiting clubs, league officials, and supporters who travel in for game weekends. I'd like Comfort Inn Huntsville to be the place they count on every time they're in town.
+
+Here's what I'd like to propose for the season:
+
+- A standing visiting-team and officials room block, held at a discounted group rate of $99/night for Standard Queen and $109/night for Standard King rooms on game weekends
+- A "Game Night" rate for traveling supporter groups, promotable through your website, ticket emails, or social channels
+- Hot breakfast included daily, useful for early travel days and back-to-back road trips
+- Flexible booking and cancellation terms that work with your season schedule
+- On-site parking with no fees, including space for team buses and larger vehicles
+
+A recurring partnership like this means your visiting teams and fans always have a reliable, comfortable option waiting for them, and it gives us the chance to build a long-term relationship with the Havoc organization and its fan base.
+
+I'd be glad to set up a season-long agreement or simply handle bookings game by game, whichever is easier for your staff. Please reach me directly at (256) 562-2525 or reply to this email.
+
+Go Havoc,
+Sam Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 562-2525`
+    },
+    {
+      id: 13,
+      eventName: 'Cotton Row Run',
+      to: 'info@huntsvilletrackclub.org',
+      subject: 'Hotel Partnership Proposal for Cotton Row Run Weekend: Comfort Inn Huntsville',
+      body: `Dear Huntsville Track Club Team,
+
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW, about four miles from the start line in downtown Huntsville. Cotton Row Run is one of the signature running events in the Southeast, and I'd love for Comfort Inn to support runners and their families during race weekend.
+
+Many of your participants travel in from out of town the night before an early-morning start, and they need a quiet, comfortable place to rest up and refuel afterward. That's exactly the kind of stay we're built for.
+
+Here's what I'd like to offer for Cotton Row Run weekend:
+
+- A "Race Weekend" room block, 15-20 rooms at a discounted rate of $99/night for Standard Queen and $109/night for Standard King, available the night before and the night of the race
+- Early check-in when available for runners arriving the day before, so they can settle in and rest ahead of an early start
+- Hot breakfast included daily, with grab-and-go options for runners heading out before sunrise
+- Late checkout until 1:00 PM the morning after the race, so participants can recover before the drive home
+- On-site parking with no hidden fees, convenient for families traveling together
+
+I'd love to be listed as a recommended hotel on your race website or in participant communications, and we're glad to display Cotton Row Run signage and route information in our lobby that weekend.
+
+Please feel free to reach me at (256) 562-2525 or reply to this email to talk through the details.
+
+On your mark,
+Sam Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 562-2525`
+    },
+    {
+      id: 14,
+      eventName: 'Huntsville City FC Match Day',
+      to: 'info@huntsvillecityfc.com',
+      subject: 'Hotel Partnership Inquiry for Huntsville City FC Match Weekends: Comfort Inn Huntsville',
+      body: `Dear Huntsville City FC Team,
+
+My name is Sam Patel, General Manager of Comfort Inn Huntsville at 4725 University Drive NW, about 6.5 miles from Joe Davis Stadium. I'm reaching out to propose a hotel partnership for visiting club staff, match officials, and traveling supporter groups on match weekends throughout the season.
+
+Soccer travel often means tight turnarounds between matches, and visiting clubs and officials need a clean, quiet, dependable place to stay close to the city. I'd like Comfort Inn Huntsville to be that option for everyone who comes through town to support a Huntsville City FC match.
+
+Here's what I'd like to propose for match weekends:
+
+- A standing visiting-club and officials room block, held at a discounted group rate of $99/night for Standard Queen and $109/night for Standard King
+- A "Match Weekend" rate for traveling supporter groups that we're happy to promote through your website, app, or ticket confirmation emails
+- Hot breakfast included daily, ideal for early travel days before or after a match
+- On-site parking with no fees, with room for team vehicles and supporter coach buses
+- Flexible group booking terms that work with your match schedule throughout the season
+
+I'd be glad to set up a season-long agreement that covers all your home matches, or we can start smaller and build from there. Please reach me directly at (256) 562-2525 or reply to this email.
+
+Looking forward to a great season,
+Sam Patel
+General Manager
+Comfort Inn Huntsville
+4725 University Drive NW, Huntsville, AL 35816
+(256) 562-2525`
     }
   ];
 }
@@ -1369,7 +1520,7 @@ app.get('/api/email-templates', (req, res) => {
   res.json({ success: true, data: fromCache('email-templates', generateEmailTemplates) });
 });
 
-// Real-time endpoint — activity feed is live; all numbers derived from
+// Real-time endpoint: activity feed is live; all numbers derived from
 // deterministic daily data so they never fluctuate between refreshes.
 app.get('/api/realtime', (req, res) => {
   const trafficData   = fromCache('analytics_traffic', generateTrafficData);
@@ -1431,7 +1582,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// POST /api/send-email  { id }  — sends the template email for that event id
+// POST /api/send-email  { id }  sends the template email for that event id
 app.post('/api/send-email', async (req, res) => {
   const { id } = req.body;
   if (!id) return res.status(400).json({ success: false, error: 'Missing email id' });
@@ -1442,7 +1593,7 @@ app.post('/api/send-email', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from:    `"Sam Patel — Comfort Inn Huntsville" <${process.env.GMAIL_USER}>`,
+      from:    `"Sam Patel, Comfort Inn Huntsville" <${process.env.GMAIL_USER}>`,
       to:      template.to,
       subject: template.subject,
       text:    template.body
@@ -1487,7 +1638,7 @@ app.use((err, req, res, next) => {
 // ─── Start ────────────────────────────────────────────────────────────────────
 
 app.listen(PORT, () => {
-  console.log(`\n  HotelPulse — ${HOTEL.name}`);
+  console.log(`\n  HotelPulse: ${HOTEL.name}`);
   console.log(`  ${'─'.repeat(50)}`);
   console.log(`  Server:    http://localhost:${PORT}`);
   console.log(`  Health:    http://localhost:${PORT}/health`);

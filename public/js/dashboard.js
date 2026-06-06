@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════
-   HotelPulse Analytics — Dashboard Controller
+   HotelPulse Analytics: Dashboard Controller
    ═══════════════════════════════════════════════════════════════════ */
 
 'use strict';
@@ -31,8 +31,8 @@ function applyConfig(cfg) {
   const type  = cfg.hotelType || '';
   const city  = cfg.hotelCity || '';
 
-  const subtitle = [name, city].filter(Boolean).join(' — ');
-  const footerParts = [name, rooms + ' Rooms', type].filter(Boolean).join(' — ');
+  const subtitle = [name, city].filter(Boolean).join(', ');
+  const footerParts = [name, rooms + ' Rooms', type].filter(Boolean).join(', ');
 
   const headerEl  = document.getElementById('headerHotelName');
   const revNameEl = document.getElementById('revenueHotelName');
@@ -44,7 +44,7 @@ function applyConfig(cfg) {
   if (revRoomsEl) revRoomsEl.textContent= rooms;
   if (footerEl)   footerEl.textContent  = footerParts;
 
-  document.title = `HotelPulse — ${name}`;
+  document.title = `HotelPulse: ${name}`;
 }
 
 function initSetupModal() {
@@ -606,7 +606,7 @@ async function refreshRealtime() {
   }
 }
 
-// KPI refresh — re-fetches exact cached numbers from server, no modification
+// KPI refresh: re-fetches exact cached numbers from server, no modification
 async function refreshKPIs() {
   try {
     const res = await fetchJSON('/api/analytics');
@@ -737,7 +737,7 @@ function renderEvents(events) {
         </div>
         <div class="event-meta-item">
           <span class="event-meta-label">Venue</span>
-          <span class="event-meta-value">${ev.venue} — ${ev.distanceMiles} mi away</span>
+          <span class="event-meta-value">${ev.venue} (${ev.distanceMiles} mi away)</span>
         </div>
         <div class="event-meta-item">
           <span class="event-meta-label">Expected Attendance</span>
@@ -797,7 +797,7 @@ function openEmail(id) {
   fetch('/api/events').then(r=>r.json()).then(json => {
     const ev = json.data.find(e => e.id === id);
     if (!ev) return;
-    const subject = encodeURIComponent(`Room Block Partnership — Comfort Inn Huntsville — ${ev.name}`);
+    const subject = encodeURIComponent(`Room Block Partnership: Comfort Inn Huntsville for ${ev.name}`);
     const body    = encodeURIComponent(ev.outreachScript + '\n\nComfort Inn Huntsville\n4725 University Drive NW, Huntsville, AL 35816\n(256) 837-4070');
     window.open(`mailto:${ev.contactEmail}?subject=${subject}&body=${body}`);
   });
@@ -1021,10 +1021,10 @@ async function boot() {
   await loadEvents();
   await loadEmailTemplates();
 
-  // Real-time activity feed — every 3 seconds
+  // Real-time activity feed: every 3 seconds
   setInterval(refreshRealtime, 3000);
 
-  // KPI refresh — every 30 seconds
+  // KPI refresh: every 30 seconds
   setInterval(refreshKPIs, 30_000);
 }
 
