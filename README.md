@@ -5,6 +5,8 @@
 [![Price](https://img.shields.io/badge/price-%2499%20one--time-brightgreen)](#buy-now)
 [![Works with](https://img.shields.io/badge/works%20with-Next.js%20%7C%20React%20%7C%20Django%20%7C%20Rails%20%7C%20Laravel%20%7C%20Go-blue)]
 
+**[→ View sales page](https://htmlpreview.github.io/?https://raw.githubusercontent.com/kennypatel/HotelWeb/main/index.html)**
+
 ## What it does
 
 Run `/stripe-launch` in any project and Claude Code will:
