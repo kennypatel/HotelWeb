@@ -4,27 +4,40 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+  administration: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Try to enable GitHub Pages (Actions source)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/pages \
+            --method POST \
+            -f build_type=workflow \
+            2>&1 && echo "Pages enabled via API" || echo "Pages API call failed (may already be enabled or needs manual setup)"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
