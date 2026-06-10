@@ -1,0 +1,76 @@
+Run /stripe-launch in Claude Code and get a complete, production-ready Stripe integration committed to your project — in under 5 minutes.
+
+What normally takes 6–10 hours of reading Stripe docs, debugging webhook signatures, and wiring up edge cases — done in one command.
+
+---
+
+WHAT IT CREATES
+
+→ Checkout endpoint — one-time payment or subscription, with error handling and promotion codes
+→ Webhook handler — proper signature verification (the part everyone gets wrong), all critical events handled
+→ Customer portal — let subscribers manage their own billing with one endpoint
+→ React checkout button — drop-in component with loading state and TypeScript support
+→ Tests — mocked Stripe integration tests covering happy path and error cases
+→ STRIPE_SETUP.md — step-by-step guide from test mode to production, tailored to your project
+
+---
+
+WORKS WITH
+
+✓ Next.js 13/14/15 (TypeScript or JS)
+✓ React + Express
+✓ Django
+✓ Flask / FastAPI
+✓ Ruby on Rails
+✓ Laravel
+✓ Go (net/http)
+
+The skill auto-detects your framework and generates idiomatic code for each one.
+
+---
+
+HOW TO USE IT
+
+1. Copy SKILL.md into your project at .claude/skills/stripe-launch.md
+2. Open your project in Claude Code
+3. Type: /stripe-launch
+   Or for subscriptions: /stripe-launch subscriptions
+
+That's it.
+
+---
+
+WHAT YOU GET
+
+• SKILL.md — the skill file, works instantly in Claude Code
+• One-time payments AND subscriptions (both included)
+• All 7 supported frameworks
+• Lifetime updates as Stripe API evolves
+• Use on unlimited personal and client projects
+
+---
+
+PRICING
+
+$99 one-time. No subscriptions. No per-project fees.
+
+Compare: hiring a developer to integrate Stripe costs $300–$800+. This does it in 5 minutes for $99, and you can reuse it forever.
+
+---
+
+FAQ
+
+Q: Do I need a Stripe account?
+A: Yes, it's free at stripe.com. The skill tells you exactly where to find your API keys.
+
+Q: Will it overwrite my existing code?
+A: No. It only adds new files. If Stripe is partially set up, it detects that and builds on it.
+
+Q: Does it work with TypeScript?
+A: Yes. It detects .ts/.tsx files and outputs fully typed code.
+
+Q: Can I use this on client projects?
+A: Yes. One purchase, unlimited commercial projects.
+
+Q: What if my framework isn't listed?
+A: Open an issue on GitHub. New frameworks added within 48 hours at no extra cost.
