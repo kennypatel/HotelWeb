@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+Disallow: /index-live.html
+Disallow: /favicon-options/
+Disallow: /DEPLOY_SEMRUSH_FIXES.md
+Disallow: /BACKLINK_OUTREACH_KIT.md
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://anchorforhotels.com/sitemap.xml

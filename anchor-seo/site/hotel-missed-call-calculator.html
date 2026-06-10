@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1a1410">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>Hotel Missed Call Revenue Calculator | Anchor for Hotels</title>
+<meta name="description" content="Estimate how much revenue a hotel or motel may lose from unanswered calls. Built for hotel owners, GMs, and front desk operators evaluating AI phone answering.">
+<link rel="canonical" href="https://anchorforhotels.com/hotel-missed-call-calculator.html">
+<meta property="og:title" content="Hotel Missed Call Revenue Calculator">
+<meta property="og:description" content="A practical calculator for hotel owners estimating missed-call revenue risk from unanswered guest calls, group leads, and after-hours demand.">
+<meta property="og:url" content="https://anchorforhotels.com/hotel-missed-call-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://anchorforhotels.com/favicon-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hotel Missed Call Revenue Calculator">
+<meta name="twitter:description" content="Estimate hotel revenue risk from unanswered calls and compare it with AI phone answering coverage.">
+<meta name="twitter:image" content="https://anchorforhotels.com/favicon-512x512.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hotel Missed Call Revenue Calculator",
+  "url": "https://anchorforhotels.com/hotel-missed-call-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "description": "A calculator for hotel owners and managers estimating missed-call revenue risk from unanswered calls.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anchor for Hotels",
+    "url": "https://anchorforhotels.com/"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Hotel owners, motel owners, general managers, and hospitality operators"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Anchor for Hotels",
+      "item": "https://anchorforhotels.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hotel Missed Call Revenue Calculator",
+      "item": "https://anchorforhotels.com/hotel-missed-call-calculator.html"
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --ink: #1a1410;
+    --soft: #4a3f37;
+    --paper: #fbf6e9;
+    --cream: #fffaf0;
+    --rule: #d8cba8;
+    --brass: #b07a28;
+    --signal: #8a2818;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.58;
+  }
+  a { color: var(--signal); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 42px 24px 64px; }
+  .top { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: .12em; display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 46px; }
+  h1 { max-width: 820px; font-size: clamp(38px, 7vw, 72px); line-height: .96; margin: 0 0 20px; letter-spacing: -.03em; }
+  .lede { max-width: 760px; font-size: 22px; color: var(--soft); margin-bottom: 34px; }
+  .panel { background: var(--cream); border: 1px solid var(--rule); border-radius: 8px; padding: 24px; }
+  .calculator { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 22px; align-items: start; margin: 34px 0; }
+  .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  label { display: grid; gap: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--soft); }
+  input { width: 100%; border: 1px solid var(--rule); border-radius: 6px; background: #fff; color: var(--ink); padding: 13px 12px; font: 20px Georgia, serif; }
+  input:focus-visible, a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+  .result { position: sticky; top: 20px; background: var(--ink); color: var(--cream); border-radius: 8px; padding: 24px; }
+  .result small { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .14em; color: #d8cba8; }
+  .money { font-size: 56px; line-height: 1; margin: 14px 0 12px; overflow-wrap: anywhere; }
+  .supporting-money { font-size: 17px; line-height: 1.45; }
+  .result p { margin: 0; color: #f5ecd5; }
+  h2 { font-size: 32px; line-height: 1.1; margin: 44px 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+  .card { background: var(--cream); border: 1px solid var(--rule); border-radius: 8px; padding: 20px; }
+  .card h3 { margin: 0 0 8px; font-size: 21px; }
+  .card p { margin: 0; color: var(--soft); }
+  .cta { margin-top: 42px; background: var(--ink); color: var(--cream); border-radius: 8px; padding: 28px; display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+  .cta h2 { margin: 0 0 8px; color: var(--cream); }
+  .cta p { margin: 0; color: #f5ecd5; }
+  .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  .cta a { background: var(--brass); color: #15100c; text-decoration: none; padding: 13px 18px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; white-space: nowrap; }
+  .cta a.secondary { background: transparent; color: var(--cream); border: 1px solid #d8cba8; }
+  footer { margin-top: 42px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 15px; }
+  .skip-link { position: absolute; left: 16px; top: 16px; z-index: 10; background: var(--ink); color: var(--cream); padding: 10px 12px; transform: translateY(-150%); }
+  .skip-link:focus { transform: translateY(0); }
+  @media (max-width: 820px) {
+    .calculator, .grid, .cta { grid-template-columns: 1fr; display: grid; }
+    .fields { grid-template-columns: 1fr; }
+    .result { position: static; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding-left: 18px; padding-right: 18px; }
+    .panel, .result, .card, .cta { padding: 20px; }
+    .money { font-size: 44px; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7J8PBKMCG4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-7J8PBKMCG4");
+</script>
+<script type="importmap">
+{"imports":{"@amplitude/unified":"https://esm.sh/@amplitude/unified"}}
+</script>
+<script type="module" src="/amplitude-init.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to calculator</a>
+<main class="wrap" id="main-content">
+  <nav class="top">
+    <a href="/">Anchor for Hotels</a>
+    <a href="/hotel-ai-agent.html">Hotel AI Agent</a>
+    <a href="/press.html">Press</a>
+  </nav>
+
+  <h1>Hotel Missed Call Revenue Calculator</h1>
+  <p class="lede">Use this simple calculator to estimate how much revenue may be at risk when a hotel or motel misses booking calls, group inquiries, long-stay leads, and after-hours guest questions.</p>
+
+  <section class="calculator" aria-label="Hotel missed call calculator">
+    <div class="panel">
+      <div class="fields">
+        <label for="missedCalls">Missed calls per night
+          <input id="missedCalls" type="number" value="12" min="0" step="1">
+        </label>
+        <label for="intentRate">Booking-intent rate
+          <input id="intentRate" type="number" value="25" min="0" max="100" step="1">
+        </label>
+        <label for="adr">Average daily rate
+          <input id="adr" type="number" value="109" min="0" step="1">
+        </label>
+        <label for="stay">Average stay length
+          <input id="stay" type="number" value="1.7" min="0" step="0.1">
+        </label>
+        <label for="closeRate">Close rate if answered
+          <input id="closeRate" type="number" value="35" min="0" max="100" step="1">
+        </label>
+        <label for="nights">Nights per month
+          <input id="nights" type="number" value="30" min="1" step="1">
+        </label>
+      </div>
+    </div>
+    <aside class="result" aria-live="polite">
+      <small>Estimated annual revenue at risk</small>
+      <div id="annual" class="money">$70,056</div>
+      <p id="monthly" class="supporting-money">$5,838 per month before group blocks, repeat guests, and upsell value.</p>
+    </aside>
+  </section>
+
+  <h2>Why this matters for hotels and motels</h2>
+  <p>Phone calls still matter when guests need a late room, a weekly rate, a group block, early check-in help, pet policy confirmation, or a fast answer before choosing a competitor. Missed calls do not always show up cleanly in a PMS or OTA report, but they can still create real revenue leakage.</p>
+
+  <section class="grid" aria-label="Common missed-call sources">
+    <article class="card">
+      <h3>After-hours demand</h3>
+      <p>Late arrivals and same-night travelers often call instead of filling out a form.</p>
+    </article>
+    <article class="card">
+      <h3>Front desk overflow</h3>
+      <p>Calls get missed when the desk is helping guests, checking rooms, or handling shift work.</p>
+    </article>
+    <article class="card">
+      <h3>Group and long-stay leads</h3>
+      <p>Teams, crews, nurses, and contractors may be worth far more than a single transient room.</p>
+    </article>
+  </section>
+
+  <h2>How to use this estimate</h2>
+  <p>Treat the number as a planning estimate, not a guarantee. Pull a recent phone report, count unanswered or voicemail calls during overnight and busy front desk windows, then test conservative assumptions. If the revenue at risk is higher than the cost of coverage, AI phone answering may be worth evaluating.</p>
+
+  <section class="cta">
+    <div>
+      <h2>Want to hear what coverage sounds like?</h2>
+      <p>Ava is Anchor's hotel AI phone agent for answering calls, capturing leads, and routing urgent guest issues.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:+12568090866">Call demo line</a>
+      <a class="secondary" href="mailto:ceo@anchorforhotels.com?subject=Founding%20hotel%20pilot&body=Hi%20Anchor%2C%0A%0AI%20used%20the%20missed-call%20calculator%20and%20would%20like%20to%20review%20a%20founding%20pilot.%0A%0AProperty%20name%3A%0ARoom%20count%3A%0AMissed%20calls%20happen%20most%20often%3A%0ABest%20phone%20number%3A%0A">Review pilot</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by <a href="/">Anchor for Hotels</a>, an AI phone answering service for hotels and motels. For citations or press inquiries, contact <a href="mailto:ceo@anchorforhotels.com">ceo@anchorforhotels.com</a>.</p>
+  </footer>
+</main>
+<script>
+  const fields = ["missedCalls", "intentRate", "adr", "stay", "closeRate", "nights"].map(id => document.getElementById(id));
+  const monthlyEl = document.getElementById("monthly");
+  const annualEl = document.getElementById("annual");
+  const dollars = value => value.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  function calculate() {
+    const [missedCalls, intentRate, adr, stay, closeRate, nights] = fields.map(field => Number(field.value) || 0);
+    const monthly = missedCalls * (intentRate / 100) * adr * stay * (closeRate / 100) * nights;
+    annualEl.textContent = dollars(monthly * 12);
+    monthlyEl.textContent = `${dollars(monthly)} per month before group blocks, repeat guests, and upsell value.`;
+  }
+  fields.forEach(field => field.addEventListener("input", calculate));
+  calculate();
+</script>
+</body>
+</html>
