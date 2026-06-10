@@ -112,14 +112,27 @@ You don't have to do anything per sale. It's fully automatic.
 
 ---
 
-## Optional: Add a nicer landing page
+## Optional: Custom landing page (free, 2 options)
 
-If you want the polished `index.html` sales page live on the web:
+### Option A — GitHub Pages (automatic after merge)
 
-1. Go to **https://netlify.com/drop** in your browser (no account needed)
-2. Drag the entire `HotelWeb` folder onto the page
-3. You get a free URL like `peaceful-mcclintock-abc123.netlify.app`
-4. In `index.html`, replace `STRIPE_PAYMENT_LINK_HERE` with your Gumroad product URL
+After merging the PR, do this **once**:
+1. Go to **https://github.com/kennypatel/HotelWeb/settings/pages**
+2. Source: **GitHub Actions**
+3. Click Save
+
+The deploy workflow runs automatically on every push to `main`.
+Your sales page will be live at `https://kennypatel.github.io/HotelWeb`.
+
+> Note: GitHub Pages cannot be enabled by a workflow — it requires this one manual click in Settings.
+> After that, all future deployments are fully automatic.
+
+### Option B — Netlify Drop (no account, instant)
+
+1. Go to **https://netlify.com/drop** in your browser
+2. Drag the `HotelWeb` folder onto the page
+3. Get a free URL like `peaceful-mcclintock-abc123.netlify.app`
+4. In `index.html`, replace `YOUR_GUMROAD_LINK` with your Gumroad product URL
 5. Drag the folder again to update
 
-That's it. Free forever, no account required.
+Free forever, no account required.
