@@ -1,0 +1,2 @@
+Prospect Name,URL,Category,Contact Name,Contact Email/Form,Pitch Type (template #),Personalization Note Used,Date Sent,Follow-up 1 (Day 4),Follow-up 2 (Day 10),Status (queued/sent/replied/accepted/published/declined/no-response),Resulting Link URL,Anchor Text,Next Action,Notes
+EXAMPLE - Hospitality Net,https://www.hospitalitynet.org,Hospitality publication,(find editor name),via /submit form,1 - guest post,Referenced their staffing-shortage series,,,,queued,,,"Write personal line, send",Delete this example row; import top-priority rows from backlink_prospects.csv
