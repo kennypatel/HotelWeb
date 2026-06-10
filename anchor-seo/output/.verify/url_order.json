@@ -1,0 +1,1220 @@
+[
+ {
+  "idx": 0,
+  "rank": 0,
+  "name": "Hospitality Net",
+  "url": "https://www.hospitalitynet.org",
+  "priority": 10
+ },
+ {
+  "idx": 1,
+  "rank": 1,
+  "name": "eHotelier",
+  "url": "https://ehotelier.com",
+  "priority": 10
+ },
+ {
+  "idx": 2,
+  "rank": 2,
+  "name": "Hotel Tech Report",
+  "url": "https://hoteltechreport.com",
+  "priority": 10
+ },
+ {
+  "idx": 3,
+  "rank": 3,
+  "name": "Revfine",
+  "url": "https://www.revfine.com",
+  "priority": 10
+ },
+ {
+  "idx": 4,
+  "rank": 4,
+  "name": "AAHOA (Allied Membership)",
+  "url": "https://www.aahoa.com",
+  "priority": 10
+ },
+ {
+  "idx": 5,
+  "rank": 5,
+  "name": "Google Business Profile",
+  "url": "https://business.google.com",
+  "priority": 10
+ },
+ {
+  "idx": 6,
+  "rank": 6,
+  "name": "G2",
+  "url": "https://www.g2.com",
+  "priority": 10
+ },
+ {
+  "idx": 7,
+  "rank": 7,
+  "name": "Capterra",
+  "url": "https://www.capterra.com",
+  "priority": 10
+ },
+ {
+  "idx": 8,
+  "rank": 8,
+  "name": "Today's Hotelier (AAHOA)",
+  "url": "https://www.todayshotelier.com",
+  "priority": 9
+ },
+ {
+  "idx": 9,
+  "rank": 9,
+  "name": "Asian Hospitality",
+  "url": "https://www.asianhospitality.com",
+  "priority": 9
+ },
+ {
+  "idx": 10,
+  "rank": 10,
+  "name": "Hotel Speak",
+  "url": "https://www.hotelspeak.com",
+  "priority": 9
+ },
+ {
+  "idx": 11,
+  "rank": 11,
+  "name": "HotelMinder",
+  "url": "https://www.hotelminder.com",
+  "priority": 9
+ },
+ {
+  "idx": 12,
+  "rank": 12,
+  "name": "Lodging Leaders Podcast",
+  "url": "https://lodgingleaders.com",
+  "priority": 9
+ },
+ {
+  "idx": 13,
+  "rank": 13,
+  "name": "Huntsville/Madison County Chamber",
+  "url": "https://hsvchamber.org",
+  "priority": 9
+ },
+ {
+  "idx": 14,
+  "rank": 14,
+  "name": "GetApp",
+  "url": "https://www.getapp.com",
+  "priority": 9
+ },
+ {
+  "idx": 15,
+  "rank": 15,
+  "name": "Software Advice",
+  "url": "https://www.softwareadvice.com",
+  "priority": 9
+ },
+ {
+  "idx": 16,
+  "rank": 16,
+  "name": "Product Hunt",
+  "url": "https://www.producthunt.com",
+  "priority": 9
+ },
+ {
+  "idx": 17,
+  "rank": 17,
+  "name": "Crunchbase",
+  "url": "https://www.crunchbase.com",
+  "priority": 9
+ },
+ {
+  "idx": 18,
+  "rank": 18,
+  "name": "There's An AI For That",
+  "url": "https://theresanaiforthat.com",
+  "priority": 9
+ },
+ {
+  "idx": 19,
+  "rank": 19,
+  "name": "Bing Places",
+  "url": "https://www.bingplaces.com",
+  "priority": 9
+ },
+ {
+  "idx": 20,
+  "rank": 20,
+  "name": "Apple Business Connect",
+  "url": "https://businessconnect.apple.com",
+  "priority": 9
+ },
+ {
+  "idx": 21,
+  "rank": 21,
+  "name": "Hotel News Resource",
+  "url": "https://www.hotelnewsresource.com",
+  "priority": 8
+ },
+ {
+  "idx": 22,
+  "rank": 22,
+  "name": "Hotel Online",
+  "url": "https://www.hotel-online.com",
+  "priority": 8
+ },
+ {
+  "idx": 23,
+  "rank": 23,
+  "name": "Hotel Executive",
+  "url": "https://www.hotelexecutive.com",
+  "priority": 8
+ },
+ {
+  "idx": 24,
+  "rank": 24,
+  "name": "4Hoteliers",
+  "url": "https://www.4hoteliers.com",
+  "priority": 8
+ },
+ {
+  "idx": 25,
+  "rank": 25,
+  "name": "Alabama Restaurant & Hospitality Assn",
+  "url": "https://alabamahospitality.org",
+  "priority": 8
+ },
+ {
+  "idx": 26,
+  "rank": 26,
+  "name": "Starter Story",
+  "url": "https://www.starterstory.com",
+  "priority": 8
+ },
+ {
+  "idx": 27,
+  "rank": 27,
+  "name": "Hospitality Daily (Josiah Mackenzie)",
+  "url": "https://www.hospitalitydaily.com",
+  "priority": 8
+ },
+ {
+  "idx": 28,
+  "rank": 28,
+  "name": "The Modern Hotelier",
+  "url": "https://www.themodernhotelier.com",
+  "priority": 8
+ },
+ {
+  "idx": 29,
+  "rank": 29,
+  "name": "Social Hospitality",
+  "url": "https://socialhospitality.com",
+  "priority": 8
+ },
+ {
+  "idx": 30,
+  "rank": 30,
+  "name": "TrustRadius",
+  "url": "https://www.trustradius.com",
+  "priority": 8
+ },
+ {
+  "idx": 31,
+  "rank": 31,
+  "name": "SaaSworthy",
+  "url": "https://www.saasworthy.com",
+  "priority": 8
+ },
+ {
+  "idx": 32,
+  "rank": 32,
+  "name": "SaaSHub",
+  "url": "https://www.saashub.com",
+  "priority": 8
+ },
+ {
+  "idx": 33,
+  "rank": 33,
+  "name": "AlternativeTo",
+  "url": "https://alternativeto.net",
+  "priority": 8
+ },
+ {
+  "idx": 34,
+  "rank": 34,
+  "name": "Futurepedia",
+  "url": "https://www.futurepedia.io",
+  "priority": 8
+ },
+ {
+  "idx": 35,
+  "rank": 35,
+  "name": "IdeaMensch",
+  "url": "https://ideamensch.com",
+  "priority": 8
+ },
+ {
+  "idx": 36,
+  "rank": 36,
+  "name": "Hotel Management (Questex)",
+  "url": "https://www.hotelmanagement.net",
+  "priority": 7
+ },
+ {
+  "idx": 37,
+  "rank": 37,
+  "name": "Lodging Magazine",
+  "url": "https://lodgingmagazine.com",
+  "priority": 7
+ },
+ {
+  "idx": 38,
+  "rank": 38,
+  "name": "No Vacancy with Glenn Haussman",
+  "url": "https://novacancynews.com",
+  "priority": 7
+ },
+ {
+  "idx": 39,
+  "rank": 39,
+  "name": "Hotel Business",
+  "url": "https://www.hotelbusiness.com",
+  "priority": 7
+ },
+ {
+  "idx": 40,
+  "rank": 40,
+  "name": "Hospitality Technology (HT)",
+  "url": "https://hospitalitytech.com",
+  "priority": 7
+ },
+ {
+  "idx": 41,
+  "rank": 41,
+  "name": "Insider Perks (blog/podcast)",
+  "url": "https://insiderperks.com",
+  "priority": 7
+ },
+ {
+  "idx": 42,
+  "rank": 42,
+  "name": "HotelTechReport Buyer Guides",
+  "url": "https://hoteltechreport.com/guides",
+  "priority": 7
+ },
+ {
+  "idx": 43,
+  "rank": 43,
+  "name": "Are Morch \u2014 Hotel Blogger",
+  "url": "https://aremorch.com",
+  "priority": 7
+ },
+ {
+  "idx": 44,
+  "rank": 44,
+  "name": "Huntsville Business Journal",
+  "url": "https://huntsvillebusinessjournal.com",
+  "priority": 7
+ },
+ {
+  "idx": 45,
+  "rank": 45,
+  "name": "Indie Hackers",
+  "url": "https://www.indiehackers.com",
+  "priority": 7
+ },
+ {
+  "idx": 46,
+  "rank": 46,
+  "name": "Future Tools",
+  "url": "https://www.futuretools.io",
+  "priority": 7
+ },
+ {
+  "idx": 47,
+  "rank": 47,
+  "name": "Yelp for Business",
+  "url": "https://business.yelp.com",
+  "priority": 7
+ },
+ {
+  "idx": 48,
+  "rank": 48,
+  "name": "Alignable",
+  "url": "https://www.alignable.com",
+  "priority": 7
+ },
+ {
+  "idx": 49,
+  "rank": 49,
+  "name": "Slick Talk: The Hospitality Podcast",
+  "url": "https://slicktalkpodcast.com",
+  "priority": 7
+ },
+ {
+  "idx": 50,
+  "rank": 50,
+  "name": "Hotel Tech Insider",
+  "url": "https://www.hoteltechinsider.com",
+  "priority": 7
+ },
+ {
+  "idx": 51,
+  "rank": 51,
+  "name": "LinkedIn Articles (Kenny Patel)",
+  "url": "https://www.linkedin.com/in/anchorforhotels/",
+  "priority": 7
+ },
+ {
+  "idx": 52,
+  "rank": 52,
+  "name": "Hotel Dive",
+  "url": "https://www.hoteldive.com",
+  "priority": 6
+ },
+ {
+  "idx": 53,
+  "rank": 53,
+  "name": "AHLA (Partner programs)",
+  "url": "https://www.ahla.com",
+  "priority": 6
+ },
+ {
+  "idx": 54,
+  "rank": 54,
+  "name": "Asian American Hotel Owners local chapters (events)",
+  "url": "https://www.aahoa.com/events",
+  "priority": 6
+ },
+ {
+  "idx": 55,
+  "rank": 55,
+  "name": "PhocusWire",
+  "url": "https://www.phocuswire.com",
+  "priority": 6
+ },
+ {
+  "idx": 56,
+  "rank": 56,
+  "name": "Boutique Hotelier",
+  "url": "https://www.boutiquehotelier.com",
+  "priority": 6
+ },
+ {
+  "idx": 57,
+  "rank": 57,
+  "name": "Hospitality Upgrade",
+  "url": "https://www.hospitalityupgrade.com",
+  "priority": 6
+ },
+ {
+  "idx": 58,
+  "rank": 58,
+  "name": "BLLA (Boutique Lifestyle Lodging Assn)",
+  "url": "https://www.blla.org",
+  "priority": 6
+ },
+ {
+  "idx": 59,
+  "rank": 59,
+  "name": "Texas Hotel & Lodging Association",
+  "url": "https://www.texaslodging.com",
+  "priority": 6
+ },
+ {
+  "idx": 60,
+  "rank": 60,
+  "name": "New Jersey Restaurant & Hospitality Assn",
+  "url": "https://www.njrha.org",
+  "priority": 6
+ },
+ {
+  "idx": 61,
+  "rank": 61,
+  "name": "Better Business Bureau",
+  "url": "https://www.bbb.org",
+  "priority": 6
+ },
+ {
+  "idx": 62,
+  "rank": 62,
+  "name": "Hotel Moment (Revinate)",
+  "url": "https://www.revinate.com/hotel-moment-podcast/",
+  "priority": 6
+ },
+ {
+  "idx": 63,
+  "rank": 63,
+  "name": "Suite Spot (Travel Media Group)",
+  "url": "https://www.travelmediagroup.com/suite-spot/",
+  "priority": 6
+ },
+ {
+  "idx": 64,
+  "rank": 64,
+  "name": "Good Morning Hospitality",
+  "url": "https://www.goodmorninghospitality.com",
+  "priority": 6
+ },
+ {
+  "idx": 65,
+  "rank": 65,
+  "name": "The Proven Principles Podcast",
+  "url": "https://knowinghospitality.com/podcast",
+  "priority": 6
+ },
+ {
+  "idx": 66,
+  "rank": 66,
+  "name": "FinancesOnline",
+  "url": "https://financesonline.com",
+  "priority": 6
+ },
+ {
+  "idx": 67,
+  "rank": 67,
+  "name": "SoftwareSuggest",
+  "url": "https://www.softwaresuggest.com",
+  "priority": 6
+ },
+ {
+  "idx": 68,
+  "rank": 68,
+  "name": "Tekpon",
+  "url": "https://tekpon.com",
+  "priority": 6
+ },
+ {
+  "idx": 69,
+  "rank": 69,
+  "name": "BetaList",
+  "url": "https://betalist.com",
+  "priority": 6
+ },
+ {
+  "idx": 70,
+  "rank": 70,
+  "name": "F6S",
+  "url": "https://www.f6s.com",
+  "priority": 6
+ },
+ {
+  "idx": 71,
+  "rank": 71,
+  "name": "Wellfound (AngelList)",
+  "url": "https://wellfound.com",
+  "priority": 6
+ },
+ {
+  "idx": 72,
+  "rank": 72,
+  "name": "Toolify.ai",
+  "url": "https://www.toolify.ai",
+  "priority": 6
+ },
+ {
+  "idx": 73,
+  "rank": 73,
+  "name": "TopAI.tools",
+  "url": "https://topai.tools",
+  "priority": 6
+ },
+ {
+  "idx": 74,
+  "rank": 74,
+  "name": "Hackernoon",
+  "url": "https://hackernoon.com",
+  "priority": 6
+ },
+ {
+  "idx": 75,
+  "rank": 75,
+  "name": "Clutch.co",
+  "url": "https://clutch.co",
+  "priority": 6
+ },
+ {
+  "idx": 76,
+  "rank": 76,
+  "name": "Help a B2B Writer",
+  "url": "https://helpab2bwriter.com",
+  "priority": 6
+ },
+ {
+  "idx": 77,
+  "rank": 77,
+  "name": "Qwoted",
+  "url": "https://www.qwoted.com",
+  "priority": 6
+ },
+ {
+  "idx": 78,
+  "rank": 78,
+  "name": "Featured.com (ex-Terkel)",
+  "url": "https://featured.com",
+  "priority": 6
+ },
+ {
+  "idx": 79,
+  "rank": 79,
+  "name": "HOTELS Magazine",
+  "url": "https://www.hotelsmag.com",
+  "priority": 5
+ },
+ {
+  "idx": 80,
+  "rank": 80,
+  "name": "Hospitality Net World Panel",
+  "url": "https://www.hospitalitynet.org/panel",
+  "priority": 5
+ },
+ {
+  "idx": 81,
+  "rank": 81,
+  "name": "HFTP",
+  "url": "https://www.hftp.org",
+  "priority": 5
+ },
+ {
+  "idx": 82,
+  "rank": 82,
+  "name": "Florida Restaurant & Lodging Assn",
+  "url": "https://frla.org",
+  "priority": 5
+ },
+ {
+  "idx": 83,
+  "rank": 83,
+  "name": "Hotel Owner (UK)",
+  "url": "https://www.hotelowner.co.uk",
+  "priority": 5
+ },
+ {
+  "idx": 84,
+  "rank": 84,
+  "name": "Hospitality.today",
+  "url": "https://hospitality.today",
+  "priority": 5
+ },
+ {
+  "idx": 85,
+  "rank": 85,
+  "name": "Travel Daily News",
+  "url": "https://www.traveldailynews.com",
+  "priority": 5
+ },
+ {
+  "idx": 86,
+  "rank": 86,
+  "name": "Hotelogix Blog",
+  "url": "https://www.hotelogix.com/blog/",
+  "priority": 5
+ },
+ {
+  "idx": 87,
+  "rank": 87,
+  "name": "Hospitality Insights (EHL)",
+  "url": "https://hospitalityinsights.ehl.edu",
+  "priority": 5
+ },
+ {
+  "idx": 88,
+  "rank": 88,
+  "name": "HSMAI",
+  "url": "https://www.hsmai.org",
+  "priority": 5
+ },
+ {
+  "idx": 89,
+  "rank": 89,
+  "name": "California Hotel & Lodging Assn",
+  "url": "https://calodging.com",
+  "priority": 5
+ },
+ {
+  "idx": 90,
+  "rank": 90,
+  "name": "Georgia Hotel & Lodging Assn",
+  "url": "https://www.ghla.net",
+  "priority": 5
+ },
+ {
+  "idx": 91,
+  "rank": 91,
+  "name": "Tennessee Hospitality & Tourism Assn",
+  "url": "https://www.tnhospitality.net",
+  "priority": 5
+ },
+ {
+  "idx": 92,
+  "rank": 92,
+  "name": "Huntsville/Madison County CVB",
+  "url": "https://www.huntsville.org",
+  "priority": 5
+ },
+ {
+  "idx": 93,
+  "rank": 93,
+  "name": "Decatur-Morgan County Chamber",
+  "url": "https://www.dcc.org",
+  "priority": 5
+ },
+ {
+  "idx": 94,
+  "rank": 94,
+  "name": "Alabama Launchpad / EDPA",
+  "url": "https://alabamalaunchpad.com",
+  "priority": 5
+ },
+ {
+  "idx": 95,
+  "rank": 95,
+  "name": "Innovate Alabama",
+  "url": "https://innovatealabama.org",
+  "priority": 5
+ },
+ {
+  "idx": 96,
+  "rank": 96,
+  "name": "New Jersey Chamber of Commerce",
+  "url": "https://njchamber.com",
+  "priority": 5
+ },
+ {
+  "idx": 97,
+  "rank": 97,
+  "name": "NJ Tech Weekly",
+  "url": "https://njtechweekly.com",
+  "priority": 5
+ },
+ {
+  "idx": 98,
+  "rank": 98,
+  "name": "Failory",
+  "url": "https://www.failory.com",
+  "priority": 5
+ },
+ {
+  "idx": 99,
+  "rank": 99,
+  "name": "Hospitality Net Resource Library",
+  "url": "https://www.hospitalitynet.org/library",
+  "priority": 5
+ },
+ {
+  "idx": 100,
+  "rank": 100,
+  "name": "Hotel Speak Resource: Direct Bookings",
+  "url": "https://www.hotelspeak.com/category/direct-bookings/",
+  "priority": 5
+ },
+ {
+  "idx": 101,
+  "rank": 101,
+  "name": "Soegjobs Hospitality Blog",
+  "url": "https://www.soegjobs.com/blog/",
+  "priority": 5
+ },
+ {
+  "idx": 102,
+  "rank": 102,
+  "name": "Slashdot Software",
+  "url": "https://slashdot.org/software/",
+  "priority": 5
+ },
+ {
+  "idx": 103,
+  "rank": 103,
+  "name": "SourceForge Business Software",
+  "url": "https://sourceforge.net/software/",
+  "priority": 5
+ },
+ {
+  "idx": 104,
+  "rank": 104,
+  "name": "Crozdesk",
+  "url": "https://crozdesk.com",
+  "priority": 5
+ },
+ {
+  "idx": 105,
+  "rank": 105,
+  "name": "Launching Next",
+  "url": "https://www.launchingnext.com",
+  "priority": 5
+ },
+ {
+  "idx": 106,
+  "rank": 106,
+  "name": "KillerStartups",
+  "url": "https://www.killerstartups.com",
+  "priority": 5
+ },
+ {
+  "idx": 107,
+  "rank": 107,
+  "name": "StartupRanking",
+  "url": "https://www.startupranking.com",
+  "priority": 5
+ },
+ {
+  "idx": 108,
+  "rank": 108,
+  "name": "Uneed",
+  "url": "https://www.uneed.best",
+  "priority": 5
+ },
+ {
+  "idx": 109,
+  "rank": 109,
+  "name": "SaaS AI Tools",
+  "url": "https://saasaitools.com",
+  "priority": 5
+ },
+ {
+  "idx": 110,
+  "rank": 110,
+  "name": "AIxploria",
+  "url": "https://www.aixploria.com",
+  "priority": 5
+ },
+ {
+  "idx": 111,
+  "rank": 111,
+  "name": "Easy With AI",
+  "url": "https://easywithai.com",
+  "priority": 5
+ },
+ {
+  "idx": 112,
+  "rank": 112,
+  "name": "YP.com (Yellow Pages)",
+  "url": "https://www.yellowpages.com",
+  "priority": 5
+ },
+ {
+  "idx": 113,
+  "rank": 113,
+  "name": "Manta",
+  "url": "https://www.manta.com",
+  "priority": 5
+ },
+ {
+  "idx": 114,
+  "rank": 114,
+  "name": "Chamberofcommerce.com",
+  "url": "https://www.chamberofcommerce.com",
+  "priority": 5
+ },
+ {
+  "idx": 115,
+  "rank": 115,
+  "name": "Founderoo",
+  "url": "https://www.founderoo.co",
+  "priority": 5
+ },
+ {
+  "idx": 116,
+  "rank": 116,
+  "name": "CanvasRebel",
+  "url": "https://canvasrebel.com",
+  "priority": 5
+ },
+ {
+  "idx": 117,
+  "rank": 117,
+  "name": "Bold Journey",
+  "url": "https://boldjourney.com",
+  "priority": 5
+ },
+ {
+  "idx": 118,
+  "rank": 118,
+  "name": "GoodFirms",
+  "url": "https://www.goodfirms.co",
+  "priority": 5
+ },
+ {
+  "idx": 119,
+  "rank": 119,
+  "name": "UpCity",
+  "url": "https://upcity.com",
+  "priority": 5
+ },
+ {
+  "idx": 120,
+  "rank": 120,
+  "name": "Skift",
+  "url": "https://skift.com",
+  "priority": 4
+ },
+ {
+  "idx": 121,
+  "rank": 121,
+  "name": "SiteMinder Blog",
+  "url": "https://www.siteminder.com/r/",
+  "priority": 4
+ },
+ {
+  "idx": 122,
+  "rank": 122,
+  "name": "Cloudbeds Blog",
+  "url": "https://www.cloudbeds.com/blog/",
+  "priority": 4
+ },
+ {
+  "idx": 123,
+  "rank": 123,
+  "name": "Little Hotelier Blog",
+  "url": "https://www.littlehotelier.com/blog/",
+  "priority": 4
+ },
+ {
+  "idx": 124,
+  "rank": 124,
+  "name": "WebRezPro Blog",
+  "url": "https://www.webrezpro.com/blog/",
+  "priority": 4
+ },
+ {
+  "idx": 125,
+  "rank": 125,
+  "name": "AL.com Business",
+  "url": "https://www.al.com/business/",
+  "priority": 4
+ },
+ {
+  "idx": 126,
+  "rank": 126,
+  "name": "Hotel-Industry.co.uk",
+  "url": "https://www.hotel-industry.co.uk",
+  "priority": 4
+ },
+ {
+  "idx": 127,
+  "rank": 127,
+  "name": "Lure Agency Blog",
+  "url": "https://lureagency.com/blog/",
+  "priority": 4
+ },
+ {
+  "idx": 128,
+  "rank": 128,
+  "name": "Travelboom Hotel Marketing Blog",
+  "url": "https://www.travelboommarketing.com/blog/",
+  "priority": 4
+ },
+ {
+  "idx": 129,
+  "rank": 129,
+  "name": "Birmingham Business Alliance",
+  "url": "https://www.birminghambusinessalliance.com",
+  "priority": 4
+ },
+ {
+  "idx": 130,
+  "rank": 130,
+  "name": "NJBIA",
+  "url": "https://njbia.org",
+  "priority": 4
+ },
+ {
+  "idx": 131,
+  "rank": 131,
+  "name": "ROI-NJ",
+  "url": "https://www.roi-nj.com",
+  "priority": 4
+ },
+ {
+  "idx": 132,
+  "rank": 132,
+  "name": "Boostly Podcast",
+  "url": "https://boostly.co.uk/podcast",
+  "priority": 4
+ },
+ {
+  "idx": 133,
+  "rank": 133,
+  "name": "Behind the Stays",
+  "url": "https://www.behindthestays.com",
+  "priority": 4
+ },
+ {
+  "idx": 134,
+  "rank": 134,
+  "name": "Travel Market Life",
+  "url": "https://travelmarket.life",
+  "priority": 4
+ },
+ {
+  "idx": 135,
+  "rank": 135,
+  "name": "Hotel Effectiveness Blog (Actabl)",
+  "url": "https://www.actabl.com/resources",
+  "priority": 4
+ },
+ {
+  "idx": 136,
+  "rank": 136,
+  "name": "Xotels Glossary/Blog",
+  "url": "https://www.xotels.com/en/glossary",
+  "priority": 4
+ },
+ {
+  "idx": 137,
+  "rank": 137,
+  "name": "Reddit r/askhotels (profile link only)",
+  "url": "https://www.reddit.com/r/askhotels/",
+  "priority": 4
+ },
+ {
+  "idx": 138,
+  "rank": 138,
+  "name": "StartupBase",
+  "url": "https://startupbase.io",
+  "priority": 4
+ },
+ {
+  "idx": 139,
+  "rank": 139,
+  "name": "Fazier",
+  "url": "https://fazier.com",
+  "priority": 4
+ },
+ {
+  "idx": 140,
+  "rank": 140,
+  "name": "MicroLaunch",
+  "url": "https://microlaunch.net",
+  "priority": 4
+ },
+ {
+  "idx": 141,
+  "rank": 141,
+  "name": "Peerlist Launchpad",
+  "url": "https://peerlist.io/launchpad",
+  "priority": 4
+ },
+ {
+  "idx": 142,
+  "rank": 142,
+  "name": "Insidr.ai",
+  "url": "https://www.insidr.ai",
+  "priority": 4
+ },
+ {
+  "idx": 143,
+  "rank": 143,
+  "name": "AI Tools Directory",
+  "url": "https://aitoolsdirectory.com",
+  "priority": 4
+ },
+ {
+  "idx": 144,
+  "rank": 144,
+  "name": "AI Scout",
+  "url": "https://aiscout.net",
+  "priority": 4
+ },
+ {
+  "idx": 145,
+  "rank": 145,
+  "name": "OpenTools",
+  "url": "https://opentools.ai",
+  "priority": 4
+ },
+ {
+  "idx": 146,
+  "rank": 146,
+  "name": "Hotfrog",
+  "url": "https://www.hotfrog.com",
+  "priority": 4
+ },
+ {
+  "idx": 147,
+  "rank": 147,
+  "name": "Brownbook",
+  "url": "https://www.brownbook.net",
+  "priority": 4
+ },
+ {
+  "idx": 148,
+  "rank": 148,
+  "name": "Cylex US",
+  "url": "https://www.cylex.us.com",
+  "priority": 4
+ },
+ {
+  "idx": 149,
+  "rank": 149,
+  "name": "MerchantCircle",
+  "url": "https://www.merchantcircle.com",
+  "priority": 4
+ },
+ {
+  "idx": 150,
+  "rank": 150,
+  "name": "EZlocal",
+  "url": "https://ezlocal.com",
+  "priority": 4
+ },
+ {
+  "idx": 151,
+  "rank": 151,
+  "name": "Lodging Lytes",
+  "url": "https://lodginglytes.com",
+  "priority": 4
+ },
+ {
+  "idx": 152,
+  "rank": 152,
+  "name": "Hotel Spider Blog",
+  "url": "https://www.hotel-spider.com/blog",
+  "priority": 4
+ },
+ {
+  "idx": 153,
+  "rank": 153,
+  "name": "DesignRush",
+  "url": "https://www.designrush.com",
+  "priority": 4
+ },
+ {
+  "idx": 154,
+  "rank": 154,
+  "name": "The Org",
+  "url": "https://theorg.com",
+  "priority": 4
+ },
+ {
+  "idx": 155,
+  "rank": 155,
+  "name": "Owler",
+  "url": "https://www.owler.com",
+  "priority": 4
+ },
+ {
+  "idx": 156,
+  "rank": 156,
+  "name": "Medium publication (Hospitality)",
+  "url": "https://medium.com",
+  "priority": 4
+ },
+ {
+  "idx": 157,
+  "rank": 157,
+  "name": "Quora Spaces (Hospitality)",
+  "url": "https://www.quora.com",
+  "priority": 4
+ },
+ {
+  "idx": 158,
+  "rank": 158,
+  "name": "SourceBottle",
+  "url": "https://www.sourcebottle.com",
+  "priority": 4
+ },
+ {
+  "idx": 159,
+  "rank": 159,
+  "name": "EIN Presswire (paid)",
+  "url": "https://www.einpresswire.com",
+  "priority": 4
+ },
+ {
+  "idx": 160,
+  "rank": 160,
+  "name": "Mews Blog",
+  "url": "https://www.mews.com/en/blog",
+  "priority": 3
+ },
+ {
+  "idx": 161,
+  "rank": 161,
+  "name": "StackShare",
+  "url": "https://stackshare.io",
+  "priority": 3
+ },
+ {
+  "idx": 162,
+  "rank": 162,
+  "name": "Hospitality Hangout",
+  "url": "https://thedigitalrestaurant.com/hospitality-hangout/",
+  "priority": 3
+ },
+ {
+  "idx": 163,
+  "rank": 163,
+  "name": "StayNTouch Resources",
+  "url": "https://www.stayntouch.com/resources/",
+  "priority": 3
+ },
+ {
+  "idx": 164,
+  "rank": 164,
+  "name": "Cvent Supplier Network Blog",
+  "url": "https://www.cvent.com/en/blog",
+  "priority": 3
+ },
+ {
+  "idx": 165,
+  "rank": 165,
+  "name": "SBA / SCORE Huntsville",
+  "url": "https://www.score.org/huntsville",
+  "priority": 3
+ },
+ {
+  "idx": 166,
+  "rank": 166,
+  "name": "PitchBook profile (via inbound)",
+  "url": "https://pitchbook.com",
+  "priority": 3
+ },
+ {
+  "idx": 167,
+  "rank": 167,
+  "name": "The Hotels Network Blog",
+  "url": "https://blog.thehotelsnetwork.com",
+  "priority": 3
+ },
+ {
+  "idx": 168,
+  "rank": 168,
+  "name": "AI Top Rank",
+  "url": "https://aitoprank.com",
+  "priority": 3
+ },
+ {
+  "idx": 169,
+  "rank": 169,
+  "name": "Nextdoor Business",
+  "url": "https://business.nextdoor.com",
+  "priority": 3
+ },
+ {
+  "idx": 170,
+  "rank": 170,
+  "name": "Pump It Up Magazine / local features",
+  "url": "https://pumpitupmagazine.com",
+  "priority": 3
+ },
+ {
+  "idx": 171,
+  "rank": 171,
+  "name": "Texas Travel Alliance vendor",
+  "url": "https://www.traveltexas.com",
+  "priority": 3
+ },
+ {
+  "idx": 172,
+  "rank": 172,
+  "name": "PRLog (free PR)",
+  "url": "https://www.prlog.org",
+  "priority": 3
+ },
+ {
+  "idx": 173,
+  "rank": 173,
+  "name": "EU Startups / US equivalents - skip",
+  "url": "https://www.eu-startups.com",
+  "priority": 2
+ }
+]
