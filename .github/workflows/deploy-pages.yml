@@ -22,14 +22,11 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Try to enable GitHub Pages (Actions source)
+      - name: Enable GitHub Pages via API
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -37,7 +34,8 @@ jobs:
           gh api repos/${{ github.repository }}/pages \
             --method POST \
             -f build_type=workflow \
-            2>&1 && echo "Pages enabled via API" || echo "Pages API call failed (may already be enabled or needs manual setup)"
+            && echo "Pages enabled successfully" \
+            || echo "Pages enable failed (may already be enabled or need manual setup)"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
