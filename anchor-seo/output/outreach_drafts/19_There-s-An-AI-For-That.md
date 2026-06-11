@@ -23,4 +23,7 @@ Copy template #8 — AI directory request from seo-system/outreach_templates.md,
 4. Log the send in outreach_tracker.csv (Date Sent, template #, personalization note).
 
 ## RESEARCH NOTES
-(Claude Code Phase 5 appends 3 bullets here for top-20 prospects: recent articles, themes, suggested angle.)
+**Site unreachable from the build environment (network egress policy) — research manually before sending.**
+- Read 2–3 of their recent articles or their about page.
+- Note what they've covered lately that overlaps missed calls, staffing, or AI for hotels.
+- Pick one specific piece to reference in your personal opening line.
