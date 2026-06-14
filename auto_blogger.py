@@ -3,6 +3,7 @@ import re
 import time
 import requests
 import json
+from urllib.parse import quote_plus
 import google.generativeai as genai
 from dotenv import load_dotenv
 from wordpress_xmlrpc import Client, WordPressPost
@@ -25,6 +26,20 @@ FALLBACK_NICHES = [
     "mens summer shorts",
     "portable power stations",
 ]
+
+
+def build_amazon_link(query, affiliate_tag=None):
+    """Build an accurate, URL-encoded Amazon search link for a product.
+
+    Properly percent-encodes the query (handles spaces, &, ?, ', accents, etc.)
+    and only appends the affiliate tag when one is actually configured, so we
+    never emit a broken `&tag=None` link.
+    """
+    query = (query or "").strip()
+    link = f"https://www.amazon.com/s?k={quote_plus(query)}"
+    if affiliate_tag:
+        link += f"&tag={quote_plus(affiliate_tag.strip())}"
+    return link
 
 
 def get_gemini_model():
@@ -134,7 +149,15 @@ def write_article(topic, search_data):
 
     model = get_gemini_model()
 
-    prompt = f"Write a 1200-word SEO-optimized blog post for 'The Daily Vetted' about: {topic}. Use this data: {search_data}. Format in Markdown with product reviews and pros/cons. Use [CHECK_PRICE] for links."
+    prompt = (
+        f"Write a 1200-word SEO-optimized blog post for 'The Daily Vetted' about: {topic}. "
+        f"Use this data: {search_data}. "
+        "Format in Markdown with product reviews and pros/cons. "
+        "For every product you recommend, insert a price-check link directly after "
+        "you introduce it using the EXACT format [CHECK_PRICE: <exact product brand "
+        "and model>] — for example [CHECK_PRICE: Sony WH-1000XM5]. Use the precise "
+        "product name inside the brackets so each link points to that specific product."
+    )
 
     try:
         response = model.generate_content(prompt)
@@ -151,10 +174,21 @@ def publish_to_wordpress(title, content):
     user = os.getenv("WP_USERNAME")
     password = os.getenv("WP_APP_PASSWORD") # Use the 16-char Application Password
     affiliate_tag = os.getenv("AFFILIATE_TAG")
+    if not affiliate_tag:
+        print("⚠️ AFFILIATE_TAG is not set — Amazon links will NOT include your tag (no commissions).")
 
-    # Format Content
-    amazon_link = f"https://www.amazon.com/s?k={title.replace(' ', '+')}&tag={affiliate_tag}"
-    final_body = content.replace("[CHECK_PRICE]", f"[Check Price on Amazon]({amazon_link})")
+    # Format Content: turn each [CHECK_PRICE: Product Name] into an accurate,
+    # product-specific Amazon search link. Fall back to the article title for
+    # any bare [CHECK_PRICE] placeholders that lack a product name.
+    def _link_for_product(match):
+        product = match.group(1).strip() or title
+        return f"[Check Price on Amazon]({build_amazon_link(product, affiliate_tag)})"
+
+    final_body = re.sub(r"\[CHECK_PRICE:\s*([^\]]+)\]", _link_for_product, content)
+    final_body = final_body.replace(
+        "[CHECK_PRICE]",
+        f"[Check Price on Amazon]({build_amazon_link(title, affiliate_tag)})",
+    )
     final_body += "\n\n---\n*Disclaimer: The Daily Vetted earns commissions from affiliate links.*"
 
     try:
